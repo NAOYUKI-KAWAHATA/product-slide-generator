@@ -1,17 +1,19 @@
 ---
 name: product-slide-generator
-description: 講座型商品の販売用スライド資料（52〜66ページ）を画像生成モードで自動生成するSkill。「スライドを作りたい」「講座資料を作って」「商品スライドを生成して」などのリクエストで使用すること。Canvaテンプレート画像をリファレンスとして使用し、見出しバナーを全ページ統一した高品質スライドを生成する。
+description: 講座型商品の販売用スライド資料（52〜66ページ）を画像生成モードで自動生成するSkill。「スライドを作りたい」「講座資料を作って」「商品スライドを生成して」などのリクエストで使用すること。Canvaテンプレート画像でレイアウトを統一し、5種類のデザインテーマから世界観を選択できる。
 ---
 
-# 商品スライド制作スキル v2
+# 商品スライド制作スキル v3
 
 ## 概要
 
-講座型商品の販売用スライド資料を、**Manusスライド機能（画像生成モード）** で52〜66ページ生成する。全ページを1枚ずつAI画像として生成し、Canvaテンプレートをリファレンスとした洗練された高級感を実現する。
+講座型商品の販売用スライド資料を、**Manusスライド機能（画像生成モード）** で52〜66ページ生成する。全ページを1枚ずつAI画像として生成する。
 
-**デザインの2大ルール（必ず守ること）:**
-1. **見出しバナーは全コンテンツページで完全統一** — 同じ形・色・フォントのバナーを使う
-2. **ロゴ・ブランドマークは一切表示しない** — 「M」ロゴ含め全て非表示
+**設計思想（最重要）:**
+- **レイアウト（構造）** → 全テーマ共通。Canvaテンプレート（`canva_reference/`）のみを参照（固定）
+- **デザイン（世界観）** → 5テーマから選択。テーマが指定する「色・装飾・雰囲気・テロップの色」に従う
+- **見出しバナー** → 全コンテンツページで完全統一。テーマごとにバナーの色は変わるが、形・位置は同一
+- **ロゴ・ブランドマーク** → 一切表示しない
 
 ---
 
@@ -70,22 +72,7 @@ READ: /home/ubuntu/skills/product-design-planner/references/slide_structure_temp
 
 ---
 
-## Phase 2: デザインシステムの読み込み
-
-デザインプロンプトの共通指示とレイアウト別プロンプトを読み込む。
-
-```
-READ: /home/ubuntu/skills/product-slide-generator/references/design_system.md
-READ: /home/ubuntu/skills/product-slide-generator/references/layout_prompts.md
-```
-
-**Canvaリファレンス画像の場所**: `/home/ubuntu/skills/product-slide-generator/templates/canva_reference/`
-
-各レイアウトに対応するCanva画像（A〜O）を `image_slide_generate` の `references` に必ず含めること。
-
----
-
-## Phase 3: デザインテーマの選択
+## Phase 2: デザインテーマの選択
 
 ### Step 1: テーマ選択の提案
 
@@ -96,17 +83,13 @@ READ: /home/ubuntu/skills/product-slide-generator/references/design_themes.md
 ```
 
 > スライドのデザインテーマを選んでください。
-> セミナー告知のLP画像と同じ世界観でスライドを作れます！
 >
 > **テーマ一覧:**
-> 1. 🔷 **Gemini グラデーション** — 白ベース＋青紫グラデーション。AI・テック・ビジネス向け
-> 2. 🟤 **ベージュブラウン** — 暖かみのあるブラウン＋ゴールド光線。ビジネス・男性向け
-> 3. 🌌 **コスミックネイビー** — 深いネイビー＋ゴールド。高級感・権威・男性向け
-> 4. 🌿 **フォレストグリーン** — ベージュ＋深緑＋植物装飾。子育て・教育・ナチュラル
-> 5. ✨ **ラグジュアリーゴールド** — 白＋シャンパンゴールド＋水滴装飾。美容・女性向け
-> 6. 🌹 **ローズレッド** — 深紅＋薔薇の花装飾。スピリチュアル・恋愛・女性向け
-> 7. 💎 **ライトパステル** — 白＋水色＋ピンク＋ダイヤモンド装飾。美容・ファッション
-> 8. 💧 **アクアブルー** — ティール＋水色＋水紋装飾。健康・美容・ヨガ・ピラティス
+> 1. 💎 **ライトパステル** — 白〜淡いピンク〜ラベンダー。美容・ファッション・女性向け
+> 2. 💧 **アクアブルー** — ホワイトベース＋ブルーグラデーション。健康・美容・コンサル
+> 3. 🌿 **フォレストグリーン** — 淡いグリーングラデーション。子育て・教育・ナチュラル
+> 4. 🔷 **ジオメトリック** — ホワイトグレー＋幾何学線。AI・テック・ビジネス
+> 5. ☕ **ソフトベージュ** — ホワイトベージュ＋柔らかいフレーム。ライフスタイル・コーチング
 >
 > 番号または名前で教えてください。
 
@@ -114,12 +97,25 @@ READ: /home/ubuntu/skills/product-slide-generator/references/design_themes.md
 
 ユーザーが選択したテーマのIDを記録する。以降の全ページ生成で使用する。
 
-- テーマ1（gemini_gradient）: `design_system.md` をそのまま使用
-- テーマ2〜8: `design_themes.md` の該当テーマの `=== THEME OVERRIDE ===` ブロックを `design_system.md` の COLOR PALETTE と DECORATIVE ELEMENTS に上書きして使用
+選択テーマの `=== THEME OVERRIDE ===` ブロックを `design_system.md` の COLOR PALETTE と DECORATIVE ELEMENTS に上書きして使用する。
 
 ---
 
-## Phase 5: 写真素材の確認
+## Phase 3: デザインシステムの読み込み
+
+デザインプロンプトの共通指示とレイアウト別プロンプトを読み込む。
+
+```
+READ: /home/ubuntu/skills/product-slide-generator/references/design_system.md
+READ: /home/ubuntu/skills/product-slide-generator/references/layout_prompts.md
+```
+
+**Canvaリファレンス画像の場所**: `/home/ubuntu/skills/product-slide-generator/templates/canva_reference/`
+**テーマリファレンス画像の場所**: `/home/ubuntu/skills/product-slide-generator/templates/themes/theme_XX_<name>/`
+
+---
+
+## Phase 4: 写真素材の確認
 
 ユーザーに以下を確認する。
 
@@ -135,7 +131,7 @@ READ: /home/ubuntu/skills/product-slide-generator/references/design_themes.md
 
 ---
 
-## Phase 6: スライド生成
+## Phase 5: スライド生成
 
 ### Step 1: プロジェクト初期化
 
@@ -153,23 +149,31 @@ READ: /home/ubuntu/skills/product-slide-generator/references/design_themes.md
 
 **生成ルール（全ページ共通）:**
 
-1. `design_system.md` の共通デザイン指示を**毎回プロンプトの末尾に付加する**
-2. 各ページのレイアウトに対応するCanvaリファレンス画像を `references` の**最初の要素**として含める
-3. 2ページ目以降は、直前に生成した画像も `references` に含める（最大2枚）
-4. レイアウト種別ごとのプロンプトテンプレートは `layout_prompts.md` を参照する
+1. `design_system.md` の共通デザイン指示（テーマ上書き済み）を**毎回プロンプトの末尾に付加する**
+2. `references` 配列に以下の順でリファレンス画像を含める:
+   - **第1要素**: Canvaレイアウト参照画像（`canva_reference/` フォルダ）— レイアウト構造
+   - **第2要素**: テーマリファレンス画像（`themes/theme_XX/` フォルダ）— 色・雰囲気
+   - **第3要素**: 直前ページの生成画像（2ページ目以降）— デザイン継続性
+3. レイアウト種別ごとのプロンプトテンプレートは `layout_prompts.md` を参照する
+4. プロンプト内に以下を明示する:
 
-**referencesの指定例（P3以降）:**
 ```
-references: [
-  "/home/ubuntu/skills/product-slide-generator/templates/canva_reference/B_bullet_list.jpg",  // Canvaテンプレート（最優先）
-  "/home/ubuntu/product_slides/p02_generated.webp"  // 直前ページ（デザイン継続性）
-]
+IMPORTANT: Follow the LAYOUT from the Canva reference image.
+Follow the COLOR and ATMOSPHERE from the theme reference image.
+Do NOT copy the text content from either reference image.
 ```
+
+**テーマリファレンス画像の選択ルール:**
+- 表紙 → `cover.png`
+- 箇条書き・リスト系 → `bullet_list.png`（ない場合は `content.png`）
+- コンテンツ説明系 → `content.png`
+- 価格・比較系 → `pricing.png`
 
 **見出しバナーの統一確認**: 生成前に必ず確認する。
-- コンテンツページ: 左上に「ダークチャコール(#333333)バナー＋白文字の見出し」を表示
+- コンテンツページ: テーマ指定のバナー色＋白文字の見出しを表示
 - 表紙・セクション扉・インパクト文ページ: バナーなし
 - ロゴ・ブランドマーク: 一切表示しない
+- **異なるデザインの見出しが複数出てくることは絶対NG**
 
 ### Step 3: 進捗報告
 
@@ -179,7 +183,7 @@ references: [
 
 ---
 
-## Phase 7: 品質チェックと納品
+## Phase 6: 品質チェックと納品
 
 ### Step 1: 全ページの確認
 
@@ -189,22 +193,35 @@ references: [
 
 > スライド資料が完成しました！（全{{総数}}ページ）
 >
-> **デザイン**: モノトーン＋シャンパンゴールド
+> **デザインテーマ**: {{選択テーマ名}}
 >
 > 修正したいページがあれば、ページ番号と修正内容を教えてください。
 > 例: 「P4のプロフィール写真を差し替えたい」「P15の文字を修正したい」
 
 ### Step 3: 修正対応
 
-ユーザーから修正依頼があった場合、該当ページのみ `image_slide_generate` で再生成する。そのページのCanvaリファレンス画像と前後のページ画像を `references` に含め、デザインの一貫性を保つ。
+ユーザーから修正依頼があった場合、該当ページのみ `image_slide_generate` で再生成する。そのページのCanvaリファレンス画像・テーマリファレンス画像・前後のページ画像を `references` に含め、デザインの一貫性を保つ。
 
 ---
 
 ## 注意事項
 
-### 見出しバナーの一貫性（最重要）
+### レイアウトとデザインの分離（最重要原則）
 
-全コンテンツページで見出しバナーのデザインが統一されていることを確認する。バナーの形・色（#333333）・フォントが1ページでも異なると品質NG。
+- **レイアウト** = ページの構造・要素の配置 → Canvaテンプレート（`canva_reference/`）に従う。全テーマ共通。
+- **デザイン** = 色・装飾・雰囲気・テロップの色 → テーマ定義（`design_themes.md`）に従う。テーマごとに異なる。
+- この2つを混同しないこと。テーマが変わってもレイアウトは変わらない。
+
+### 見出しバナーの一貫性
+
+全コンテンツページで見出しバナーのデザインが統一されていることを確認する。バナーの形・位置は全テーマ共通。色はテーマに従う。1ページでも異なるデザインのバナーが出たら品質NG。
+
+### テキスト色ルール
+
+- 本文・箇条書き: チャコールグレー（#333333）または白のみ
+- グラデーション文字は扉タイトル・大見出しのみ許可
+- バナー・装飾にはテーマカラーのグラデーションOK
+- AIっぽいギラギラ感は絶対NG。洗練された落ち着いた高級感を意識する
 
 ### 日本語テキストの精度
 

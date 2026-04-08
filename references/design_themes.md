@@ -1,7 +1,7 @@
-# デザインテーマ一覧 v1
+# デザインテーマ一覧 v2
 
-> LP画像から抽出した8つのデザインテーマ。
-> **レイアウト**は常に `canva_reference/` のCanvaテンプレートを参照する（固定）。
+> **重要**: このファイルは各テーマの「世界観」を定義する。
+> **レイアウト（構造）**は全テーマ共通で `canva_reference/` の画像に従う（固定）。
 > **世界観（色・装飾・雰囲気）**のみ、このファイルのテーマプロンプトで上書きする。
 >
 > 使い方: `design_system.md` の `COLOR PALETTE` と `DECORATIVE ELEMENTS` のセクションを、
@@ -11,341 +11,222 @@
 
 ## テーマ一覧
 
-| # | テーマID | テーマ名 | 雰囲気 | 向いているジャンル |
-|---|---|---|---|---|
-| 1 | `gemini_gradient` | Gemini グラデーション | 白ベース＋青紫グラデーション＋ガラスモーフィズム | AI・テック・ビジネス |
-| 2 | `beige_brown` | ベージュブラウン | 暖かみのあるブラウン＋ゴールド光線 | ビジネス・マーケティング・男性向け |
-| 3 | `cosmic_navy` | コスミックネイビー | 深いネイビー＋ゴールド＋スポットライト | 高級感・権威・男性向け |
-| 4 | `forest_green` | フォレストグリーン | ベージュ＋深緑＋植物装飾 | 子育て・教育・ナチュラル |
-| 5 | `luxury_gold` | ラグジュアリーゴールド | 白＋シャンパンゴールド＋水滴装飾 | 美容・ライフスタイル・女性向け |
-| 6 | `rose_red` | ローズレッド | 深紅＋薔薇の花装飾＋ローズゴールド | スピリチュアル・恋愛・女性向け |
-| 7 | `light_pastel` | ライトパステル | 白＋水色＋ピンク＋ダイヤモンド装飾 | 美容・ファッション・爽やか |
-| 8 | `aqua_blue` | アクアブルー | ティール＋水色＋水紋装飾 | 健康・美容・ヨガ・ピラティス |
+| # | テーマID | テーマ名 | 背景 | タイトル文字 | 向いているジャンル |
+|---|---|---|---|---|---|
+| 1 | `light_pastel` | ライトパステル | 白〜淡いピンク〜ラベンダー | ブルー→パープル→ピンクのグラデーション | 美容・ファッション・女性向け |
+| 2 | `aqua_blue` | アクアブルー | ホワイトベース | ブルーグラデーション | 健康・美容・ヨガ・コンサル |
+| 3 | `forest_green` | フォレストグリーン | 淡いグリーングラデーション | 深緑アクセント | 子育て・教育・ナチュラル |
+| 4 | `geometric` | ジオメトリック | ホワイトグレー＋幾何学線 | ブルー→パープル→ピンクのグラデーション | AI・テック・ビジネス |
+| 5 | `soft_beige` | ソフトベージュ | 薄いホワイトベージュ | ベージュグラデーション | ライフスタイル・コーチング・女性向け |
 
-**LP参照画像パス**: `/home/ubuntu/skills/product-slide-generator/templates/themes/`
+**テーマ参照画像パス**: `templates/themes/theme_XX_<name>/`
+各テーマフォルダに `cover.png`, `content.png`, `bullet_list.png`, `pricing.png` を格納。
 
 ---
 
-## テーマ1: Gemini グラデーション（既存・デフォルト）
+## 共通ルール（全テーマ必須・テーマ指定より優先）
 
-**テーマID**: `gemini_gradient`
-**LP参照画像**: なし（既存のdesign_system.mdがそのまま適用される）
+### テキスト色ルール
+- **本文・箇条書き・説明文**: チャコールグレー（#333333〜#4A4A4A）または白（暗い背景の場合）
+- **扉タイトル・大見出しのみ**: テーマ指定のグラデーション文字OK
+- **それ以外のページのタイトル**: チャコールグレーまたは白。グラデーション文字禁止
+- **見出しバナー・装飾**: テーマカラーのグラデーションOK
 
-```
-=== THEME OVERRIDE: GEMINI GRADIENT ===
+### ギラギラ禁止ルール（ANTI-GLITTER MANDATE）
+- 1スライドに使う装飾技法は最大1種類
+- 全ての装飾は「一見気づかないくらい控えめ」に
+- 判定基準：「洗練された高級感がある」→ OK / 「AIっぽい・ギラギラ」→ NG
+- 光沢・グロー・レンズフレアは最小限に抑える
+- 背景のグラデーションは柔らかく自然な遷移にする
 
-BACKGROUND:
-- Base: pure white (#FFFFFF) to very light warm gray (#F8F7F5)
-- Subtle white marble texture in background
-- Corner decorations: thin blue-purple gradient geometric lines
-- Overall: bright, airy, premium tech aesthetic
-
-COLOR PALETTE:
-- Background: white (#FFFFFF) to light gray (#F8F7F5)
-- Primary text: dark charcoal (#333333)
-- Title accent: blue-purple gradient (#6B8DD6 to #8E6BC6)
-- Accent lines: blue-purple (#7B7FC4)
-- Glassmorphism panels: rgba(255,255,255,0.6) with blur effect
-- Header banner: dark charcoal (#333333) with white text
-
-DECORATIVE ELEMENTS:
-- Glassmorphism center panel with frosted glass effect
-- Thin blue-purple gradient border lines at corners
-- Subtle geometric grid pattern in background
-- Clean, tech-forward aesthetic
-
-MOOD: Sophisticated AI/tech premium — like a high-end software product launch
-```
+### 見出しバナー統一ルール
+- 見出しが必要なページ → 同一デザインのバナー＋白文字を必ず使う
+- 扉・表紙・インパクト文ページ → 見出しバナーなし
+- **異なるデザインの見出しが複数出てくることは絶対NG**
 
 ---
 
-## テーマ2: ベージュブラウン
-
-**テーマID**: `beige_brown`
-**LP参照画像**: `theme_02_beige_brown.jpg`
-
-```
-=== THEME OVERRIDE: BEIGE BROWN ===
-
-BACKGROUND:
-- Base: warm beige (#F5EDD8) to light cream (#FAF3E0)
-- Subtle warm texture, like aged parchment
-- Corner decorations: golden light ray streaks emanating from top-right
-- Overall: warm, confident, masculine authority
-
-COLOR PALETTE:
-- Background: warm beige (#F5EDD8) to cream (#FAF3E0)
-- Primary text: dark brown (#3D2B1F)
-- Title text: warm white (#FFFFFF) with dark brown background band
-- Accent: warm gold (#C8A96E)
-- Highlight bands: dark chocolate brown (#4A2E1A) horizontal stripes behind titles
-- Header banner: dark chocolate brown (#4A2E1A) with white text
-
-DECORATIVE ELEMENTS:
-- Golden light rays / sunburst effect from upper-right corner
-- Dark brown horizontal band behind main title text (full width)
-- Warm gold circular badge element in lower-right
-- Subtle warm bokeh light effects in background
-- Rounded rectangle info box in warm gold at bottom
-
-MOOD: Warm authority and confidence — like a premium business seminar for driven professionals
-```
-
----
-
-## テーマ3: コスミックネイビー
-
-**テーマID**: `cosmic_navy`
-**LP参照画像**: `theme_03_cosmic_navy.jpg`
-
-```
-=== THEME OVERRIDE: COSMIC NAVY ===
-
-BACKGROUND:
-- Base: deep navy blue (#0D1B3E) to dark midnight blue (#0A1628)
-- Subtle star/cosmos texture in background
-- Spotlight effect from upper-right: warm golden light beam
-- Overall: powerful, authoritative, premium night-sky aesthetic
-
-COLOR PALETTE:
-- Background: deep navy (#0D1B3E) to midnight blue (#0A1628)
-- Primary text: white (#FFFFFF)
-- Title text: white (#FFFFFF) with champagne gold (#C8A96E) accent
-- Accent: champagne gold (#C8A96E) and bright gold (#FFD700)
-- Divider lines: champagne gold (#C8A96E)
-- Header banner: dark navy (#0A1628) with gold border and white text
-
-DECORATIVE ELEMENTS:
-- Warm golden spotlight beam from upper-right corner
-- Champagne gold thin border frame around entire slide
-- Gold circular badge/seal element in lower-right corner
-- Subtle star/particle effects in dark background
-- Rounded rectangle info box: dark navy with gold border
-
-MOOD: Cosmic authority and premium exclusivity — like a VIP invitation to an elite event
-```
-
----
-
-## テーマ4: フォレストグリーン
-
-**テーマID**: `forest_green`
-**LP参照画像**: `theme_04_forest_green.jpg`
-
-```
-=== THEME OVERRIDE: FOREST GREEN ===
-
-BACKGROUND:
-- Base: warm cream (#F5F0E8) to soft beige (#EDE8DC)
-- Watercolor wash effect in corners: soft sage green (#C8D5B9)
-- Botanical decorations: hand-drawn style leaves, small flowers, branches
-- Overall: natural, warm, nurturing, organic aesthetic
-
-COLOR PALETTE:
-- Background: warm cream (#F5F0E8) to soft beige (#EDE8DC)
-- Primary text: deep forest green (#1A4A2E)
-- Title text: deep forest green (#1A4A2E), bold
-- Accent: sage green (#6B9E78) and forest green (#2D6A4F)
-- Divider lines: sage green (#6B9E78), hand-drawn style
-- Header banner: forest green (#2D6A4F) with white text
-
-DECORATIVE ELEMENTS:
-- Hand-drawn botanical illustrations: leaves, small wildflowers, thin branches
-- Watercolor green wash in corners and edges
-- Rounded rectangle info box: cream with forest green border
-- Circular badge: forest green with laurel wreath decoration
-- Organic, imperfect lines — NOT geometric or corporate
-
-MOOD: Warm, nurturing, natural growth — like a caring educator in a sunlit garden
-```
-
----
-
-## テーマ5: ラグジュアリーゴールド
-
-**テーマID**: `luxury_gold`
-**LP参照画像**: `theme_05_luxury_gold.jpg`
-
-```
-=== THEME OVERRIDE: LUXURY GOLD ===
-
-BACKGROUND:
-- Base: pure white (#FFFFFF) to very light warm cream (#FDF9F0)
-- Soft bokeh light effects: warm golden circles, subtle and dreamy
-- Right side: flowing champagne gold ribbon/stream decoration
-- Water droplet accents: small golden drops scattered elegantly
-- Overall: feminine luxury, spa-like, premium beauty aesthetic
-
-COLOR PALETTE:
-- Background: white (#FFFFFF) to light cream (#FDF9F0)
-- Primary text: dark warm brown (#3D2B1F)
-- Title text: champagne gold (#C8A96E) with subtle shimmer
-- Accent: champagne gold (#C8A96E) and warm gold (#D4AF6A)
-- Divider lines: champagne gold (#C8A96E), thin and delicate
-- Header banner: champagne gold (#C8A96E) with dark brown text
-
-DECORATIVE ELEMENTS:
-- Flowing champagne gold ribbon/stream on right side of slide
-- Small golden water droplets scattered in background
-- Soft warm bokeh circles in background
-- Diamond/rhombus shaped badge in upper-right: gold outline with text inside
-- Circular clock/date badge: gold ring with white interior
-- Thin gold horizontal band at bottom for info
-
-MOOD: Feminine luxury and elegance — like a premium spa or high-end beauty brand
-```
-
----
-
-## テーマ6: ローズレッド
-
-**テーマID**: `rose_red`
-**LP参照画像**: `theme_06_rose_red.jpg`
-
-```
-=== THEME OVERRIDE: ROSE RED ===
-
-BACKGROUND:
-- Base: deep crimson red (#8B1A2F) to dark burgundy (#6B0F1F)
-- Large rose flower illustrations: semi-transparent, overlapping in corners
-- Subtle golden star/sparkle particles scattered throughout
-- Overall: passionate, mystical, romantic, spiritual aesthetic
-
-COLOR PALETTE:
-- Background: deep crimson (#8B1A2F) to dark burgundy (#6B0F1F)
-- Primary text: white (#FFFFFF)
-- Title text: white (#FFFFFF) with warm glow
-- Accent: rose gold (#C9956C) and warm gold (#D4AF6A)
-- Divider lines: rose gold (#C9956C)
-- Header banner: dark burgundy (#6B0F1F) with rose gold border and white text
-
-DECORATIVE ELEMENTS:
-- Large semi-transparent rose flower illustrations in corners (top-right, bottom-left)
-- Golden sparkle/star particles scattered throughout background
-- Circular badge: rose gold ring with laurel wreath, white text inside
-- Rounded rectangle info box: dark burgundy with rose gold border
-- Circular rose icon/emblem in upper-left area
-
-MOOD: Passionate mystique and feminine power — like a high-end spiritual or romance coaching brand
-```
-
----
-
-## テーマ7: ライトパステル
+## テーマ1: ライトパステル（Light Pastel）
 
 **テーマID**: `light_pastel`
-**LP参照画像**: `theme_07_light_pastel.jpg`
+**リファレンス画像**: `templates/themes/theme_01_light_pastel/`
 
 ```
 === THEME OVERRIDE: LIGHT PASTEL ===
 
 BACKGROUND:
-- Base: very light lavender (#F0EEFF) to soft sky blue (#E8F4FF) gradient
-- Floating geometric shapes: translucent diamond/crystal shapes in pastel blue and pink
-- Dot matrix pattern in upper-right corner: subtle gray dots
-- Overall: fresh, youthful, digital-native, clean aesthetic
+- Base: white (#FFFFFF) with very subtle gradient to pale pink (#FFF0F5) and pale lavender (#F0E6FF)
+- Soft, diffused light glow in bottom-right corner
+- Overall: ethereal, soft, premium feminine aesthetic
 
 COLOR PALETTE:
-- Background: light lavender (#F0EEFF) to sky blue (#E8F4FF)
-- Primary text: dark navy (#1A2A4A)
-- Title text: gradient from sky blue (#5BB8F5) to soft pink (#F5A0C0)
-- Accent: sky blue (#5BB8F5) and soft pink (#F5A0C0)
-- Divider lines: light blue (#A0D4F5), thin
-- Header banner: light blue (#5BB8F5) with white text, rounded corners
+- Background: white → pale pink (#FFF0F5) → pale lavender (#F0E6FF)
+- Primary text: charcoal gray (#4A4A4A)
+- Title text (cover/section ONLY): blue-to-purple-to-pink gradient (#4A90D9 → #8B5CF6 → #EC4899). Serif typeface.
+- Accent: subtle gold (#C5A55A) for price highlights only
+- Heading banner: soft pink-to-lavender gradient (#F0A0C0 → #C0A0E0) with white text
+- Bullet icons: diamond (◆) shape in gradient pink-purple
 
 DECORATIVE ELEMENTS:
-- Floating translucent diamond/crystal shapes in pastel blue and pink
-- Subtle dot matrix grid in upper-right corner
-- Rounded rectangle info box: white with light blue border
-- Circular badge: light blue-pink gradient with white text
-- Sparkle star accents near header text
-- Clean, airy geometric decorations
+- Thin diamond-shaped geometric lines, very subtle
+- Controlled light particles — barely visible, like dust in sunlight
+- NO heavy glow, NO lens flare, NO sparkle clusters
+- Clean and delicate — like fine jewelry packaging
 
-MOOD: Fresh digital confidence — like a modern beauty tech or lifestyle app brand
+MOOD: Like a luxury jewelry brand lookbook — delicate, precious, aspirational
 ```
 
 ---
 
-## テーマ8: アクアブルー
+## テーマ2: アクアブルー（Aqua Blue）
 
 **テーマID**: `aqua_blue`
-**LP参照画像**: `theme_08_aqua_blue.jpg`
+**リファレンス画像**: `templates/themes/theme_02_aqua_blue/`
 
 ```
 === THEME OVERRIDE: AQUA BLUE ===
 
 BACKGROUND:
-- Base: soft aqua (#C8EEF0) to light teal (#B0E8EC) gradient
-- Water ripple/ring patterns: concentric circles in slightly darker teal
-- Water droplet accents: transparent drops scattered elegantly
-- Bubble elements: small transparent circles floating
-- Overall: refreshing, clean, health-focused, wellness aesthetic
+- Base: clean white (#FFFFFF to #F8FBFF)
+- Very subtle blue tint at edges or corners
+- Overall: clean, professional, trustworthy
 
 COLOR PALETTE:
-- Background: soft aqua (#C8EEF0) to light teal (#B0E8EC)
-- Primary text: dark teal (#1A5F6A)
-- Title text: deep teal (#1A5F6A), bold
-- Accent: medium teal (#2E9DAA) and silver (#B0C4C8)
-- Divider lines: medium teal (#2E9DAA)
-- Header banner: medium teal (#2E9DAA) with white text, pill/rounded shape
+- Background: white (#FFFFFF) to very light blue (#F8FBFF)
+- Primary text: charcoal gray (#333333)
+- Title text (cover/section ONLY): blue gradient (#1E90FF → #0066CC → #003D7A). Sans-serif typeface.
+- Accent: deep navy (#0D47A1) for emphasis, light blue (#E3F2FD) for background highlights
+- Heading banner: blue gradient (#2196F3 → #0D47A1) with white text
+- Bullet icons: circle or square in solid blue (#2196F3)
 
 DECORATIVE ELEMENTS:
-- Concentric water ripple rings in background (subtle, darker teal)
-- Small transparent water droplets and bubbles scattered throughout
-- Rounded rectangle info box: light teal with medium teal border, rounded corners
-- Circular badge: silver/chrome ring with white interior and teal text
-- Water drop icon accent near header elements
-- Pill-shaped tag/label for header text (rounded ends)
+- Subtle water ripple or wave patterns — very faint, background only
+- Clean geometric lines if any — thin and precise
+- NO heavy water effects, NO bubble clusters
+- Minimal and professional
 
-MOOD: Refreshing wellness and clarity — like a premium spa, yoga studio, or health brand
+MOOD: Like a premium consulting firm presentation — authoritative, clean, trustworthy
 ```
 
 ---
 
-## 全テーマ共通: テキスト色ルール（必ず遵守）
+## テーマ3: フォレストグリーン（Forest Green）
 
-> **このルールは全テーマに適用される。テーマの `=== THEME OVERRIDE ===` より優先する。**
+**テーマID**: `forest_green`
+**リファレンス画像**: `templates/themes/theme_03_forest_green/`
 
 ```
-=== UNIVERSAL TEXT COLOR RULES (OVERRIDES ALL THEMES) ===
+=== THEME OVERRIDE: FOREST GREEN ===
 
-TEXT COLOR BY PAGE TYPE:
-- Cover page (cover): main title → gold or theme accent color OK
-- Section divider (section-title): section title → gold or theme accent color OK
-- ALL OTHER PAGES: body text, bullet points, descriptions → MUST be charcoal gray (#333333) or white (#FFFFFF) only
+BACKGROUND:
+- Base: soft green gradient (#F0F7F0 → #E8F5E8 → #D4EDDA)
+- Very gentle, like morning light through leaves
+- Subtle botanical silhouettes at edges — faint and understated
+- Overall: natural, warm, nurturing, organic luxury
 
-GRADIENT TEXT RESTRICTION:
-- Gradient text is ONLY allowed on: cover page title, section divider title
-- NEVER use gradient text on: bullet points, descriptions, sub-headings, captions, any body copy
-- Reason: gradient body text looks AI-generated and cheap
+COLOR PALETTE:
+- Background: soft green gradient (#F0F7F0 → #E8F5E8 → #D4EDDA)
+- Primary text: dark charcoal (#333333)
+- Title text (cover/section ONLY): deep forest green gradient (#2D5016 → #1B5E20 → #388E3C). Elegant serif or sans-serif.
+- Accent: warm gold (#B8860B) for price highlights. Soft cream (#FFF8E1) for card backgrounds
+- Heading banner: deep green gradient (#2E7D32 → #1B5E20) with white text
+- Bullet icons: leaf (🍃) or circle in forest green (#2E7D32)
 
-DECORATIVE ELEMENTS vs TEXT:
-- Banners, borders, divider lines, background elements: theme colors and gradients are OK
-- Text content: charcoal (#333333) or white (#FFFFFF) ONLY (except cover/section titles)
+DECORATIVE ELEMENTS:
+- Subtle botanical elements — faint leaf silhouettes, gentle vine patterns at edges
+- Watercolor-like green wash in corners — very understated
+- NO heavy floral illustrations, NO cartoon plants
+- Organic and imperfect — hand-drawn feel, not corporate geometric
 
-ANTI-GLITTER MANDATE:
-- The overall impression must be: "This looks expensive and professionally designed"
-- NOT: "This looks like an AI made it with too many effects"
-- Maximum ONE decorative technique per slide
-- All effects must be subtle enough to be barely noticeable at first glance
+MOOD: Like a premium organic spa brochure — calming, trustworthy, grounded in nature
 ```
 
 ---
 
-## 使用方法（Manusへの指示）
+## テーマ4: ジオメトリック（Geometric）
 
-スライド生成時、ユーザーが選択したテーマに応じて以下の手順でプロンプトを構成する。
+**テーマID**: `geometric`
+**リファレンス画像**: `templates/themes/theme_04_geometric/`
 
-**Step 1**: 選択テーマの `=== THEME OVERRIDE ===` ブロックを取得する。
+```
+=== THEME OVERRIDE: GEOMETRIC ===
 
-**Step 2**: `design_system.md` の共通プロンプトの `COLOR PALETTE` と `DECORATIVE ELEMENTS` セクションをテーマのものに置き換える。
+BACKGROUND:
+- Base: white to light gray (#FFFFFF → #F5F5F7)
+- Subtle geometric line patterns: thin intersecting lines, hexagons, or angular shapes in very light gray (#E0E0E0)
+- Lines are outlines only — NO fills, NO solid shapes
+- Overall: modern, intellectual, structured, tech-meets-art
 
-**Step 3**: 各ページのプロンプトに以下の順で `references` を指定する：
+COLOR PALETTE:
+- Background: white (#FFFFFF) to light gray (#F5F5F7)
+- Primary text: charcoal gray (#333333)
+- Title text (cover/section ONLY): blue-to-purple-to-pink gradient (#4A90D9 → #7C3AED → #EC4899). Modern sans-serif.
+- Accent: purple (#7C3AED) for emphasis. Light lavender (#F3E8FF) for background highlights
+- Heading banner: blue-to-purple gradient (#4A90D9 → #7C3AED) with white text
+- Bullet icons: geometric shapes — hexagon or triangle in gradient blue-purple
+
+DECORATIVE ELEMENTS:
+- Thin geometric wireframe lines — angular, precise, architectural
+- Outlines only — NO filled shapes, NO heavy patterns
+- Very subtle — like a faint blueprint in the background
+- NO neon glow, NO 3D effects
+
+MOOD: Like a cutting-edge tech company keynote — structured, forward-thinking, intellectual
+```
+
+---
+
+## テーマ5: ソフトベージュ（Soft Beige）
+
+**テーマID**: `soft_beige`
+**リファレンス画像**: `templates/themes/theme_05_soft_beige/`
+
+```
+=== THEME OVERRIDE: SOFT BEIGE ===
+
+BACKGROUND:
+- Base: pale white-beige (#FFFBF5 → #FFF5E6)
+- Organic, irregular-shaped frames in very pale yellow (#FFF9C4) and soft orange (#FFE0B2)
+- Shapes are like watercolor blobs — soft, flowing, NOT geometric
+- Overall: warm, approachable, soft luxury
+
+COLOR PALETTE:
+- Background: pale white-beige (#FFFBF5 → #FFF5E6)
+- Primary text: warm charcoal (#4A4040)
+- Title text (cover/section ONLY): warm beige-to-gold gradient (#C4A265 → #8B7355 → #A0845C). Elegant serif.
+- Accent: muted orange (#E8A87C) for highlights. Cream (#FFF8E1) for card backgrounds
+- Heading banner: warm beige-gold gradient (#C4A265 → #8B7355) with white text
+- Bullet icons: soft circle or dot in warm gold (#C4A265)
+
+DECORATIVE ELEMENTS:
+- Organic, irregular blob shapes in very pale yellow and soft peach as background frames
+- Watercolor-like soft edges — flowing, imperfect, natural
+- NO sharp geometric lines, NO angular patterns
+- Warm and inviting — like a hand-painted watercolor border
+
+MOOD: Like a premium lifestyle magazine spread — warm, inviting, effortlessly stylish
+```
+
+---
+
+## テーマ選択時の運用ルール
+
+1. ユーザーにテーマ一覧を提示し、番号で選択してもらう
+2. 選択されたテーマの「世界観プロンプト」を全スライド生成に適用する
+3. 各スライド生成時、テーマフォルダ内の最も近いリファレンス画像を必ず添付する
+   - 表紙 → `cover.png`
+   - 箇条書き・リスト系 → `bullet_list.png`（ない場合は `content.png`）
+   - コンテンツ説明系 → `content.png`
+   - 価格・比較系 → `pricing.png`
+4. レイアウト構造は `canva_reference/` の画像に従う（テーマに関係なく共通）
+5. テーマ画像はあくまで「色・装飾・雰囲気」の参考。レイアウトはCanvaテンプレートが優先
+
+### リファレンス画像の指定順序（references配列）
 1. 対応するCanvaレイアウト参照画像（`canva_reference/` フォルダ）— レイアウト構造の参照
-2. 選択テーマのLP参照画像（`themes/` フォルダ）— 色・雰囲気の参照
+2. 選択テーマのリファレンス画像（`themes/theme_XX/` フォルダ）— 色・雰囲気の参照
 3. 直前ページの生成画像（2ページ目以降）— デザイン継続性の参照
 
-**Step 4**: プロンプト内に明示する：
+### プロンプト内に明示する文言
 ```
 IMPORTANT: Follow the LAYOUT from the Canva reference image.
 Follow the COLOR and ATMOSPHERE from the theme reference image.
