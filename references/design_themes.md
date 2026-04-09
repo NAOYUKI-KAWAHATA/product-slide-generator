@@ -20,6 +20,7 @@
 | 5 | `soft_beige` | ソフトベージュ | 薄いホワイトベージュ | ベージュグラデーション | ライフスタイル・コーチング・女性向け |
 | 6 | `natural_pink` | ナチュラルピンク | 白ベース＋水彩ピンク | ローズピンクグラデーション | 女性向けサロン・恋愛・婚活 |
 | 7 | `navy_gold` | ネイビーゴールド | ネイビーブルーグラデーション | 白文字 | 男性向け・ビジネス系 |
+| 8 | `gray_gold` | グレーゴールド | グレーグラデーション | ゴールド（メタリック） | 男性向け・ビジネス・コンサル |
 
 **テーマ参照画像パス**: `templates/themes/theme_XX_<name>/`
 各テーマフォルダに `cover.png`, `content.png`, `bullet_list.png`, `pricing.png` を格納。
@@ -552,3 +553,77 @@ MOOD:
 ===
 ```
 
+
+
+## テーマ8: グレーゴールド（Gray Gold）
+
+**テーマID**: `gray_gold`
+**向いているジャンル**: 男性向け、ビジネス系、コンサルティング、経営者向け、投資
+**参照画像**: `templates/themes/theme_08_gray_gold/`
+
+```
+=== THEME OVERRIDE: GRAY GOLD ===
+
+CRITICAL: You MUST use the provided theme reference images as your PRIMARY style guide.
+Copy the exact color tones, textures, gradients, and atmosphere from the reference images.
+The reference images are the ABSOLUTE AUTHORITY for this theme's visual style.
+
+COLOR PALETTE:
+- Background (COVER): Medium gray gradient — center slightly lighter (#A0A0A0 to #B0B0B0), edges darker (#707070 to #606060). Smooth radial gradient from center outward. Neutral, achromatic, sophisticated.
+- Background (CONTENT): Light gray gradient at top 70-75% (#D8D8D8 to #E5E5E5), very pale and clean. Transitioning to dark charcoal-gray band at bottom 15-20% (#3A3A3A to #4A4A4A).
+- Title text (COVER): Metallic champagne gold gradient (#B8953F to #D4AF5A to #C8A84E), large serif font, luxurious and commanding. The gold should have a subtle metallic sheen — NOT flat, NOT overly shiny.
+- Subtitle text (COVER): Muted warm gray (#8A8080 to #7A7070), smaller, clean sans-serif
+- Body text (CONTENT): Dark charcoal (#333333 to #4A4A4A), Gothic/sans-serif font — NOT too bold, medium weight
+- Header banner (small): Dark gray gradient (#3A3A3A to #5A5A5A), rectangular, positioned top-left
+- Header banner (large): Wider dark gray gradient band, centered at top area
+- Banner text: White (#FFFFFF)
+- Accent: Gold (#B8953F to #D4AF5A) — used ONLY for frame lines, price band, and title underline
+
+DECORATIVE ELEMENTS:
+- COVER PAGE:
+  - Full-bleed medium gray gradient background (center lighter, edges darker)
+  - White right-angle frame lines: thin white lines forming L-shaped corner brackets at TOP-LEFT and BOTTOM-RIGHT corners
+  - Top-left: two nested L-shaped lines (like a bracket) pointing inward from the corner
+  - Bottom-right: two nested L-shaped lines (like a bracket) pointing inward from the corner — mirror of top-left
+  - Lines are THIN (1-2px equivalent), pure white (#FFFFFF), NOT thick or heavy
+  - Thin gold horizontal line below the title text (centered, ~40% width)
+  - NO diagonal lines, NO watercolor, NO organic shapes — purely geometric and clean
+  - The corner brackets give a structured, architectural feel
+
+- CONTENT PAGES:
+  - Top 70-75%: Light gray gradient background (neutral, clean)
+  - Thin horizontal gold line (#B8953F to #D4AF5A) separating gray area from dark band (~1px)
+  - Bottom 15-20%: Solid dark charcoal-gray band (#3A3A3A to #4A4A4A)
+  - Very thin gold accent line at the very bottom edge
+  - Header banner: dark gray gradient rectangle, top-left (small type) or centered wide band (large type), white text
+  - NO watercolor, NO organic shapes, NO dots — clean corporate aesthetic
+
+- PRICING PAGE:
+  - Same top light gray + bottom dark gray band structure as content pages
+  - Left column: product name + gold gradient price band (horizontal strip behind price text)
+  - Vertical divider line between columns (thin, gray or gold)
+  - Right column: details in dark charcoal text on light gray background
+
+TEXT STYLE (MASCULINE BUSINESS RULE):
+- Body text: Gothic/sans-serif font, MEDIUM weight — NOT Bold, NOT Heavy, NOT too thin
+- Body text should feel authoritative but not aggressive — professional and clear
+- Think of a premium business consulting firm's presentation
+- Font weight should match the reference images exactly — clean and readable
+
+TEXT SPACING:
+- Generous line spacing, structured and organized
+- LEFT-ALIGNED text on content pages
+- Professional spacing — not too tight, not too loose
+- Clean grid-like organization
+
+MOOD:
+- Sophisticated, understated, premium — like a luxury architecture firm or high-end real estate presentation
+- The neutral gray conveys timeless elegance and professionalism
+- The gold accents convey exclusivity and premium value without being flashy
+- The achromatic palette feels more understated and refined than the Navy Gold theme
+- Overall: calm authority, quiet confidence, mature sophistication — makes the viewer feel they're dealing with a serious, established brand
+- NEVER playful, NEVER cute, NEVER casual, NEVER colorful
+- Think: luxury watch catalog, premium car brochure, private wealth management office
+- KEY DIFFERENCE FROM NAVY GOLD: This theme is ACHROMATIC (no blue/color) — all grays + gold. More subtle, more neutral, more universally sophisticated.
+===
+```
