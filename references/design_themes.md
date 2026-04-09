@@ -18,6 +18,7 @@
 | 3 | `forest_green` | フォレストグリーン | 淡いグリーングラデーション | 深緑アクセント | 子育て・教育・ナチュラル |
 | 4 | `geometric` | ジオメトリック | ホワイトグレー＋幾何学線 | ブルー→パープル→ピンクのグラデーション | AI・テック・ビジネス |
 | 5 | `soft_beige` | ソフトベージュ | 薄いホワイトベージュ | ベージュグラデーション | ライフスタイル・コーチング・女性向け |
+| 6 | `natural_pink` | ナチュラルピンク | 白ベース＋水彩ピンク | ローズピンクグラデーション | 女性向けサロン・恋愛・婚活 |
 
 **テーマ参照画像パス**: `templates/themes/theme_XX_<name>/`
 各テーマフォルダに `cover.png`, `content.png`, `bullet_list.png`, `pricing.png` を格納。
@@ -377,3 +378,95 @@ IMPORTANT: Follow the LAYOUT from the Canva reference image.
 Follow the COLOR and ATMOSPHERE from the theme reference image.
 Do NOT copy the text content from either reference image.
 ```
+
+---
+
+## テーマ6: ナチュラルピンク（Natural Pink）
+
+**テーマID**: `natural_pink`
+**リファレンス画像**: `templates/themes/theme_06_natural_pink/`
+
+```
+=== THEME OVERRIDE: NATURAL PINK ===
+
+CRITICAL INSTRUCTION: You MUST replicate the EXACT visual style of the provided reference images.
+Copy the reference images' background texture, decoration style, color tones, and overall atmosphere as closely as possible.
+The reference images are the single source of truth for this theme's visual identity.
+
+TYPOGRAPHY:
+- ALL text: feminine Japanese serif (Mincho) typeface — elegant, thin strokes
+- NEVER use Gothic (sans-serif) typeface anywhere
+- Body text: charcoal gray (#4A4A4A) Mincho serif
+- Title text (cover/section): rose pink-to-dusty pink gradient (#D4707A → #B86878 → #A85868) Mincho serif
+- Subtitle text: warm gray (#9A8A8A)
+- Heading banner text: white Mincho serif on soft pink gradient banner
+- Title underline: thin horizontal line in rose pink, placed directly below the title text
+
+BACKGROUND:
+- PURE WHITE (#FFFFFF) as the base color for ALL pages
+- The background should feel bright, clean, and airy — like a luxury bridal salon
+- Content pages may have a very faint pink warmth (#FFFBFC) but should read as essentially white
+
+COLOR PALETTE:
+- Background: pure white (#FFFFFF)
+- Body text: charcoal gray (#4A4A4A)
+- Title text: rose pink-to-dusty pink gradient (#D4707A → #B86878)
+- Subtitle: warm gray (#9A8A8A)
+- Price accent: warm gold gradient band (#C8A850 → #B89840) — same style as other themes
+- Heading banner (small, コンセプト style): soft pink gradient (#E0A0B0 → #D090A0) with white text, compact rectangle at top-left
+- Heading banner (large, この講座から得られる未来 style): wider soft pink gradient band across upper area, centered white text
+- Accent labels (対象:, 期間:, 提供内容): rose pink (#C06878)
+- Separator lines: very thin pink-to-lavender gradient lines
+
+DECORATIVE ELEMENTS (COPY REFERENCE IMAGES EXACTLY):
+
+1. WATERCOLOR PINK BLUSH CLOUDS:
+   - Soft, dreamy watercolor-style pink blush shapes placed at corners of the slide
+   - These are NOT solid blobs — they are translucent, airy watercolor washes that fade into the white background
+   - Colors: soft rose pink (#F0B0C0), pale coral pink (#F0C0C8), dusty pink (#E8A8B8)
+   - Edges are completely diffused — like watercolor paint dropped on wet paper, bleeding outward
+   - COVER PAGE: larger blush clouds at TOP-LEFT and BOTTOM-RIGHT (diagonal placement)
+   - CONTENT PAGES: smaller, more subtle blush clouds. Mainly corners, keeping center clean for text.
+   - The watercolor effect should look hand-painted, organic, and soft — NOT digital, NOT flat, NOT sharp-edged
+
+2. GOLD FRAME LINES (SIGNATURE ELEMENT):
+   - Two thin vertical gold lines running along the LEFT and RIGHT edges of the slide
+   - Color: warm gold (#C8A850 → #D4B860) — a refined, muted gold, NOT bright/flashy
+   - Line thickness: very thin (1-2px equivalent), like a fine gold thread
+   - Lines run from top to bottom of the slide, positioned approximately 3-5% from each edge
+   - These gold frame lines appear on EVERY page as consistent branding
+   - The gold lines give the slide a "framed" feeling, like a premium certificate or invitation
+
+3. INK SPLASH DOTS (SUBTLE ACCENT):
+   - Tiny, scattered ink-splash dots near the watercolor blush areas (especially top-left)
+   - Colors: muted gray (#A0A0A0), dark sage green (#607060), dusty pink (#C0A0A8)
+   - Very small (2-5px equivalent), randomly scattered, like paint spatters
+   - Only 5-10 dots total per slide — NOT dense, NOT a pattern
+   - These add an organic, hand-crafted feel to the watercolor aesthetic
+
+4. TEXT OVERLAP PROHIBITION (ABSOLUTE RULE):
+   - Decorations MUST NEVER overlap, touch, or come close to ANY text
+   - Minimum clear margin of 15% between any decoration and any text
+   - Text readability is the #1 priority
+   - The center of the slide must remain clean and open for text
+
+5. PLACEMENT SUMMARY:
+   - COVER PAGE: watercolor blush at TOP-LEFT (larger) + BOTTOM-RIGHT (larger). Gold frame lines on both sides. Ink dots near top-left blush. Center clean for title.
+   - CONTENT PAGES: watercolor blush at corners (smaller, more subtle). Gold frame lines on both sides. Minimal ink dots. Central area clean for text.
+   - PRICING PAGE: same as content but with gold gradient price band on left side
+
+TEXT SPACING:
+- Generous line spacing, airy and spacious layout
+- LEFT-ALIGNED text on content pages
+- Each bullet point should breathe with ample whitespace
+
+MOOD:
+- Soft, romantic, and feminine — like a luxury bridal salon or high-end beauty magazine
+- Bright and airy with a warm pink glow — inviting and reassuring
+- The watercolor elements give it an artistic, hand-crafted quality
+- The gold frame lines add a touch of premium elegance
+- Overall: warm, welcoming, beautiful — makes the viewer feel special and cared for
+- NEVER dark, NEVER heavy, NEVER harsh, NEVER cold
+- Think: cherry blossom petals, silk ribbons, morning light through pink curtains
+```
+
