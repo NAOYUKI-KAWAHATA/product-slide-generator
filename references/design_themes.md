@@ -19,6 +19,7 @@
 | 4 | `geometric` | ジオメトリック | ホワイトグレー＋幾何学線 | ブルー→パープル→ピンクのグラデーション | AI・テック・ビジネス |
 | 5 | `soft_beige` | ソフトベージュ | 薄いホワイトベージュ | ベージュグラデーション | ライフスタイル・コーチング・女性向け |
 | 6 | `natural_pink` | ナチュラルピンク | 白ベース＋水彩ピンク | ローズピンクグラデーション | 女性向けサロン・恋愛・婚活 |
+| 7 | `navy_gold` | ネイビーゴールド | ネイビーブルーグラデーション | 白文字 | 男性向け・ビジネス系 |
 
 **テーマ参照画像パス**: `templates/themes/theme_XX_<name>/`
 各テーマフォルダに `cover.png`, `content.png`, `bullet_list.png`, `pricing.png` を格納。
@@ -480,5 +481,74 @@ MOOD:
 - Overall: warm, welcoming, beautiful — makes the viewer feel special and cared for
 - NEVER dark, NEVER heavy, NEVER harsh, NEVER cold
 - Think: cherry blossom petals, silk ribbons, morning light through pink curtains
+```
+
+
+## テーマ7: ネイビーゴールド（Navy Gold）
+
+**テーマID**: `navy_gold`
+**向いているジャンル**: 男性向け、ビジネス系、コンサルティング、投資、経営者向け
+**参照画像**: `templates/themes/theme_07_navy_gold/`
+
+```
+=== THEME OVERRIDE: NAVY GOLD ===
+
+CRITICAL: You MUST use the provided theme reference images as your PRIMARY style guide.
+Copy the exact color tones, textures, gradients, and atmosphere from the reference images.
+The reference images are the ABSOLUTE AUTHORITY for this theme's visual style.
+
+COLOR PALETTE:
+- Background (COVER): Deep navy blue gradient — center slightly lighter (#4A5A8A), edges darker (#1A2550 to #0F1A3A). Smooth radial gradient from center outward.
+- Background (CONTENT): Light silver-gray gradient at top 70% (#C8CDD8 to #D8DCE5), transitioning to navy band at bottom 15% (#1A2550). Clean and professional.
+- Title text (COVER): Pure white (#FFFFFF), large serif font, elegant and commanding
+- Subtitle text (COVER): White (#FFFFFF), smaller, clean sans-serif
+- Body text (CONTENT): Deep navy (#1A2550 to #1E2D5A), Gothic/sans-serif font — NOT too bold, medium weight
+- Header banner: Deep navy gradient (#1A2550 to #2A3A6A), rectangular, positioned top-left
+- Banner text: White (#FFFFFF)
+- Accent: Gold (#B8953F to #D4AF5A) — used ONLY for frame lines and price band
+
+DECORATIVE ELEMENTS:
+- COVER PAGE:
+  - Full-bleed navy gradient background (center lighter, edges darker)
+  - Gold diagonal frame lines: thin elegant lines running from corners inward, creating a geometric frame effect
+  - Lines are THIN (1-2px equivalent), NOT thick or heavy
+  - NO watercolor, NO organic shapes — purely geometric and sharp
+  - Thin white horizontal line below title (centered, ~40% width)
+
+- CONTENT PAGES:
+  - Top 70-75%: Light silver-gray gradient background (cool-toned, professional)
+  - Thin horizontal gold line separating gray area from navy band (~1px)
+  - Bottom 15-20%: Solid deep navy band (#1A2550)
+  - Very thin gold accent line at the very bottom edge
+  - Header banner: deep navy rectangle, top-left, white text
+  - NO watercolor, NO organic shapes, NO dots — clean corporate aesthetic
+
+- PRICING PAGE:
+  - Same top silver-gray + bottom navy band structure as content pages
+  - Left column: product name + gold gradient price band (horizontal strip behind price text)
+  - Vertical divider line between columns (thin, navy or gold)
+  - Right column: details in navy text on silver-gray background
+
+TEXT STYLE (MASCULINE BUSINESS RULE):
+- Body text: Gothic/sans-serif font, MEDIUM weight — NOT Bold, NOT Heavy, NOT too thin
+- Body text should feel authoritative but not aggressive — professional and clear
+- Think of a premium business consulting firm's presentation
+- Font weight should match the reference images exactly — clean and readable
+
+TEXT SPACING:
+- Generous line spacing, structured and organized
+- LEFT-ALIGNED text on content pages
+- Professional spacing — not too tight, not too loose
+- Clean grid-like organization
+
+MOOD:
+- Authoritative, trustworthy, premium — like a top-tier consulting firm or investment bank presentation
+- The navy conveys depth and reliability
+- The gold accents convey exclusivity and premium value
+- The silver-gray content background keeps readability high while maintaining sophistication
+- Overall: powerful, confident, professional — makes the viewer feel they're dealing with a serious, high-value offering
+- NEVER playful, NEVER cute, NEVER casual, NEVER colorful
+- Think: executive boardroom, luxury watch advertisement, private banking brochure
+===
 ```
 
