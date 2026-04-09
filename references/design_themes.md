@@ -455,10 +455,22 @@ DECORATIVE ELEMENTS (COPY REFERENCE IMAGES EXACTLY):
    - CONTENT PAGES: watercolor blush at corners (smaller, more subtle). Gold frame lines on both sides. Minimal ink dots. Central area clean for text.
    - PRICING PAGE: same as content but with gold gradient price band on left side
 
-TEXT SPACING:
+TEXT STYLE (CRITICAL — FEMININE ELEGANCE RULE):
+- Body text MUST use THIN / REGULAR weight only — NEVER Bold, Semi-Bold, or Heavy
+- Body text size: approximately 60-65% of the header banner text size — modest and delicate, NOT large or commanding
+- The text should feel like it is "whispering" — light, airy, graceful
+- Think of a luxury beauty brand brochure: understated, refined, with lots of breathing room
+- Check mark (✓) icons: soft rose pink, same thin weight as body text
+
+TEXT SPACING & WHITE SPACE (CRITICAL — BREATHABLE LAYOUT):
 - Generous line spacing, airy and spacious layout
 - LEFT-ALIGNED text on content pages
 - Each bullet point should breathe with ample whitespace
+- Left margin: 20% from left edge (wider than standard)
+- Right margin: 25% from right edge (wider than standard)
+- Bottom 25% of the slide should remain EMPTY white space (decorations only)
+- The slide should feel SPACIOUS and CALMING — never crowded or text-heavy
+- Prioritize white space over information density
 
 MOOD:
 - Soft, romantic, and feminine — like a luxury bridal salon or high-end beauty magazine

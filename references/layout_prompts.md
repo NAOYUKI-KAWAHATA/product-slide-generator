@@ -270,10 +270,15 @@ A premium 16:9 presentation slide expressing empathy with audience pain points.
 LAYOUT:
 - Top-left: header banner (dark charcoal rectangle #333333, width ~35% of slide, height ~8%)
   - Banner text: "{{見出し}}" in white, clean sans-serif font — NO logo
-- Large empathetic text listed vertically below banner
-- Text in dark charcoal gray, slightly larger than body text
-- Items listed with generous spacing
+- Empathetic text listed vertically below banner
+- Text in soft charcoal gray (#5A5A5A to #6A6A6A), THIN / REGULAR weight only — NEVER Bold or Heavy
+- Text size: modest and delicate (approximately 60-65% of banner text size) — NOT large or commanding
+- Items listed with generous spacing and ample breathing room
+- Left margin: 15-20% from left edge
+- Right margin: 20-25% from right edge
+- Bottom 25% of slide should remain EMPTY (white space + decorations only)
 - Subtle, warm atmosphere — NOT aggressive or alarming
+- The text should feel like it is "whispering" — light, airy, graceful, feminine
 - NO logo, NO brand mark anywhere
 
 TEXT (render exactly):
