@@ -12,7 +12,6 @@
 ## 目次
 
 1. [cover（表紙）](#cover表紙) — `A_cover_title.jpg`
-2. [statement（1文インパクト）](#statement1文インパクト) — `G_impact_statement.jpg`
 3. [bullet-list（箇条書き）](#bullet-list箇条書き) — `B_bullet_list.jpg`
 4. [profile（講師プロフィール）](#profile講師プロフィール) — `C_profile.jpg`
 5. [section-title（セクション扉）](#section-titleセクション扉) — `J_section_divider.jpg`
@@ -42,7 +41,6 @@
 | D 商品金額 | D_pricing_detail.jpg | `/home/ubuntu/skills/product-slide-generator/templates/canva_reference/D_pricing_detail.jpg` |
 | E 業界相場 | E_market_price.jpg | `/home/ubuntu/skills/product-slide-generator/templates/canva_reference/E_market_price.jpg` |
 | F 商品一覧 | F_plan_comparison.jpg | `/home/ubuntu/skills/product-slide-generator/templates/canva_reference/F_plan_comparison.jpg` |
-| G インパクト文 | G_impact_statement.jpg | `/home/ubuntu/skills/product-slide-generator/templates/canva_reference/G_impact_statement.jpg` |
 | H カリキュラム | H_curriculum_overview.jpg | `/home/ubuntu/skills/product-slide-generator/templates/canva_reference/H_curriculum_overview.jpg` |
 | I 提供コンテンツ | I_content_detail.jpg | `/home/ubuntu/skills/product-slide-generator/templates/canva_reference/I_content_detail.jpg` |
 | J セクション扉 | J_section_divider.jpg | `/home/ubuntu/skills/product-slide-generator/templates/canva_reference/J_section_divider.jpg` |
@@ -72,26 +70,6 @@ LAYOUT:
 TEXT (render exactly):
 - Title: "{{講座名}}"
 - Subtitle: "{{コンセプト（1行要約）}}"
-```
-
----
-
-## statement（1文インパクト）
-
-**Canvaリファレンス**: `G_impact_statement.jpg`（`references`に必ず含めること）
-
-```
-A premium 16:9 presentation slide with a single impactful message.
-
-LAYOUT:
-- NO header banner on this page
-- Center of slide: main message text, large and prominent
-- Text centered both horizontally and vertically with generous margins
-- Wide letter-spacing and relaxed line-height for the main text
-- NO logo, NO brand mark anywhere
-
-TEXT (render exactly):
-- Main message: "{{本文}}"
 ```
 
 ---
@@ -308,26 +286,55 @@ TEXT (render exactly):
 ## pricing（価格提示）
 
 **Canvaリファレンス**: `D_pricing_detail.jpg`（`references`に必ず含めること）
+**レイアウト構造**: `layout_templates.md` の `=== LAYOUT STRUCTURE: PRICING ===` を必ず参照すること
 
 ```
 A premium 16:9 presentation slide presenting pricing information.
 
-LAYOUT:
-- Top-left: header banner (dark charcoal rectangle #333333, width ~35% of slide, height ~8%)
-  - Banner text: "{{プラン名}}" in white, clean sans-serif font — NO logo
-- Plan name "{{プラン名}}" in large champagne gold serif font below banner
-- Price "{{価格}}" prominently displayed, large font
-- Below: included services/features listed with bullet points
-- If comparing original vs special price: original price with strikethrough, special price highlighted in champagne gold
-- Clean, authoritative layout — NOT salesy or cluttered
+IMPORTANT: Follow the LAYOUT STRUCTURE exactly as specified below.
+Follow the COLOR and ATMOSPHERE from the theme reference image.
+CRITICAL: The background MUST use the SAME gradient as the cover page — NOT a flat/solid color. Always reference the cover page generated image for background consistency.
+Follow the COLOR and ATMOSPHERE from the theme reference image.
+Do NOT modify the layout structure based on theme colors or decorations.
+Do NOT add box/card/rectangle backgrounds around any text group.
+
+LAYOUT (FIXED TWO-COLUMN STRUCTURE — DO NOT DEVIATE):
+- LEFT COLUMN (30-35% width of slide):
+  - Product/course name "{{講座名}}" at y=30-35%, left-aligned, serif font
+  - Below: gold gradient horizontal accent line spanning column width
+  - Below line: plan name "{{プラン名}}" in theme accent color
+  - Below: price "{{価格}}" in LARGE gold gradient text (48-56px equivalent)
+  - Below: "(税込)" in smaller gold text
+  - Left margin: 5-8% from slide edge
+
+- VERTICAL DIVIDER LINE:
+  - Position: x=35-38% of slide width
+  - Thin hair-line, spans y=8% to y=92%
+  - Color: theme-appropriate (gold, silver, or muted)
+
+- RIGHT COLUMN (60-65% width of slide):
+  - Section 1 — "対象：" label in theme accent color (italic), y=10-12%
+    - Content text in charcoal gray on same line or below
+    - Thin horizontal separator line below
+  - Section 2 — "期間：" label in theme accent color (italic)
+    - Content text in charcoal gray
+    - Thin horizontal separator line below
+  - Section 3 — "提供内容" label in theme accent color, slightly larger
+    - Content items listed below, each on its own line, charcoal gray
+
+- NO header banner on this page
+- NO box/card/rectangle backgrounds
 - NO logo, NO brand mark anywhere
 
 TEXT (render exactly):
-- Banner: "{{プラン名}}"
+- Course name: "{{講座名}}"
 - Plan: "{{プラン名}}"
 - Price: "{{価格}}"
-- Includes:
-  [提供内容リスト]
+- Target: "対象： {{対象}}"
+- Duration: "期間： {{期間}}"
+- Content label: "提供内容"
+- Content items:
+  [提供内容リスト — 各項目を1行ずつ]
 ```
 
 ---

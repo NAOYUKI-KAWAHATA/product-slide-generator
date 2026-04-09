@@ -101,14 +101,17 @@ READ: /home/ubuntu/skills/product-slide-generator/references/design_themes.md
 
 ---
 
-## Phase 3: デザインシステムの読み込み
+## Phase 3: デザインシステムとレイアウト構造の読み込み
 
-デザインプロンプトの共通指示とレイアウト別プロンプトを読み込む。
+デザインプロンプトの共通指示、レイアウト別プロンプト、および**レイアウト構造テンプレート**を読み込む。
 
 ```
 READ: /home/ubuntu/skills/product-slide-generator/references/design_system.md
 READ: /home/ubuntu/skills/product-slide-generator/references/layout_prompts.md
+READ: /home/ubuntu/skills/product-slide-generator/references/layout_templates.md
 ```
+
+**レイアウト構造テンプレート**（`layout_templates.md`）は、各ページタイプの要素の配置・サイズ・余白を厳密に定義している。テーマが変わってもレイアウト構造は絶対に変わらない。
 
 **Canvaリファレンス画像の場所**: `/home/ubuntu/skills/product-slide-generator/templates/canva_reference/`
 **テーマリファレンス画像の場所**: `/home/ubuntu/skills/product-slide-generator/templates/themes/theme_XX_<name>/`
@@ -149,17 +152,19 @@ READ: /home/ubuntu/skills/product-slide-generator/references/layout_prompts.md
 
 **生成ルール（全ページ共通）:**
 
-1. `design_system.md` の共通デザイン指示（テーマ上書き済み）を**毎回プロンプトの末尾に付加する**
-2. `references` 配列に以下の順でリファレンス画像を含める:
+1. `layout_templates.md` から該当ページタイプの `=== LAYOUT STRUCTURE ===` ブロックを**そのままプロンプトに含める**（レイアウト構造の参照必須）
+2. `design_system.md` の共通デザイン指示（テーマ上書き済み）を**毎回プロンプトの末尾に付加する**
+3. `references` 配列に以下の順でリファレンス画像を含める:
    - **第1要素**: Canvaレイアウト参照画像（`canva_reference/` フォルダ）— レイアウト構造
    - **第2要素**: テーマリファレンス画像（`themes/theme_XX/` フォルダ）— 色・雰囲気
    - **第3要素**: 直前ページの生成画像（2ページ目以降）— デザイン継続性
-3. レイアウト種別ごとのプロンプトテンプレートは `layout_prompts.md` を参照する
-4. プロンプト内に以下を明示する:
+4. レイアウト種別ごとのプロンプトテンプレートは `layout_prompts.md` を参照する
+5. プロンプト内に以下を明示する:
 
 ```
-IMPORTANT: Follow the LAYOUT from the Canva reference image.
+IMPORTANT: Follow the LAYOUT STRUCTURE exactly as specified in the layout template.
 Follow the COLOR and ATMOSPHERE from the theme reference image.
+Do NOT modify the layout structure based on theme colors or decorations.
 Do NOT copy the text content from either reference image.
 ```
 
@@ -208,9 +213,13 @@ Do NOT copy the text content from either reference image.
 
 ### レイアウトとデザインの分離（最重要原則）
 
-- **レイアウト** = ページの構造・要素の配置 → Canvaテンプレート（`canva_reference/`）に従う。全テーマ共通。
+- **レイアウト** = ページの構造・要素の配置 → **3つのソース**で制御する。全テーマ共通。
+  1. `layout_templates.md` の `=== LAYOUT STRUCTURE ===` ブロック（テキストでの構造定義）
+  2. Canvaテンプレート画像（`canva_reference/`）（視覚的なレイアウト参照）
+  3. `layout_prompts.md` のプロンプトテンプレート（プロンプトの雛形）
 - **デザイン** = 色・装飾・雰囲気・テロップの色 → テーマ定義（`design_themes.md`）に従う。テーマごとに異なる。
-- この2つを混同しないこと。テーマが変わってもレイアウトは変わらない。
+- この2つを混同しないこと。**テーマが変わってもレイアウトは絶対に変わらない。**
+- プロンプト作成時に `layout_templates.md` の該当ブロックを含め忘れた場合、レイアウト崩れの原因となる。必ず含めること。
 
 ### 見出しバナーの一貫性
 
@@ -222,6 +231,36 @@ Do NOT copy the text content from either reference image.
 - グラデーション文字は扉タイトル・大見出しのみ許可
 - バナー・装飾にはテーマカラーのグラデーションOK
 - AIっぽいギラギラ感は絶対NG。洗練された落ち着いた高級感を意識する
+
+### 背景グラデーションの一貫性（全テーマ共通）
+
+- 全ページの背景は表紙と同じグラデーションを使用する。フラットな単色背景は絶対にNG。
+- 料金ページやコンテンツページでも、表紙と同じ柔らかいグラデーション感を保つこと。
+- 生成時は必ず表紙の生成画像を`references`に含めて背景の一貫性を確保する。
+
+### テーマ3（フォレストグリーン）の色に関する特別注意
+
+- テーマ3の背景は「白ベース＋青みがかった淡いミントグリーン」。キーワード：爽やかさ・清潔感・安らぎ。
+- **絶対禁止**: 抹茶色・オリーブグリーン・黄色みがかった緑・濃い緑・フラットな単色背景。
+- 下部の波装飾もクールなブルーグリーン（#8FA89A）であること。抹茶やオリーブの色味はNG。
+- 生成時は必ず表紙の生成画像を`references`に含め、背景の色合いを一致させること。
+
+### テーマ4（ジオメトリック）の装飾に関する特別注意
+
+- テーマ4はユニセックス・モダン・知的なデザイン。女性的・ソフト・ロマンチックな印象は絶対にNG。
+- **背景の幾何学線**: 画面全体に広がる透かし模様（ウォーターマーク）のような極めて薄い幾何学線。右上だけでなく全体に広がる。大きなひし形・三角形を形成する。
+- **下部の装飾**: 「波（wave）」「リボン（ribbon）」「Sカーブ」ではなく、「なだらかなフッター帯（footer band）」として指示する。遠くの丘のシルエットのようなごく緩やかなカーブ。
+- **絶対禁止**: 太い線・濃い線・派手な波・複数の重なる曲線・ソフトフォーカスなぼかし装飾。
+- **フォント**: レギュラーウェイト（太すぎず細すぎず）。全ページで統一。
+- 生成時は必ず承認済みリファレンス画像（`cover_approved.png`）を`references`に含めること。
+
+### テーマ5（ソフトベージュ）の装飾に関する特別注意
+
+- テーマ5の全体のトーンは「明るく、柔らかく、透明感のある」。渋さ・濃さ・重さは絶対にNG。
+- **装飾の質感**: 水彩風・手描き風は絶対に使わない。滑らかなグラデーションまたは単色の高透過度なベクター風シェイプを使用する。
+- **装飾の範囲**: 表紙は四隅に配置してOK。コンテンツページ（2枚目以降）は四隅の端のみに限定し、中央のテキストエリアには絶対に侵入させない。
+- **グレーの曲線**: 極めて控えめに。文字が多いページでは完全に省略する。
+- **絶対禁止**: 渋い色味・濃い茶色・濃いローズ色・水彩テクスチャ・装飾が文字に被ること。
 
 ### 日本語テキストの精度
 
