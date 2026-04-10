@@ -1,0 +1,91 @@
+<!--
+  TEMPLATE: 04_profile (講師プロフィール)
+  USAGE: P4 — 講師写真 + 肩書き + 名前 + 実績リスト
+  VARIABLES: {{BANNER_TITLE}}, {{PHOTO_PLACEHOLDER}}, {{TITLE_LABEL}}, {{NAME}}, {{ACHIEVEMENTS}} (配列)
+  THEME VARIABLES: {{BG_GRADIENT}}, {{BANNER_BG}}, {{TEXT_COLOR}}, {{NAME_COLOR}}, {{LABEL_COLOR}}, {{RULE_COLOR}}, {{DECO_LEFT}}, {{DECO_RIGHT_BOTTOM}}
+-->
+<div class="slide-container" style="
+  width: 1280px;
+  min-height: 720px;
+  background: {{BG_GRADIENT}};
+  position: relative;
+  overflow: hidden;
+  font-family: 'Noto Sans JP', sans-serif;
+">
+  <!-- 左端の装飾ライン -->
+  {{DECO_LEFT}}
+
+  <!-- 見出しバナー -->
+  <div style="
+    display: inline-block;
+    background: {{BANNER_BG}};
+    padding: 10px 40px 10px 24px;
+    margin: 0;
+  ">
+    <span style="
+      font-size: 36px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.15em;
+    ">{{BANNER_TITLE}}</span>
+  </div>
+
+  <!-- メインコンテンツ: 左写真 + 右テキスト -->
+  <div style="
+    display: flex;
+    padding: 20px 60px 40px 40px;
+    gap: 40px;
+    min-height: 600px;
+  ">
+    <!-- 左: 写真エリア -->
+    <div style="
+      width: 380px;
+      min-height: 520px;
+      background: rgba(200,200,200,0.3);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    ">
+      <!-- {{PHOTO_PLACEHOLDER}} -->
+      <span style="font-size: 16px; color: rgba(255,255,255,0.5);">【講師写真】</span>
+    </div>
+
+    <!-- 右: テキストエリア -->
+    <div style="flex: 1; padding-top: 20px;">
+      <!-- 肩書き -->
+      <p style="
+        font-size: 22px;
+        font-weight: 400;
+        color: {{LABEL_COLOR}};
+        margin: 0 0 8px 0;
+        letter-spacing: 0.04em;
+      ">{{TITLE_LABEL}}</p>
+
+      <!-- 名前 -->
+      <p style="
+        font-size: 48px;
+        font-weight: 800;
+        color: {{NAME_COLOR}};
+        margin: 0 0 32px 0;
+        letter-spacing: 0.04em;
+      ">{{NAME}}</p>
+
+      <!-- 実績リスト -->
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <!-- REPEAT_START -->
+        <p style="
+          font-size: 22px;
+          font-weight: 500;
+          color: {{TEXT_COLOR}};
+          margin: 0;
+          line-height: 1.6;
+        ">・{{ACHIEVEMENT}}</p>
+        <!-- REPEAT_END -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 右下の装飾ライン -->
+  {{DECO_RIGHT_BOTTOM}}
+</div>

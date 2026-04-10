@@ -1,0 +1,79 @@
+<!--
+  TEMPLATE: 03_bullet_list (箇条書きリスト)
+  USAGE: P22-P28 お悩み共感, P30-P39 特徴説明, P41-P53 各種リスト等
+  VARIABLES: {{BANNER_TITLE}}, {{ITEMS}} (配列: 3〜7項目)
+  THEME VARIABLES: {{BG_COLOR}}, {{BANNER_BG}}, {{TEXT_COLOR}}, {{BULLET_COLOR}}, {{BULLET_CHAR}}, {{RULE_COLOR}}, {{DECO_LEFT}}, {{DECO_RIGHT_BOTTOM}}
+  
+  NOTE: 項目数に応じてフォントサイズと行間を自動調整
+  - 3項目: font-size 38px, gap 60px
+  - 4-5項目: font-size 32px, gap 40px
+  - 6-7項目: font-size 26px, gap 28px
+-->
+<div class="slide-container" style="
+  width: 1280px;
+  min-height: 720px;
+  background: {{BG_COLOR}};
+  position: relative;
+  overflow: hidden;
+  font-family: 'Noto Sans JP', sans-serif;
+">
+  <!-- 左端の装飾ライン -->
+  {{DECO_LEFT}}
+
+  <!-- 見出しバナー -->
+  <div style="
+    display: inline-block;
+    background: {{BANNER_BG}};
+    padding: 10px 40px 10px 24px;
+    margin: 0;
+  ">
+    <span style="
+      font-size: 36px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.15em;
+    ">{{BANNER_TITLE}}</span>
+  </div>
+
+  <!-- バナー下の水平線 -->
+  <div style="
+    width: 100%;
+    height: 1px;
+    background: {{RULE_COLOR}};
+    margin-top: 8px;
+  "></div>
+
+  <!-- 箇条書きエリア -->
+  <div style="
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 100px 40px 100px;
+    min-height: 520px;
+    gap: {{ITEM_GAP}};
+  ">
+    <!-- 各項目 -->
+    <!-- REPEAT_START -->
+    <div style="display: flex; align-items: flex-start;">
+      <span style="
+        font-size: {{FONT_SIZE}};
+        font-weight: 700;
+        color: {{BULLET_COLOR}};
+        margin-right: 16px;
+        flex-shrink: 0;
+        line-height: 1.4;
+      ">{{BULLET_CHAR}}</span>
+      <span style="
+        font-size: {{FONT_SIZE}};
+        font-weight: 700;
+        color: {{TEXT_COLOR}};
+        letter-spacing: 0.02em;
+        line-height: 1.5;
+      ">{{ITEM_TEXT}}</span>
+    </div>
+    <!-- REPEAT_END -->
+  </div>
+
+  <!-- 右下の装飾ライン -->
+  {{DECO_RIGHT_BOTTOM}}
+</div>
