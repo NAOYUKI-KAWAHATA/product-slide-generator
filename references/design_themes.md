@@ -355,6 +355,53 @@ MOOD:
 - NEVER dark, NEVER heavy, NEVER muddy, NEVER busy
 ```
 
+### テーマ5 HTML変数定義（HTMLモード用・確定版）
+
+HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素を使用する。
+**装飾方式**: 外部画像不要。純粋なCSSの `radial-gradient` でブロブを実装する。
+
+```
+BG_COLOR: #FFFCF8
+BG_GRADIENT: #FFFCF8
+TITLE_GRADIENT: linear-gradient(135deg, #D4A870, #B87860, #C08878)
+TITLE_GRADIENT_CSS: background: linear-gradient(135deg, #D4A870, #B87860, #C08878); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+SUBTITLE_COLOR: #A09888
+TEXT_COLOR: #5A4A44
+BULLET_COLOR: #D4A870
+BULLET_CHAR: ◆
+BANNER_BG: linear-gradient(90deg, #D8B8A0, #CCA0A0)
+RULE_COLOR: rgba(212, 168, 112, 0.3)
+LINE_COLOR: linear-gradient(90deg, #D4A870, #B87860)
+```
+
+---
+【ブロブ装飾 — 表紙（cover）用】
+以下の3つのdivをposition:absoluteで配置する（外部画像不要）。
+
+```html
+<!-- 左上ブロブ：クリームイエロー -->
+<div style="position:absolute;top:-100px;left:-100px;width:420px;height:380px;background:radial-gradient(ellipse at center,rgba(245,230,195,0.65) 0%,rgba(245,230,195,0.30) 50%,transparent 75%);z-index:0;pointer-events:none;"></div>
+
+<!-- 右上ブロブ：サーモンピンク -->
+<div style="position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(ellipse at center,rgba(242,196,172,0.60) 0%,rgba(242,196,172,0.28) 50%,transparent 75%);z-index:0;pointer-events:none;"></div>
+
+<!-- 右下ブロブ：ピーチサーモン -->
+<div style="position:absolute;bottom:-100px;right:-100px;width:420px;height:400px;background:radial-gradient(ellipse at center,rgba(240,190,165,0.65) 0%,rgba(240,190,165,0.30) 50%,transparent 75%);z-index:0;pointer-events:none;"></div>
+```
+
+---
+【ブロブ装飾 — コンテンツページ用（bullet-list, phase-card, feature-card等）】
+
+```html
+<!-- 左上ブロブ：控えめなクリームイエロー -->
+<div style="position:absolute;top:-80px;left:-80px;width:280px;height:260px;background:radial-gradient(ellipse at center,rgba(245,230,195,0.45) 0%,rgba(245,230,195,0.20) 50%,transparent 75%);z-index:0;pointer-events:none;"></div>
+
+<!-- 右下ブロブ：控えめなピーチサーモン -->
+<div style="position:absolute;bottom:-80px;right:-80px;width:280px;height:260px;background:radial-gradient(ellipse at center,rgba(240,190,165,0.45) 0%,rgba(240,190,165,0.20) 50%,transparent 75%);z-index:0;pointer-events:none;"></div>
+```
+
+**注意**: ゴールドドット装飾は使用しない（ユーザー確認済みで削除）。
+
 ---
 
 ## テーマ選択時の運用ルール

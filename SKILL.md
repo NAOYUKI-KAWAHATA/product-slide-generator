@@ -171,8 +171,16 @@ READ: /home/ubuntu/skills/product-slide-generator/references/layout_templates.md
    - エンディングCTA → `13_closing.html`
 
 **フォント統一ルール:**
-- 女性向けテーマ（1〜6）: `Noto Serif JP`（明朝体）を全ページで使用
-- 男性向けテーマ（7〜8）: 表紙は `Noto Serif JP`、コンテンツページは `Noto Sans JP`（ゴシック体）を使用
+- 女性向けテーマ（1ー6）: `Noto Serif JP`（明朝体）を全ページで使用
+- 男性向けテーマ（7ー8）: 表紙は `Noto Serif JP`、コンテンツページは `Noto Sans JP`（ゴシック体）を使用
+
+**テーマ5（ソフトベージ）のHTML変数定義（重要）:**
+- `design_themes.md` の「テーマ5 HTML変数定義（HTMLモード用・確定版）」セクションに記載の具体的なCSSコードをそのまま使用する
+- **ブロブ装飾は外部画像不要**。純粋なCSSの `radial-gradient` で実装する
+- 表紙: 左上（クリームイエロー）・右上（サーモンピンク）・右下（ピーチサーモン）の3つのブロブを配置
+- コンテンツページ: 左上・右下の控えめな2つのブロブのみ
+- **ゴールドドット装飾は使用しない**（ユーザー確認済みで削除）
+- タイトルには `TITLE_GRADIENT_CSS` を適用する：`background: linear-gradient(135deg, #D4A870, #B87860, #C08878); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;`
 
 **見出しバナーの統一確認**: 生成前に必ず確認する。
 - コンテンツページ: テーマ指定のバナー色＋白文字の見出しを表示
