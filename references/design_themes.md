@@ -100,6 +100,62 @@ TEXT SPACING (CRITICAL FOR CONTENT PAGES):
 MOOD: Delicate feminine elegance — like a luxury bridal magazine. Refined, soft, never loud. Every element whispers rather than shouts.
 ```
 
+### テーマ1 HTML変数定義（HTMLモード用・確定版）
+
+HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素を使用する。
+**装飾方式**: 外部画像不要。純粋なCSSで実装する。
+
+```
+BG_COLOR: #FFFBFD
+BG_GRADIENT: radial-gradient(ellipse at 30% 30%, #FFF0F5 0%, #FFFBFD 40%, #F8F0FF 100%)
+BG_GRADIENT_DARK: linear-gradient(135deg, #E8D0E8 0%, #D0C0E0 50%, #E0C8D8 100%)
+TITLE_GRADIENT_CSS: background: linear-gradient(135deg, #7A9BBF, #9B7FB8, #C48A9F); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+TITLE_COLOR: #9B7FB8
+SUBTITLE_COLOR: #8A8AAA
+TEXT_COLOR: #4A4A4A
+BULLET_COLOR: #C48A9F
+BULLET_CHAR: ◆
+BANNER_BG: linear-gradient(90deg, #D4A0B0, #B0A0C8)
+BANNER_BG_WIDE: linear-gradient(90deg, #D4A0B0, #B0A0C8, #D4A0B0)
+RULE_COLOR: rgba(180, 150, 190, 0.4)
+LINE_COLOR: linear-gradient(90deg, #9B7FB8, #C48A9F)
+PRICE_COLOR: #C5A55A
+```
+
+---
+【装飾 — 表紙（cover）用】
+左上・右下にシルバーのダイヤモンドライン（CSS border で実装）。
+
+```html
+<!-- 左上ダイヤモンドライン装飾 -->
+<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;z-index:0;pointer-events:none;">
+  <div style="position:absolute;top:0;left:0;width:80px;height:80px;border:1px solid rgba(192,192,192,0.5);transform:rotate(45deg);transform-origin:0 0;"></div>
+  <div style="position:absolute;top:15px;left:15px;width:60px;height:60px;border:1px solid rgba(192,192,192,0.3);transform:rotate(45deg);transform-origin:0 0;"></div>
+</div>
+
+<!-- 右下ダイヤモンドライン装飾 -->
+<div style="position:absolute;bottom:20px;right:20px;width:120px;height:120px;z-index:0;pointer-events:none;">
+  <div style="position:absolute;bottom:0;right:0;width:80px;height:80px;border:1px solid rgba(192,192,192,0.5);transform:rotate(45deg);transform-origin:100% 100%;"></div>
+  <div style="position:absolute;bottom:15px;right:15px;width:60px;height:60px;border:1px solid rgba(192,192,192,0.3);transform:rotate(45deg);transform-origin:100% 100%;"></div>
+</div>
+```
+
+---
+【装飾 — コンテンツページ用】
+表紙と同じダイヤモンドライン（控えめサイズ）。
+
+```html
+<!-- 左上ダイヤモンドライン（控えめ） -->
+<div style="position:absolute;top:10px;left:10px;width:80px;height:80px;z-index:0;pointer-events:none;">
+  <div style="position:absolute;top:0;left:0;width:55px;height:55px;border:1px solid rgba(192,192,192,0.4);transform:rotate(45deg);transform-origin:0 0;"></div>
+</div>
+
+<!-- 右下ダイヤモンドライン（控えめ） -->
+<div style="position:absolute;bottom:10px;right:10px;width:80px;height:80px;z-index:0;pointer-events:none;">
+  <div style="position:absolute;bottom:0;right:0;width:55px;height:55px;border:1px solid rgba(192,192,192,0.4);transform:rotate(45deg);transform-origin:100% 100%;"></div>
+</div>
+```
+
 ---
 
 ## テーマ2: アクアブルー（Aqua Blue）
@@ -148,6 +204,58 @@ TEXT SPACING (CRITICAL FOR CONTENT PAGES):
 - Text should feel spacious and airy, never cramped
 
 MOOD: Clean intellectual elegance — like a premium consulting firm or architectural studio. Sharp, precise, trustworthy. The intersecting lines give a sense of structure and sophistication.
+```
+
+### テーマ2 HTML変数定義（HTMLモード用・確定版）
+
+HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素を使用する。
+**装飾方式**: 外部画像不要。純粋なCSSで実装する。
+
+```
+BG_COLOR: #F0F8F8
+BG_GRADIENT: radial-gradient(ellipse at 50% 40%, #FFFFFF 0%, #F0F8F8 60%, #EAF4F4 100%)
+BG_GRADIENT_DARK: linear-gradient(135deg, #2A8A8A 0%, #1A3A5C 100%)
+TITLE_GRADIENT_CSS: background: linear-gradient(135deg, #2A8A8A, #1A3A5C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+TITLE_COLOR: #2A8A8A
+SUBTITLE_COLOR: #6A8A9A
+TEXT_COLOR: #4A4A4A
+BULLET_COLOR: #2A8A8A
+BULLET_CHAR: —
+BANNER_BG: linear-gradient(90deg, #5AACAC, #8A8ABF)
+BANNER_BG_WIDE: linear-gradient(90deg, #5AACAC, #6A9ABF, #8A8ABF, #6A9ABF, #5AACAC)
+RULE_COLOR: rgba(42, 138, 138, 0.3)
+LINE_COLOR: linear-gradient(90deg, #2A8A8A, #1A3A5C)
+PRICE_COLOR: #B8A060
+```
+
+---
+【装飾 — 表紙（cover）用】
+左端に縦のグラデーションストライプ、右下に2本の細い交差線。
+
+```html
+<!-- 左端縦グラデーションストライプ -->
+<div style="position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(180deg,rgba(90,172,172,0.6) 0%,rgba(138,138,191,0.4) 100%);z-index:0;pointer-events:none;"></div>
+
+<!-- 右下交差線 -->
+<div style="position:absolute;bottom:60px;right:40px;width:160px;height:120px;z-index:0;pointer-events:none;">
+  <div style="position:absolute;bottom:0;right:0;width:140px;height:2px;background:linear-gradient(90deg,rgba(42,138,138,0.5),rgba(26,58,92,0.5));transform:rotate(-30deg);transform-origin:right bottom;"></div>
+  <div style="position:absolute;bottom:20px;right:0;width:120px;height:1px;background:linear-gradient(90deg,rgba(42,138,138,0.3),rgba(26,58,92,0.3));transform:rotate(-20deg);transform-origin:right bottom;"></div>
+</div>
+```
+
+---
+【装飾 — コンテンツページ用】
+表紙と同じ左端ストライプ＋右下交差線（控えめ）。
+
+```html
+<!-- 左端縦グラデーションストライプ -->
+<div style="position:absolute;top:0;left:0;width:5px;height:100%;background:linear-gradient(180deg,rgba(90,172,172,0.5) 0%,rgba(138,138,191,0.3) 100%);z-index:0;pointer-events:none;"></div>
+
+<!-- 右下交差線（控えめ） -->
+<div style="position:absolute;bottom:40px;right:30px;width:120px;height:90px;z-index:0;pointer-events:none;">
+  <div style="position:absolute;bottom:0;right:0;width:100px;height:1px;background:linear-gradient(90deg,rgba(42,138,138,0.4),rgba(26,58,92,0.4));transform:rotate(-30deg);transform-origin:right bottom;"></div>
+  <div style="position:absolute;bottom:15px;right:0;width:80px;height:1px;background:linear-gradient(90deg,rgba(42,138,138,0.25),rgba(26,58,92,0.25));transform:rotate(-20deg);transform-origin:right bottom;"></div>
+</div>
 ```
 
 ---
@@ -201,13 +309,57 @@ TEXT SPACING (CRITICAL FOR CONTENT PAGES):
 - Text should feel spacious and airy, never cramped
 - LEFT-ALIGNED text on content pages
 
-MOOD: Like a premium coastal spa brochure — cool, calming, refreshing. The mint-green background has a COOL BLUE undertone like sea glass or eucalyptus. NEVER warm, NEVER yellow-toned, NEVER matcha-like. Think: cool ocean breeze through mint leaves.
-
-CRITICAL REMINDERS FOR ALL PAGES:
+MOOD: Like a premium coastal spa brochure — cool, calming, refreshing. The mint-green background has a COOL BLUE undertone like sea glass or eucalyptus. NEVER warm, NEVER yellow-toned, NEVER matcha-like. Think: cool ocean breeze through mint leavCRITICAL REMINDERS FOR ALL PAGES:
 1. Background MUST be the same soft gradient on EVERY page (cover, content, pricing, ending). NEVER use a flat/solid color.
 2. Background is primarily WHITE with a whisper of cool mint. NOT a green slide — a WHITE slide with green accents.
 3. The bottom wave decoration MUST be cool blue-green (#8FA89A), NOT matcha/olive.
-4. Keywords: 爽やかさ・清潔感・安らぎ (freshness, cleanliness, serenity).
+4. Keywords: 爵やかさ・清潔感・安らぎ (freshness, cleanliness, serenity).
+```
+
+### テーマ3 HTML変数定義（HTMLモード用・確定版）
+
+HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素を使用する。
+**装飾方式**: 外部画像不要。純粋なCSSで実装する。
+
+```
+BG_COLOR: #EFF5F1
+BG_GRADIENT: radial-gradient(ellipse at 50% 40%, #FAFCFB 0%, #F0F6F2 50%, #EAF2EE 100%)
+BG_GRADIENT_DARK: linear-gradient(135deg, #2D5016 0%, #1B5E20 50%, #3A7A3A 100%)
+TITLE_GRADIENT_CSS: background: linear-gradient(135deg, #2D5016, #1B5E20, #3A7A3A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+TITLE_COLOR: #2D5016
+SUBTITLE_COLOR: #4A6A3A
+TEXT_COLOR: #3A4A3A
+BULLET_COLOR: #4A8A50
+BULLET_CHAR: —
+BANNER_BG: linear-gradient(90deg, #A8C8A0, #4A8A50, #2D5016)
+BANNER_BG_WIDE: linear-gradient(90deg, #A8C8A0, #4A8A50, #2D5016, #4A8A50, #A8C8A0)
+RULE_COLOR: rgba(74, 138, 80, 0.3)
+LINE_COLOR: linear-gradient(90deg, #4A8A50, #2D5016)
+PRICE_COLOR: #B8960B
+```
+
+---
+【装飾 — 表紙（cover）用】
+下部の波＋極薄い葉シルエット（CSSのみ）。
+
+```html
+<!-- 下部の波装飾 -->
+<div style="position:absolute;bottom:0;left:0;width:1280px;height:90px;background:linear-gradient(180deg,transparent 0%,rgba(143,168,154,0.5) 100%);border-radius:60% 60% 0 0 / 40% 40% 0 0;z-index:1;pointer-events:none;"></div>
+
+<!-- 左上極薄い葉シルエット -->
+<div style="position:absolute;top:-20px;left:-20px;width:200px;height:200px;background:radial-gradient(ellipse at 30% 30%,rgba(184,200,192,0.20) 0%,transparent 70%);z-index:0;pointer-events:none;"></div>
+
+<!-- 右下極薄い葉シルエット -->
+<div style="position:absolute;bottom:60px;right:-20px;width:180px;height:180px;background:radial-gradient(ellipse at 70% 70%,rgba(184,200,192,0.18) 0%,transparent 70%);z-index:0;pointer-events:none;"></div>
+```
+
+---
+【装飾 — コンテンツページ用】
+下部の波のみ（葉シルエットなし）。
+
+```html
+<!-- 下部の波装飾 -->
+<div style="position:absolute;bottom:0;left:0;width:1280px;height:80px;background:linear-gradient(180deg,transparent 0%,rgba(143,168,154,0.45) 100%);border-radius:60% 60% 0 0 / 40% 40% 0 0;z-index:1;pointer-events:none;"></div>
 ```
 
 ---
@@ -279,6 +431,42 @@ TEXT SPACING (CRITICAL FOR CONTENT PAGES):
 - LEFT-ALIGNED text on content pages
 
 MOOD: Like a cutting-edge tech company keynote (Apple, Google, Tesla) — structured, forward-thinking, intellectual. The blue-purple-pink gradient gives it energy and modernity, while the geometric background lines add sophistication. Clean, sharp, confident. Gender-neutral and professional. NOT feminine, NOT romantic, NOT soft.
+```
+
+### テーマ4 HTML変数定義（HTMLモード用・確定版）
+
+HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素を使用する。
+**装飾方式**: 外部画像不要。純粋なCSSで実装する。
+
+```
+BG_COLOR: #F8F8FC
+BG_GRADIENT: radial-gradient(ellipse at 50% 40%, #FFFFFF 0%, #F5F5FB 50%, #F0F0F8 100%)
+BG_GRADIENT_DARK: linear-gradient(135deg, #4A7AD9 0%, #7A4ABF 50%, #C04A8A 100%)
+TITLE_GRADIENT_CSS: background: linear-gradient(90deg, #4A7AD9, #7A4ABF, #C04A8A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+TITLE_COLOR: #7A4ABF
+SUBTITLE_COLOR: #8A8A9A
+TEXT_COLOR: #3A3A4A
+BULLET_COLOR: #7A4ABF
+BULLET_CHAR: —
+BANNER_BG: linear-gradient(90deg, #4A7AD9, #7A4ABF, #C04A8A)
+BANNER_BG_WIDE: linear-gradient(90deg, #4A7AD9, #7A4ABF, #C04A8A)
+RULE_COLOR: rgba(122, 74, 191, 0.3)
+LINE_COLOR: linear-gradient(90deg, #4A7AD9, #7A4ABF, #C04A8A)
+PRICE_COLOR: #B8960B
+```
+
+---
+【装飾 — 全ページ共通】
+背景に極薄い幾何学線（ウォーターマーク風）、下部にスリムなグラデーション帯。
+
+```html
+<!-- 背景幾何学線（ウォーターマーク風） -->
+<div style="position:absolute;top:0;left:0;width:1280px;height:720px;z-index:0;pointer-events:none;overflow:hidden;">
+  <div style="position:absolute;top:-100px;left:-100px;width:1480px;height:920px;background:repeating-linear-gradient(45deg,rgba(122,74,191,0.04) 0px,rgba(122,74,191,0.04) 1px,transparent 1px,transparent 80px),repeating-linear-gradient(-45deg,rgba(74,122,217,0.04) 0px,rgba(74,122,217,0.04) 1px,transparent 1px,transparent 80px);"></div>
+</div>
+
+<!-- 下部グラデーション帯 -->
+<div style="position:absolute;bottom:0;left:0;width:1280px;height:36px;background:linear-gradient(90deg,#4A7AD9,#7A4ABF,#C04A8A);border-radius:8px 8px 0 0;z-index:1;pointer-events:none;"></div>
 ```
 
 ---
@@ -531,6 +719,62 @@ MOOD:
 - Think: cherry blossom petals, silk ribbons, morning light through pink curtains
 ```
 
+### テーマ6 HTML変数定義（HTMLモード用・確定版）
+
+HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素を使用する。
+**装飾方式**: 外部画像不要。純粋なCSSで実装する。
+
+```
+BG_COLOR: #FFFBFC
+BG_GRADIENT: radial-gradient(ellipse at 50% 40%, #FFFFFF 0%, #FFF5F8 50%, #FFF0F4 100%)
+BG_GRADIENT_DARK: linear-gradient(135deg, #D4707A 0%, #B86878 100%)
+TITLE_GRADIENT_CSS: background: linear-gradient(90deg, #D4707A, #B86878); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+TITLE_COLOR: #D4707A
+SUBTITLE_COLOR: #9A8A8A
+TEXT_COLOR: #4A4A4A
+BULLET_COLOR: #D4707A
+BULLET_CHAR: —
+BANNER_BG: linear-gradient(90deg, #E0A0B0, #D090A0)
+BANNER_BG_WIDE: linear-gradient(90deg, #E0A0B0, #D090A0, #E0A0B0)
+RULE_COLOR: rgba(212, 112, 122, 0.3)
+LINE_COLOR: linear-gradient(90deg, #D4707A, #B86878)
+PRICE_COLOR: #C8A850
+```
+
+---
+【装飾 — 表紙（cover）用】
+左右両端に細いゴールド縦線、左上にピンクのグロー。
+
+```html
+<!-- 左端ゴールド縦線 -->
+<div style="position:absolute;top:0;left:20px;width:1px;height:100%;background:linear-gradient(180deg,rgba(200,168,80,0.6) 0%,rgba(200,168,80,0.3) 100%);z-index:0;pointer-events:none;"></div>
+
+<!-- 右端ゴールド縦線 -->
+<div style="position:absolute;top:0;right:20px;width:1px;height:100%;background:linear-gradient(180deg,rgba(200,168,80,0.6) 0%,rgba(200,168,80,0.3) 100%);z-index:0;pointer-events:none;"></div>
+
+<!-- 左上ピンクグロー -->
+<div style="position:absolute;top:-40px;left:-40px;width:280px;height:280px;background:radial-gradient(ellipse at 30% 30%,rgba(240,176,192,0.35) 0%,transparent 70%);z-index:0;pointer-events:none;"></div>
+
+<!-- 右下ピンクグロー -->
+<div style="position:absolute;bottom:-40px;right:-40px;width:260px;height:260px;background:radial-gradient(ellipse at 70% 70%,rgba(240,176,192,0.30) 0%,transparent 70%);z-index:0;pointer-events:none;"></div>
+```
+
+---
+【装飾 — コンテンツページ用】
+左右ゴールド縦線＋左上に控えめのピンクグロー。
+
+```html
+<!-- 左端ゴールド縦線 -->
+<div style="position:absolute;top:0;left:20px;width:1px;height:100%;background:linear-gradient(180deg,rgba(200,168,80,0.5) 0%,rgba(200,168,80,0.25) 100%);z-index:0;pointer-events:none;"></div>
+
+<!-- 右端ゴールド縦線 -->
+<div style="position:absolute;top:0;right:20px;width:1px;height:100%;background:linear-gradient(180deg,rgba(200,168,80,0.5) 0%,rgba(200,168,80,0.25) 100%);z-index:0;pointer-events:none;"></div>
+
+<!-- 左上控えめピンクグロー -->
+<div style="position:absolute;top:-20px;left:-20px;width:180px;height:180px;background:radial-gradient(ellipse at 30% 30%,rgba(240,176,192,0.22) 0%,transparent 70%);z-index:0;pointer-events:none;"></div>
+```
+
+---
 
 ## テーマ7: ネイビーゴールド（Navy Gold）
 
@@ -600,7 +844,60 @@ MOOD:
 ===
 ```
 
+### テーマ7 HTML変数定義（HTMLモード用・確定版）
 
+HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素を使用する。
+**装飾方式**: 外部画像不要。純粋なCSSで実装する。
+
+```
+BG_COLOR: #C8CDD8
+BG_GRADIENT: radial-gradient(ellipse at 50% 40%, #4A5A8A 0%, #2A3A6A 50%, #1A2550 100%)
+BG_GRADIENT_DARK: linear-gradient(135deg, #1A2550 0%, #2A3A6A 100%)
+BG_GRADIENT_CONTENT: linear-gradient(180deg, #C8CDD8 0%, #D8DCE5 70%, #1A2550 70%)
+TITLE_GRADIENT_CSS: color: #FFFFFF;
+TITLE_COLOR: #FFFFFF
+SUBTITLE_COLOR: rgba(255,255,255,0.85)
+TEXT_COLOR: #1A2550
+BULLET_COLOR: #B8953F
+BULLET_CHAR: ■
+BANNER_BG: linear-gradient(90deg, #1A2550, #2A3A6A)
+BANNER_BG_WIDE: linear-gradient(90deg, #1A2550, #2A3A6A, #1A2550)
+RULE_COLOR: rgba(184, 149, 63, 0.5)
+LINE_COLOR: linear-gradient(90deg, #B8953F, #D4AF5A)
+PRICE_COLOR: #D4AF5A
+```
+
+---
+【装飾 — 表紙（cover）用】
+背景はネイビーグラデーション、四隅にゴールドの方向線。
+
+```html
+<!-- 左上ゴールド方向線 -->
+<div style="position:absolute;top:0;left:0;width:200px;height:200px;z-index:0;pointer-events:none;">
+  <div style="position:absolute;top:30px;left:30px;width:120px;height:1px;background:linear-gradient(90deg,rgba(212,175,90,0.8),transparent);transform:rotate(45deg);transform-origin:0 0;"></div>
+  <div style="position:absolute;top:50px;left:50px;width:90px;height:1px;background:linear-gradient(90deg,rgba(212,175,90,0.5),transparent);transform:rotate(45deg);transform-origin:0 0;"></div>
+</div>
+
+<!-- 右下ゴールド方向線 -->
+<div style="position:absolute;bottom:0;right:0;width:200px;height:200px;z-index:0;pointer-events:none;">
+  <div style="position:absolute;bottom:30px;right:30px;width:120px;height:1px;background:linear-gradient(270deg,rgba(212,175,90,0.8),transparent);transform:rotate(45deg);transform-origin:100% 0;"></div>
+  <div style="position:absolute;bottom:50px;right:50px;width:90px;height:1px;background:linear-gradient(270deg,rgba(212,175,90,0.5),transparent);transform:rotate(45deg);transform-origin:100% 0;"></div>
+</div>
+```
+
+---
+【装飾 — コンテンツページ用】
+上70%シルバーグレー・下20%ネイビー帯。
+
+```html
+<!-- 下部ネイビー帯 -->
+<div style="position:absolute;bottom:0;left:0;width:1280px;height:144px;background:#1A2550;z-index:1;pointer-events:none;"></div>
+
+<!-- ゴールド区切り線 -->
+<div style="position:absolute;bottom:144px;left:0;width:1280px;height:1px;background:linear-gradient(90deg,#B8953F,#D4AF5A,#B8953F);z-index:2;pointer-events:none;"></div>
+```
+
+---
 
 ## テーマ8: グレーゴールド（Gray Gold）
 
@@ -674,3 +971,65 @@ MOOD:
 - KEY DIFFERENCE FROM NAVY GOLD: This theme is ACHROMATIC (no blue/color) — all grays + gold. More subtle, more neutral, more universally sophisticated.
 ===
 ```
+
+### テーマ8 HTML変数定義（HTMLモード用・確定版）
+
+HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素を使用する。
+**装飾方式**: 外部画像不要。純粋なCSSで実装する。
+
+```
+BG_COLOR: #D8D8D8
+BG_GRADIENT: radial-gradient(ellipse at 50% 40%, #B0B0B0 0%, #909090 50%, #606060 100%)
+BG_GRADIENT_DARK: linear-gradient(135deg, #3A3A3A 0%, #5A5A5A 100%)
+BG_GRADIENT_CONTENT: linear-gradient(180deg, #D8D8D8 0%, #E5E5E5 70%, #3A3A3A 70%)
+TITLE_GRADIENT_CSS: background: linear-gradient(90deg, #B8953F, #D4AF5A, #C8A84E); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+TITLE_COLOR: #D4AF5A
+SUBTITLE_COLOR: rgba(255,255,255,0.75)
+TEXT_COLOR: #333333
+BULLET_COLOR: #B8953F
+BULLET_CHAR: ■
+BANNER_BG: linear-gradient(90deg, #3A3A3A, #5A5A5A)
+BANNER_BG_WIDE: linear-gradient(90deg, #3A3A3A, #5A5A5A, #3A3A3A)
+RULE_COLOR: rgba(184, 149, 63, 0.5)
+LINE_COLOR: linear-gradient(90deg, #B8953F, #D4AF5A)
+PRICE_COLOR: #D4AF5A
+```
+
+---
+【装飾 — 表紙（cover）用】
+背景はグレーグラデーション、左上・右下に白のL字ブラケット線。
+
+```html
+<!-- 左上白ブラケット線 -->
+<div style="position:absolute;top:0;left:0;width:120px;height:120px;z-index:0;pointer-events:none;">
+  <div style="position:absolute;top:24px;left:24px;width:70px;height:1px;background:rgba(255,255,255,0.7);"></div>
+  <div style="position:absolute;top:24px;left:24px;width:1px;height:70px;background:rgba(255,255,255,0.7);"></div>
+  <div style="position:absolute;top:36px;left:36px;width:50px;height:1px;background:rgba(255,255,255,0.4);"></div>
+  <div style="position:absolute;top:36px;left:36px;width:1px;height:50px;background:rgba(255,255,255,0.4);"></div>
+</div>
+
+<!-- 右下白ブラケット線 -->
+<div style="position:absolute;bottom:0;right:0;width:120px;height:120px;z-index:0;pointer-events:none;">
+  <div style="position:absolute;bottom:24px;right:24px;width:70px;height:1px;background:rgba(255,255,255,0.7);"></div>
+  <div style="position:absolute;bottom:24px;right:24px;width:1px;height:70px;background:rgba(255,255,255,0.7);transform:translateX(69px);"></div>
+  <div style="position:absolute;bottom:36px;right:36px;width:50px;height:1px;background:rgba(255,255,255,0.4);"></div>
+  <div style="position:absolute;bottom:36px;right:36px;width:1px;height:50px;background:rgba(255,255,255,0.4);transform:translateX(49px);"></div>
+</div>
+
+<!-- タイトル下ゴールド横線 -->
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,20px);width:480px;height:1px;background:linear-gradient(90deg,transparent,#D4AF5A,transparent);z-index:0;pointer-events:none;"></div>
+```
+
+---
+【装飾 — コンテンツページ用】
+上70%ライトグレー・下20%チャコール帯。
+
+```html
+<!-- 下部チャコール帯 -->
+<div style="position:absolute;bottom:0;left:0;width:1280px;height:144px;background:#3A3A3A;z-index:1;pointer-events:none;"></div>
+
+<!-- ゴールド区切り線 -->
+<div style="position:absolute;bottom:144px;left:0;width:1280px;height:1px;background:linear-gradient(90deg,#B8953F,#D4AF5A,#B8953F);z-index:2;pointer-events:none;"></div>
+```
+
+---
