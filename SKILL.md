@@ -1,13 +1,13 @@
 ---
 name: product-slide-generator
-description: 講座型商品の販売用スライド資料（52〜66ページ）を画像生成モードで自動生成するSkill。「スライドを作りたい」「講座資料を作って」「商品スライドを生成して」などのリクエストで使用すること。Canvaテンプレート画像でレイアウトを統一し、8種類のデザインテーマから世界観を選択できる。
+description: 講座型商品の販売用スライド資料（52〜66ページ）をHTMLモードで自動生成するSkill。「スライドを作りたい」「講座資料を作って」「商品スライドを生成して」などのリクエストで使用すること。HTMLテンプレートでレイアウトを完全統一し、8種類のデザインテーマから世界観を選択できる。フォント崩れ・レイアウトズレなし。
 ---
 
 # 商品スライド制作スキル v3
 
 ## 概要
 
-講座型商品の販売用スライド資料を、**Manusスライド機能（画像生成モード）** で52〜66ページ生成する。全ページを1枚ずつAI画像として生成する。
+講座型商品の販売用スライド資料を、**Manusスライド機能（HTMLモード）** で52〜66ページ生成する。全ページをHTMLテンプレートで構築し、フォント・レイアウト・文字サイズを完全統一する。
 
 **設計思想（最重要）:**
 - **レイアウト（構造）** → 全テーマ共通。Canvaテンプレート（`canva_reference/`）のみを参照（固定）
@@ -138,47 +138,47 @@ READ: /home/ubuntu/skills/product-slide-generator/references/layout_templates.md
 
 ### Step 1: プロジェクト初期化
 
-`slide_initialize` で画像生成モードのプロジェクトを作成する。
+`slide_initialize` でHTMLモードのプロジェクトを作成する。
 
-- `generate_mode`: `image`
+- `generate_mode`: `html`
 - `height_constraint`: `true`（16:9）
 - `project_dir`: `/home/ubuntu/product_slides`
 
 **アウトラインの作成ルール**: Phase 1で生成したスライド構成の全ページを `outline` に変換する。各ページの `id` はレイアウト種別＋連番（例: `cover_01`, `statement_01`, `bullet_list_01`）とする。
 
-### Step 2: ページごとの画像生成
+### Step 2: ページごとのHTML生成
 
-全ページを順番に `image_slide_generate` で生成する。
+全ページを順番に `slide_edit` で生成する。
 
 **生成ルール（全ページ共通）:**
 
-1. `layout_templates.md` から該当ページタイプの `=== LAYOUT STRUCTURE ===` ブロックを**そのままプロンプトに含める**（レイアウト構造の参照必須）
-2. `design_system.md` の共通デザイン指示（テーマ上書き済み）を**毎回プロンプトの末尾に付加する**
-3. `references` 配列に以下の順でリファレンス画像を含める:
-   - **第1要素**: Canvaレイアウト参照画像（`canva_reference/` フォルダ）— レイアウト構造
-   - **第2要素**: テーマリファレンス画像（`themes/theme_XX/` フォルダ）— 色・雰囲気
-   - **第3要素**: 直前ページの生成画像（2ページ目以降）— デザイン継続性
-4. レイアウト種別ごとのプロンプトテンプレートは `layout_prompts.md` を参照する
-5. プロンプト内に以下を明示する:
+1. `templates/html_layouts/` フォルダの該当レイアウトテンプレートHTMLを必ず読み込み、ベースとして使用する
+2. テーマの色設定（`design_themes.md`）に従い、CSSの色・グラデーション・装飾を上書きする
+3. テキスト内容のみ下書きの内容に差し替える（構造・サイズ・余白は変更しない）
+4. 使用するHTMLテンプレートの対応表:
+   - 表紙 → `01_cover.html`
+   - コンセプト・矢印付き箇条書き → `02_bullet_arrow.html`
+   - 箇条書きリスト（お悩み・特徴等） → `03_bullet_list.html`
+   - 講師プロフィール → `04_profile.html`
+   - セクション扉 → `05_section_title.html`
+   - 章立て2カラム → `06_two_column_chapter.html`
+   - フェーズカード（カリキュラム） → `07_phase_card.html`
+   - 提供コンテンツ簡易 → `08_feature_card.html`
+   - 提供コンテンツ詳細 → `09_feature_card_detail.html`
+   - まとめ → `10_content_summary.html`
+   - インパクト文（得られる未来等） → `11_impact_statement.html`
+   - 料金詳細 → `12_pricing.html`
+   - エンディングCTA → `13_closing.html`
 
-```
-IMPORTANT: Follow the LAYOUT STRUCTURE exactly as specified in the layout template.
-Follow the COLOR and ATMOSPHERE from the theme reference image.
-Do NOT modify the layout structure based on theme colors or decorations.
-Do NOT copy the text content from either reference image.
-```
-
-**テーマリファレンス画像の選択ルール:**
-- 表紙 → `cover.png`
-- 箇条書き・リスト系 → `bullet_list.png`（ない場合は `content.png`）
-- コンテンツ説明系 → `content.png`
-- 価格・比較系 → `pricing.png`
+**フォント統一ルール:**
+- 女性向けテーマ（1〜6）: `Noto Serif JP`（明朝体）を全ページで使用
+- 男性向けテーマ（7〜8）: 表紙は `Noto Serif JP`、コンテンツページは `Noto Sans JP`（ゴシック体）を使用
 
 **見出しバナーの統一確認**: 生成前に必ず確認する。
 - コンテンツページ: テーマ指定のバナー色＋白文字の見出しを表示
 - 表紙・セクション扉・インパクト文ページ: バナーなし
 - ロゴ・ブランドマーク: 一切表示しない
-- **異なるデザインの見出しが複数出てくることは絶対NG**
+- **全ページで同じバナーデザインを使用すること（絶対NG: ページごとに異なるバナー）**
 
 ### Step 3: 進捗報告
 
@@ -205,7 +205,7 @@ Do NOT copy the text content from either reference image.
 
 ### Step 3: 修正対応
 
-ユーザーから修正依頼があった場合、該当ページのみ `image_slide_generate` で再生成する。そのページのCanvaリファレンス画像・テーマリファレンス画像・前後のページ画像を `references` に含め、デザインの一貫性を保つ。
+ユーザーから修正依頼があった場合、該当ページのみ `slide_edit` で修正する。HTMLテンプレートの構造を維持しながら、テキスト内容・色・サイズのみを変更する。
 
 ---
 
@@ -264,11 +264,11 @@ Do NOT copy the text content from either reference image.
 
 ### 日本語テキストの精度
 
-画像生成モードでは日本語テキストが崩れやすい。以下の対策をプロンプトに必ず含める。
+HTMLモードでは日本語テキストはWebフォント（Google Fonts）で描画されるため、文字崩れは発生しない。ただし以下に注意する。
 
-- 「Render all Japanese text EXACTLY as written, no missing or garbled characters」
-- 長い文章は短いフレーズに分割して指示する
-- 漢字・ひらがな・カタカナの混在を明示する
+- テキストが長すぎてボックスからはみ出さないよう、文字数を適切に調整する
+- 1行に収まらない場合は改行を入れて2行に分割する
+- フォントはGoogle Fontsの `Noto Serif JP` または `Noto Sans JP` を使用すること（他のフォントは使用しない）
 
 ### ページ数の増減
 
