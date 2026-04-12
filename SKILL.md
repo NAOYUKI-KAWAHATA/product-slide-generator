@@ -279,7 +279,7 @@ READ: /home/ubuntu/skills/product-slide-generator/references/layout_templates.md
 
 #### 背景・帯・ゴールドライン
 
-- コンテンツページの背景: `linear-gradient(180deg, #C8CDD8 0%, #D8DCE5 93%, #1A2550 93%)`
+- コンテンツページの背景: `linear-gradient(135deg, #ECEEF4 0%, #DDE0E8 45%, #C8CDD8 93%, #1A2550 93%)` — 左上から右下への対角グラデーション
 - 下部ネイビー帯: **height:48px**、`linear-gradient(90deg,#0D1A3A,#1A2550,#2A3A6A,#1A2550,#0D1A3A)`
 - ゴールド区切り線: **帯の内側 bottom:12px**、`linear-gradient(90deg,transparent,#8A6A20,#B8953F,#D4AF5A,#C8A84E,#B8953F,#8A6A20,transparent)`
 - **コンテンツエリアは必ず下部帯（48px）を避けて配置すること**。

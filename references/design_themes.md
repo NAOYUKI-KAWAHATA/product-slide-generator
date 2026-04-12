@@ -855,7 +855,7 @@ HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素
 BG_COLOR: #C8CDD8
 BG_GRADIENT: radial-gradient(ellipse at 50% 40%, #4A5A8A 0%, #2A3A6A 50%, #1A2550 100%)
 BG_GRADIENT_DARK: linear-gradient(135deg, #1A2550 0%, #2A3A6A 100%)
-BG_GRADIENT_CONTENT: linear-gradient(180deg, #C8CDD8 0%, #D8DCE5 93%, #1A2550 93%)
+BG_GRADIENT_CONTENT: linear-gradient(135deg, #ECEEF4 0%, #DDE0E8 45%, #C8CDD8 93%, #1A2550 93%)
 TITLE_GRADIENT_CSS: color: #FFFFFF;
 TITLE_COLOR: #FFFFFF
 SUBTITLE_COLOR: rgba(255,255,255,0.85)
@@ -906,7 +906,7 @@ PRICING_ITEM: 20px
 
 ---
 【装飾 — コンテンツページ用】
-背景は上93%シルバーグレーグラデーション・下7%ネイビー帯（48px）。ゴールドラインは帯の内側（bottom:12px）。
+背景は左上から右下への対角グラデーション（左上: 明るいシルバーホワイト #ECEEF4 → 右下: グレーブルー #C8CDD8）、下7%ネイビー帯（48px）。ゴールドラインは帯の内側（bottom:12px）。
 コンテンツエリアは必ず下部帯（48px）を避けて配置すること。フォントはNoto Sans JP（weight:500）。
 
 ```html
