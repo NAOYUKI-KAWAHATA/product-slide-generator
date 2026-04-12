@@ -2,7 +2,7 @@
   TEMPLATE: 06_two_column_chapter (章立て2カラム)
   USAGE: P6 — 講座概要の章立てリスト
   VARIABLES: サンプル見出し, 講座概要, {{CHAPTERS}} (配列: 章タイトル)
-  THEME VARIABLES: linear-gradient(135deg, #FFF3E0 0%, #FBE9E7 100%), linear-gradient(90deg, #FFAB91 0%, #FFCCBC 100%), rgba(255, 255, 255, 0.7), #4E342E, rgba(255, 255, 255, 0.5), #4E342E, #FFAB91, #FF8A65, #FFAB91, <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 0% 0%, rgba(255,171,145,0.1) 0%, transparent 40%), radial-gradient(circle at 100% 100%, rgba(255,204,188,0.15) 0%, transparent 40%); pointer-events: none;"></div>, <div style="position: absolute; bottom: 20px; right: 20px; width: 120px; height: 1px; background: #FFAB91;"></div><div style="position: absolute; bottom: 20px; right: 20px; width: 1px; height: 120px; background: #FFAB91;"></div>
+  THEME VARIABLES: linear-gradient(135deg,#FFFCFD 0%,#FFF0F3 50%,#FFF5F7 100%), linear-gradient(90deg,#F87C8F,#A97682), rgba(255, 255, 255, 0.6), #4A4A4A, rgba(255, 255, 255, 0.4), #4A4A4A, #F8BBD0, #B39DDB, #F8BBD0, , 
 -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@400;500;700;900&display=swap');
@@ -10,18 +10,32 @@
 <div class="slide-container" style="
   width: 1280px;
   min-height: 720px;
-  background: linear-gradient(135deg, #FFF3E0 0%, #FBE9E7 100%);
+  background: linear-gradient(135deg,#FFFCFD 0%,#FFF0F3 50%,#FFF5F7 100%);
   position: relative;
   overflow: hidden;
   font-family: 'Noto Serif JP', serif;
 ">
-  <!-- 左端の装飾ライン -->
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 0% 0%, rgba(255,171,145,0.1) 0%, transparent 40%), radial-gradient(circle at 100% 100%, rgba(255,204,188,0.15) 0%, transparent 40%); pointer-events: none;"></div>
 
+
+  <!-- ゴールド縦線（左端） -->
+  <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,#C9A84C,#E8D08A,#C9A84C);z-index:1;pointer-events:none;"></div>
+  <!-- ゴールド縦線（右端） -->
+  <div style="position:absolute;top:0;right:0;width:3px;height:100%;background:linear-gradient(180deg,#C9A84C,#E8D08A,#C9A84C);z-index:1;pointer-events:none;"></div>
+  <!-- 左下水彩ブロブ（ピンク） -->
+  <div style="position:absolute;bottom:-60px;left:-60px;width:320px;height:280px;background:radial-gradient(ellipse at center,rgba(232,160,170,0.35) 0%,rgba(232,160,170,0.15) 50%,transparent 75%);z-index:0;pointer-events:none;"></div>
+  <!-- 右上水彩ブロブ（ピンク） -->
+  <div style="position:absolute;top:-60px;right:-60px;width:320px;height:280px;background:radial-gradient(ellipse at center,rgba(212,120,138,0.25) 0%,rgba(212,120,138,0.10) 50%,transparent 75%);z-index:0;pointer-events:none;"></div>
+  <!-- ドット装飾（右上） -->
+  <div style="position:absolute;top:60px;right:80px;z-index:0;pointer-events:none;">
+    <div style="width:8px;height:8px;border-radius:50%;background:#6B8E6B;opacity:0.7;position:absolute;top:0;left:0;"></div>
+    <div style="width:5px;height:5px;border-radius:50%;background:#8B9B8B;opacity:0.5;position:absolute;top:20px;left:30px;"></div>
+    <div style="width:4px;height:4px;border-radius:50%;background:#9B8B8B;opacity:0.4;position:absolute;top:5px;left:55px;"></div>
+    <div style="width:3px;height:3px;border-radius:50%;background:#8B9B8B;opacity:0.4;position:absolute;top:35px;left:15px;"></div>
+  </div>
   <!-- 見出しバナー -->
   <div style="
     display: inline-block;
-    background: linear-gradient(90deg, #FFAB91 0%, #FFCCBC 100%);
+    background: linear-gradient(90deg,#F87C8F,#A97682);
     padding: 10px 40px 10px 24px;
     margin: 0;
   ">
@@ -37,7 +51,7 @@
   <div style="
     width: 100%;
     height: 1px;
-    background: #FFAB91;
+    background:#F87C8F;
     margin-top: 8px;
   "></div>
 
@@ -50,7 +64,7 @@
     <!-- 左カラム: ブランド名 -->
     <div style="
       width: 35%;
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.6);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -60,7 +74,7 @@
       <p style="
         font-size: 36px;
         font-weight: 700;
-        color: #4E342E;
+        color: #4A4A4A;
         letter-spacing: 0.08em;
         text-align: center;
         line-height: 1.4;
@@ -70,13 +84,13 @@
     <!-- 中央の区切り線 -->
     <div style="
       width: 2px;
-      background: #FFAB91;
+      background:#F87C8F;
     "></div>
 
     <!-- 右カラム: 章立てリスト -->
     <div style="
       flex: 1;
-      background: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.4);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -85,20 +99,19 @@
     ">
       
       <div style="display: flex; align-items: baseline; gap: 16px;">
-        <span style="font-size: 20px; font-weight: 700; color: #FF8A65; flex-shrink: 0;">01</span>
-        <span style="font-size: 28px; font-weight: 700; color: #4E342E; line-height: 1.4;">第1章のタイトル</span>
+        <span style="font-size: 20px; font-weight: 700; color: #B39DDB; flex-shrink: 0;">01</span>
+        <span style="font-size: 28px; font-weight: 700; color: #4A4A4A; line-height: 1.4;">第1章のタイトル</span>
       </div>
       <div style="display: flex; align-items: baseline; gap: 16px;">
-        <span style="font-size: 20px; font-weight: 700; color: #FF8A65; flex-shrink: 0;">02</span>
-        <span style="font-size: 28px; font-weight: 700; color: #4E342E; line-height: 1.4;">第2章のタイトル</span>
+        <span style="font-size: 20px; font-weight: 700; color: #B39DDB; flex-shrink: 0;">02</span>
+        <span style="font-size: 28px; font-weight: 700; color: #4A4A4A; line-height: 1.4;">第2章のタイトル</span>
       </div>
       <div style="display: flex; align-items: baseline; gap: 16px;">
-        <span style="font-size: 20px; font-weight: 700; color: #FF8A65; flex-shrink: 0;">03</span>
-        <span style="font-size: 28px; font-weight: 700; color: #4E342E; line-height: 1.4;">第3章のタイトル</span>
+        <span style="font-size: 20px; font-weight: 700; color: #B39DDB; flex-shrink: 0;">03</span>
+        <span style="font-size: 28px; font-weight: 700; color: #4A4A4A; line-height: 1.4;">第3章のタイトル</span>
       </div>
     </div>
   </div>
 
-  <!-- 右下の装飾ライン -->
-  <div style="position: absolute; bottom: 20px; right: 20px; width: 120px; height: 1px; background: #FFAB91;"></div><div style="position: absolute; bottom: 20px; right: 20px; width: 1px; height: 120px; background: #FFAB91;"></div>
+
 </div>
