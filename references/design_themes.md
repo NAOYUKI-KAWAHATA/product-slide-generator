@@ -193,50 +193,39 @@ HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素
 **装飾方式**: 外部画像不要。純粋なCSSで実装する。
 
 ```
-BG_COLOR: #F0F8F8
-BG_GRADIENT: radial-gradient(ellipse at 50% 40%, #FFFFFF 0%, #F0F8F8 60%, #EAF4F4 100%)
-BG_GRADIENT_DARK: linear-gradient(135deg, #2A8A8A 0%, #1A3A5C 100%)
-TITLE_GRADIENT_CSS: background: linear-gradient(135deg, #2A8A8A, #1A3A5C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-TITLE_COLOR: #2A8A8A
-SUBTITLE_COLOR: #6A8A9A
+BG_COLOR: #E7F6F6
+BG_COVER: #FFFFFF
+BG_GRADIENT: linear-gradient(135deg, #FCFEFE 0%, #E7F6F6 100%)
+TITLE_GRADIENT_CSS: background: linear-gradient(135deg, #07AAC0, #0B7495, #0B185F); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+TITLE_COLOR: #07AAC0
+SUBTITLE_COLOR: #0B7495
 TEXT_COLOR: #4A4A4A
-BULLET_COLOR: #2A8A8A
+BULLET_COLOR: #0B7495
 BULLET_CHAR: —
-BANNER_BG: linear-gradient(90deg, #5AACAC, #8A8ABF)
-BANNER_BG_WIDE: linear-gradient(90deg, #5AACAC, #6A9ABF, #8A8ABF, #6A9ABF, #5AACAC)
-RULE_COLOR: rgba(42, 138, 138, 0.3)
-LINE_COLOR: linear-gradient(90deg, #2A8A8A, #1A3A5C)
+BANNER_BG: linear-gradient(90deg, rgba(7,170,192,0.5), rgba(11,116,149,0.5), rgba(11,24,95,0.5))
+BANNER_BG_WIDE: linear-gradient(90deg, rgba(7,170,192,0.5), rgba(11,116,149,0.5), rgba(11,24,95,0.5))
+LEFT_BAND: linear-gradient(180deg, rgba(7,170,192,0.5) 0%, rgba(11,116,149,0.5) 50%, rgba(11,24,95,0.5) 100%)
+RULE_COLOR: rgba(7, 170, 192, 0.3)
+LINE_COLOR: linear-gradient(90deg, #07AAC0, #0B7495, #0B185F)
 PRICE_COLOR: #B8A060
 ```
 
 ---
-【装飾 — 表紙（cover）用】
-左端に縦のグラデーションストライプ、右下に2本の細い交差線。
+【装飾 — 表紙・コンテンツページ共通】
+右下・左上コーナーに密着した幾何学的斜め線（2px・グラデーション）。
 
 ```html
-<!-- 左端縦グラデーションストライプ -->
-<div style="position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(180deg,rgba(90,172,172,0.6) 0%,rgba(138,138,191,0.4) 100%);z-index:0;pointer-events:none;"></div>
+<!-- 右下 幾何学的斜め線装飾 -->
+<div style="position:absolute;bottom:0;right:30px;width:2px;height:240px;background:linear-gradient(to top, rgba(7,170,192,0.6), rgba(11,116,149,0.4), rgba(11,24,95,0.15));transform:rotate(45deg);transform-origin:bottom center;z-index:0;pointer-events:none;"></div>
+<div style="position:absolute;bottom:0;right:-20px;width:2px;height:200px;background:linear-gradient(to top, rgba(7,170,192,0.6), rgba(11,116,149,0.4), rgba(11,24,95,0.15));transform:rotate(45deg);transform-origin:bottom center;z-index:0;pointer-events:none;"></div>
+<div style="position:absolute;bottom:30px;right:0;width:2px;height:240px;background:linear-gradient(to top, rgba(7,170,192,0.45), rgba(11,116,149,0.3), rgba(11,24,95,0.1));transform:rotate(-45deg);transform-origin:bottom center;z-index:0;pointer-events:none;"></div>
+<div style="position:absolute;bottom:-20px;right:0;width:2px;height:200px;background:linear-gradient(to top, rgba(7,170,192,0.45), rgba(11,116,149,0.3), rgba(11,24,95,0.1));transform:rotate(-45deg);transform-origin:bottom center;z-index:0;pointer-events:none;"></div>
 
-<!-- 右下交差線 -->
-<div style="position:absolute;bottom:60px;right:40px;width:160px;height:120px;z-index:0;pointer-events:none;">
-  <div style="position:absolute;bottom:0;right:0;width:140px;height:2px;background:linear-gradient(90deg,rgba(42,138,138,0.5),rgba(26,58,92,0.5));transform:rotate(-30deg);transform-origin:right bottom;"></div>
-  <div style="position:absolute;bottom:20px;right:0;width:120px;height:1px;background:linear-gradient(90deg,rgba(42,138,138,0.3),rgba(26,58,92,0.3));transform:rotate(-20deg);transform-origin:right bottom;"></div>
-</div>
-```
-
----
-【装飾 — コンテンツページ用】
-表紙と同じ左端ストライプ＋右下交差線（控えめ）。
-
-```html
-<!-- 左端縦グラデーションストライプ -->
-<div style="position:absolute;top:0;left:0;width:5px;height:100%;background:linear-gradient(180deg,rgba(90,172,172,0.5) 0%,rgba(138,138,191,0.3) 100%);z-index:0;pointer-events:none;"></div>
-
-<!-- 右下交差線（控えめ） -->
-<div style="position:absolute;bottom:40px;right:30px;width:120px;height:90px;z-index:0;pointer-events:none;">
-  <div style="position:absolute;bottom:0;right:0;width:100px;height:1px;background:linear-gradient(90deg,rgba(42,138,138,0.4),rgba(26,58,92,0.4));transform:rotate(-30deg);transform-origin:right bottom;"></div>
-  <div style="position:absolute;bottom:15px;right:0;width:80px;height:1px;background:linear-gradient(90deg,rgba(42,138,138,0.25),rgba(26,58,92,0.25));transform:rotate(-20deg);transform-origin:right bottom;"></div>
-</div>
+<!-- 左上 幾何学的斜め線装飾 -->
+<div style="position:absolute;top:0;left:30px;width:2px;height:240px;background:linear-gradient(to bottom, rgba(7,170,192,0.6), rgba(11,116,149,0.4), rgba(11,24,95,0.15));transform:rotate(-45deg);transform-origin:top center;z-index:0;pointer-events:none;"></div>
+<div style="position:absolute;top:0;left:-20px;width:2px;height:200px;background:linear-gradient(to bottom, rgba(7,170,192,0.6), rgba(11,116,149,0.4), rgba(11,24,95,0.15));transform:rotate(-45deg);transform-origin:top center;z-index:0;pointer-events:none;"></div>
+<div style="position:absolute;top:30px;left:0;width:2px;height:240px;background:linear-gradient(to bottom, rgba(7,170,192,0.45), rgba(11,116,149,0.3), rgba(11,24,95,0.1));transform:rotate(45deg);transform-origin:top center;z-index:0;pointer-events:none;"></div>
+<div style="position:absolute;top:-20px;left:0;width:2px;height:200px;background:linear-gradient(to bottom, rgba(7,170,192,0.45), rgba(11,116,149,0.3), rgba(11,24,95,0.1));transform:rotate(45deg);transform-origin:top center;z-index:0;pointer-events:none;"></div>
 ```
 
 ---
@@ -303,44 +292,74 @@ HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素
 **装飾方式**: 外部画像不要。純粋なCSSで実装する。
 
 ```
-BG_COLOR: #EFF5F1
-BG_GRADIENT: radial-gradient(ellipse at 50% 40%, #FAFCFB 0%, #F0F6F2 50%, #EAF2EE 100%)
-BG_GRADIENT_DARK: linear-gradient(135deg, #2D5016 0%, #1B5E20 50%, #3A7A3A 100%)
-TITLE_GRADIENT_CSS: background: linear-gradient(135deg, #2D5016, #1B5E20, #3A7A3A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-TITLE_COLOR: #2D5016
-SUBTITLE_COLOR: #4A6A3A
+BG_COLOR: #DCF0E9
+BG_COVER: #FFFFFF
+BG_GRADIENT: linear-gradient(135deg, #C5E6D9 0%, #DCF0E9 50%, #90BBA8 100%)
+TITLE_GRADIENT_CSS: background: linear-gradient(135deg, #6BB594, #53925E, #3D6B3C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+TITLE_COLOR: #6BB594
+SUBTITLE_COLOR: #53925E
 TEXT_COLOR: #3A4A3A
-BULLET_COLOR: #4A8A50
+BULLET_COLOR: #53925E
 BULLET_CHAR: —
-BANNER_BG: linear-gradient(90deg, #A8C8A0, #4A8A50, #2D5016)
-BANNER_BG_WIDE: linear-gradient(90deg, #A8C8A0, #4A8A50, #2D5016, #4A8A50, #A8C8A0)
-RULE_COLOR: rgba(74, 138, 80, 0.3)
-LINE_COLOR: linear-gradient(90deg, #4A8A50, #2D5016)
+BANNER_BG: linear-gradient(90deg, #BCEDD7, #85A98C)
+BANNER_BG_WIDE: linear-gradient(90deg, #BCEDD7, #85A98C)
+RULE_COLOR: rgba(83, 146, 94, 0.3)
+LINE_COLOR: linear-gradient(90deg, #6BB594, #53925E, #3D6B3C)
+WAVE_GRADIENT: linear-gradient from #6D9B89 to #83B09B to #8FBAA7
 PRICE_COLOR: #B8960B
 ```
 
 ---
-【装飾 — 表紙（cover）用】
-下部の波＋極薄い葉シルエット（CSSのみ）。
+【装飾 — 全ページ共通（表紙・コンテンツ）】
+左上・右下にSVGリーフ装飾（opacity:0.25）、下部にSVG曲線波紋。バナーにz-index:10を設定。
 
 ```html
-<!-- 下部の波装飾 -->
-<div style="position:absolute;bottom:0;left:0;width:1280px;height:90px;background:linear-gradient(180deg,transparent 0%,rgba(143,168,154,0.5) 100%);border-radius:60% 60% 0 0 / 40% 40% 0 0;z-index:1;pointer-events:none;"></div>
+<!-- 左上リーフ装飾 -->
+<div style="position:absolute;top:0;left:0;width:220px;height:220px;z-index:0;pointer-events:none;opacity:0.25;">
+  <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" width="220" height="220">
+    <path d="M30,10 C60,-5 120,30 100,90 C80,150 10,130 20,70 C25,45 15,25 30,10Z" fill="#6BB594" opacity="0.6"/>
+    <path d="M30,10 C45,40 65,70 100,90" stroke="#3D6B3C" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <path d="M110,40 C135,20 175,50 160,100 C145,150 95,135 105,85 C110,65 100,55 110,40Z" fill="#53925E" opacity="0.45" transform="rotate(-20,140,80)"/>
+    <path d="M110,40 C125,65 140,80 160,100" stroke="#3D6B3C" stroke-width="1" fill="none" opacity="0.4" transform="rotate(-20,140,80)"/>
+    <path d="M60,120 C75,95 110,100 105,140 C100,175 65,170 60,140 C58,130 55,125 60,120Z" fill="#8FBAA7" opacity="0.4"/>
+  </svg>
+</div>
 
-<!-- 左上極薄い葉シルエット -->
-<div style="position:absolute;top:-20px;left:-20px;width:200px;height:200px;background:radial-gradient(ellipse at 30% 30%,rgba(184,200,192,0.20) 0%,transparent 70%);z-index:0;pointer-events:none;"></div>
+<!-- 右下リーフ装飾 -->
+<div style="position:absolute;bottom:0;right:0;width:240px;height:200px;z-index:0;pointer-events:none;opacity:0.25;">
+  <svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" width="240" height="200">
+    <path d="M210,190 C170,210 110,170 130,110 C150,50 220,70 215,130 C212,155 220,175 210,190Z" fill="#6BB594" opacity="0.6"/>
+    <path d="M210,190 C190,160 165,130 130,110" stroke="#3D6B3C" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <path d="M120,150 C95,130 80,85 115,70 C150,55 175,90 155,130 C145,150 135,160 120,150Z" fill="#53925E" opacity="0.45" transform="rotate(15,130,110)"/>
+    <path d="M120,150 C110,120 110,95 115,70" stroke="#3D6B3C" stroke-width="1" fill="none" opacity="0.4" transform="rotate(15,130,110)"/>
+    <path d="M180,80 C195,60 225,70 220,105 C215,140 185,140 180,110 C178,95 172,88 180,80Z" fill="#8FBAA7" opacity="0.4"/>
+  </svg>
+</div>
 
-<!-- 右下極薄い葉シルエット -->
-<div style="position:absolute;bottom:60px;right:-20px;width:180px;height:180px;background:radial-gradient(ellipse at 70% 70%,rgba(184,200,192,0.18) 0%,transparent 70%);z-index:0;pointer-events:none;"></div>
-```
+<!-- 下部SVG波紋 -->
+<div style="position:absolute;bottom:0;left:0;width:100%;z-index:1;pointer-events:none;">
+  <svg viewBox="0 0 1280 120" xmlns="http://www.w3.org/2000/svg" width="100%" height="120" preserveAspectRatio="none">
+    <path d="M0,60 C200,20 400,100 640,60 C880,20 1080,90 1280,50 L1280,120 L0,120Z" fill="url(#waveGrad1)" opacity="0.7"/>
+    <path d="M0,80 C250,40 500,110 760,70 C1000,35 1150,95 1280,65 L1280,120 L0,120Z" fill="url(#waveGrad2)" opacity="0.5"/>
+    <defs>
+      <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#6D9B89"/>
+        <stop offset="50%" stop-color="#83B09B"/>
+        <stop offset="100%" stop-color="#8FBAA7"/>
+      </linearGradient>
+      <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#8FBAA7"/>
+        <stop offset="50%" stop-color="#6D9B89"/>
+        <stop offset="100%" stop-color="#83B09B"/>
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
 
----
-【装飾 — コンテンツページ用】
-下部の波のみ（葉シルエットなし）。
-
-```html
-<!-- 下部の波装飾 -->
-<div style="position:absolute;bottom:0;left:0;width:1280px;height:80px;background:linear-gradient(180deg,transparent 0%,rgba(143,168,154,0.45) 100%);border-radius:60% 60% 0 0 / 40% 40% 0 0;z-index:1;pointer-events:none;"></div>
+<!-- 見出しバナー（z-index:10必須）-->
+<div style="display:inline-block;position:relative;z-index:10;background:linear-gradient(90deg,#BCEDD7,#85A98C);padding:10px 40px 10px 24px;">
+  <span style="font-size:36px;font-weight:700;color:#FFFFFF;letter-spacing:0.15em;">見出しテキスト</span>
+</div>
 ```
 
 ---
