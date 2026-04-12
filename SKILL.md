@@ -160,13 +160,21 @@ READ: /home/ubuntu/skills/product-slide-generator/references/layout_templates.md
 1. **【最重要】必ず `templates/theme_html/theme_XX_.../` フォルダにある「選択されたテーマ専用の完成HTMLテンプレート」を読み込み、ベースとして使用する**
 2. テンプレートのHTML構造、CSS（色・グラデーション・装飾・フォントサイズ）、レイアウトは**一切変更しない**こと
 3. **テキスト内容と画像パスのみ**を下書きの内容に差し替える
-4. 使用するHTMLテンプレートの対応表（※テーマ1〜8の各フォルダ内に格納されているものを使用）:
-   - 表紙 → `01_cover.html`
-   - 箇条書きリスト（お悩み・特徴等） → `03_bullet_list.html`
-   - 講師プロフィール → `04_profile.html`
-   - フェーズカード（カリキュラム） → `07_phase_card.html`
-   - 料金詳細 → `12_pricing.html`
-   - ※上記以外のレイアウトが必要な場合は、`templates/html_layouts/` の汎用テンプレートを使用し、選択テーマの `03_bullet_list.html` 等からCSS変数（色・装飾・フォント）をコピーして適用すること
+4. 使用するHTMLテンプレートの対応表（※テーマ1〜8の各フォルダ内に格納されている全13種類の専用テンプレートを使用すること）:
+   - 01_cover.html（表紙）
+   - 02_bullet_arrow.html（矢印付き箇条書き）
+   - 03_bullet_list.html（標準箇条書きリスト）
+   - 04_profile.html（講師プロフィール）
+   - 05_section_title.html（セクション扉）
+   - 06_two_column_chapter.html（2カラム章立て）
+   - 07_phase_card.html（フェーズカード/カリキュラム）
+   - 08_feature_card.html（特徴カード）
+   - 09_feature_card_detail.html（特徴カード詳細）
+   - 10_content_summary.html（提供コンテンツまとめ）
+   - 11_impact_statement.html（インパクト文）
+   - 12_pricing.html（料金詳細）
+   - 13_closing.html（クロージング/エンディング）
+   - ※必ず `templates/theme_html/theme_XX_.../` フォルダ内の該当テンプレートを読み込み、テキストと画像パスのみを差し替えること。CSSやレイアウト構造は一切変更しない。
 
 **フォント統一ルール:**
 - 女性向けテーマ（1ー6）: `Noto Serif JP`（明朝体）を全ページで使用

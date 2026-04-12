@@ -1,0 +1,54 @@
+<!--
+  TEMPLATE: 05_section_title (セクション扉)
+  USAGE: P5, P9, P21, P29, P40, P46, P54, P56 — セクション区切り
+  VARIABLES: 第1章 サンプル, 美食健康サロン
+  THEME VARIABLES: linear-gradient(135deg, #EEEEEE 0%, #F5F5F5 100%), #424242, #FFA726, #FFCC80, <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,183,77,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,183,77,0.05) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none;"></div>, <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 12px; background: linear-gradient(90deg, #FFB74D 0%, #FFCC80 100%);"></div>
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@400;500;700;900&display=swap');
+</style>
+<div class="slide-container" style="
+  width: 1280px;
+  min-height: 720px;
+  background: linear-gradient(135deg, #EEEEEE 0%, #F5F5F5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Noto Serif JP', serif;
+">
+  <!-- 左端の装飾ライン -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,183,77,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,183,77,0.05) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none;"></div>
+
+  <!-- 中央コンテンツ -->
+  <div style="text-align: center; z-index: 1;">
+    <h2 style="
+      font-size: 72px;
+      font-weight: 700;
+      color: #424242;
+      margin: 0;
+      letter-spacing: 0.12em;
+      line-height: 1.3;
+    ">第1章 サンプル</h2>
+
+    <!-- 水平線 -->
+    <div style="
+      width: 160px;
+      height: 1.5px;
+      background: #FFCC80;
+      margin: 28px auto;
+    "></div>
+
+    <p style="
+      font-size: 28px;
+      font-weight: 400;
+      color: #FFA726;
+      margin: 0;
+      letter-spacing: 0.1em;
+    ">美食健康サロン</p>
+  </div>
+
+  <!-- 右下の装飾ライン -->
+  <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 12px; background: linear-gradient(90deg, #FFB74D 0%, #FFCC80 100%);"></div>
+</div>
