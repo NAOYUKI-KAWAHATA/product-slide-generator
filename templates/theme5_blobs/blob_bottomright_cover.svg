@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <radialGradient id="blobGrad3" cx="60%" cy="60%" r="60%">
+      <stop offset="0%" stop-color="#FFC3AF" stop-opacity="0.48"/>
+      <stop offset="40%" stop-color="#FFB9A5" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#FFFCF8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur3">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+  </defs>
+  <path d="M 440 80 C 520 160 520 340 420 420 C 320 500 120 480 60 380 C 0 280 40 120 160 60 C 280 0 360 0 440 80 Z"
+    fill="url(#blobGrad3)"
+    filter="url(#blur3)"
+    transform="translate(60, 60)"
+  />
+</svg>
