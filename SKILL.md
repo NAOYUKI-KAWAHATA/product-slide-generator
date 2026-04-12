@@ -299,22 +299,37 @@ READ: /home/ubuntu/skills/product-slide-generator/references/layout_templates.md
 - フォント: Noto Sans JP、**22px**、font-weight:700、color:#FFFFFF、letter-spacing:0.08em
 - バナー直下にゴールド横線: margin-top:14px、height:1.5px、`linear-gradient(90deg,#8A6A20,#B8953F,#D4AF5A,#C8A84E,#B8953F,rgba(184,149,63,0.2))`
 
-#### フォントサイズ確定値
+#### フォントサイズ確定値（全テーマ共通）
 
-| 要素 | サイズ | フォント | weight |
-|---|---|---|---|
-| バナー見出し | 22px | Noto Sans JP | 700 |
-| 箇条書きアイコン（■） | 40px | Noto Sans JP | 700 |
-| 箇条書き本文 | 34px | Noto Sans JP | 500 |
-| プロフィール名前 | 40px | Noto Serif JP | 700 |
-| プロフィール肩書き | 18px | Noto Sans JP | 500 |
-| プロフィール箇条 | 22px | Noto Sans JP | 400 |
-| フェーズラベル | 22px | Noto Sans JP | 700 |
-| フェーズタイトル | 30px | Noto Serif JP | 700 |
-| フェーズ説明文 | 22px | Noto Sans JP | 400 |
-| 料金プラン名 | 46px | Noto Serif JP | 700 |
-| 料金価格 | 52px | Noto Serif JP | 700 |
-| 料金提供内容 | 20px | Noto Sans JP | 400 |
+| 要素 | サイズ | weight |
+|---|---|---|
+| バナー見出し | **26px** | 700 |
+| 箇条書きアイコン（■/◆） | 40px | 700 |
+| 箇条書き本文 | **38px** | 500 |
+| プロフィール名前 | **48px** | 700 |
+| プロフィール肩書き | **20px** | 500 |
+| プロフィール箇条 | **26px** | 500 |
+| フェーズラベル | **24px** | 700 |
+| フェーズタイトル | **36px** | 700 |
+| フェーズ説明文 | **26px** | 500 / line-height:1.5 |
+| 料金プラン名 | **52px** | 700 |
+| 料金価格 | **60px** | 700 |
+| 料金提供内容 | **24px** | 400 |
+
+#### テーマ別フォント種類ルール（CRITICAL — 必ず守ること）
+
+| テーマ | 表紙 | 2ページ目以降（コンテンツページ） |
+|---|---|---|
+| テーマ1（ライトパステル） | **Noto Serif JP（明朝体）** | **Noto Serif JP（明朝体）** |
+| テーマ2（アクアブルー） | **Noto Serif JP（明朝体）** | **Noto Serif JP（明朝体）** |
+| テーマ3（フォレストグリーン） | **Noto Serif JP（明朝体）** | **Noto Serif JP（明朝体）** |
+| テーマ4（ジオメトリック） | **Noto Serif JP（明朝体）** | **Noto Serif JP（明朝体）** |
+| テーマ5（ソフトベージュ） | **Noto Serif JP（明朝体）** | **Noto Serif JP（明朝体）** |
+| テーマ6（ナチュラルピンク） | **Noto Serif JP（明朝体）** | **Noto Serif JP（明朝体）** |
+| テーマ7（ネイビーゴールド） | **Noto Serif JP（明朝体）** | **Noto Sans JP（ゴシック体）** |
+| テーマ8（グレーゴールド） | **Noto Serif JP（明朝体）** | **Noto Sans JP（ゴシック体）** |
+
+> **CRITICAL**: テーマ1〜6は全ページ（バナー・箇条書き・説明文・料金テキスト含む）すべてNoto Serif JP（明朝体）を使用すること。テーマ7・8は表紙のみNoto Serif JPで、2ページ目以降のコンテンツはNoto Sans JP（ゴシック体）を使用すること。この規則はどのルールよりも優先される。
 
 #### テーマ8（グレーゴールド）の下部帯
 
@@ -327,7 +342,9 @@ READ: /home/ubuntu/skills/product-slide-generator/references/layout_templates.md
 HTMLモードでは日本語テキストはWebフォント（Google Fonts）で描画されるため、文字崩れは発生しない。ただし以下に注意する。
 
 - テキストが長すぎてボックスからはみ出さないよう、文字数を適切に調整する
-- 1行に収まらない場合は改行を入れて2行に分割する
+- **`<br>`による手動改行は原則使用しない**。ブラウザの自動折り返しに任せる
+- コンテンツが多すぎて枠からはみ出る場合は、改行ではなく**テキスト量を短くまとめる**ことで対応する
+- フェーズカードの説明文は最大60字以内を目安にする
 - フォントはGoogle Fontsの `Noto Serif JP` または `Noto Sans JP` を使用すること（他のフォントは使用しない）
 
 ### ページ数の増減

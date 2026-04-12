@@ -864,7 +864,7 @@ BULLET_COLOR: linear-gradient(90deg, #8A6A20, #B8953F, #D4AF5A)
 BULLET_CHAR: ■
 BANNER_BG: linear-gradient(90deg, #0D1A3A, #1A2550, #2A3A6A, #1E2E5A)
 BANNER_BG_WIDE: linear-gradient(90deg, #0D1A3A, #1A2550, #2A3A6A, #1A2550, #0D1A3A)
-BANNER_FONT_SIZE: 22px
+BANNER_FONT_SIZE: 26px
 BANNER_PADDING: 12px 36px
 RULE_COLOR: rgba(212, 175, 90, 0.6)
 LINE_COLOR: linear-gradient(90deg, #8A6A20, #B8953F, #D4AF5A, #C8A84E, #B8953F)
@@ -872,18 +872,23 @@ PRICE_COLOR: linear-gradient(90deg, #B8953F, #D4AF5A, #C8A84E)
 GOLD_TEXT_GRADIENT: background:linear-gradient(90deg,#8A6A20,#B8953F,#D4AF5A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
 
 【フォントサイズ確定値 — コンテンツページ】
-BANNER_TEXT: 22px / font-weight:700
+BANNER_TEXT: 26px / font-weight:700
 BULLET_ICON: 40px
-BULLET_TEXT: 34px / font-weight:500
-PROFILE_TITLE: 40px / Noto Serif JP
-PROFILE_SUBTITLE: 18px / font-weight:500
-PROFILE_BULLET: 22px
-PHASE_LABEL: 22px / font-weight:700
-PHASE_TITLE: 30px / Noto Serif JP
-PHASE_BODY: 22px / font-weight:400
-PRICING_PLAN_NAME: 46px / Noto Serif JP
-PRICING_PRICE: 52px / Noto Serif JP
-PRICING_ITEM: 20px
+BULLET_TEXT: 38px / font-weight:500
+PROFILE_TITLE: 48px / Noto Serif JP
+PROFILE_SUBTITLE: 20px / font-weight:500
+PROFILE_BULLET: 26px
+PHASE_LABEL: 24px / font-weight:700
+PHASE_TITLE: 36px / Noto Serif JP
+PHASE_BODY: 26px / font-weight:500 / line-height:1.5
+PRICING_PLAN_NAME: 52px / Noto Serif JP
+PRICING_PRICE: 60px / Noto Serif JP
+PRICING_ITEM: 24px
+
+【改行ポリシー】
+- 説明文に<br>は原則入れない。ブラウザの自動折り返しに任せる。
+- コンテンツが多すぎて枠からはみ出る場合は、改行ではなく「テキスト量を短くまとめる」で対応する。
+- フェーズカードの説明文は最大60字以内を目安に。
 ```
 
 ---
