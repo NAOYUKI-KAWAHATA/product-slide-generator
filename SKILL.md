@@ -157,23 +157,16 @@ READ: /home/ubuntu/skills/product-slide-generator/references/layout_templates.md
 
 **生成ルール（全ページ共通）:**
 
-1. `templates/html_layouts/` フォルダの該当レイアウトテンプレートHTMLを必ず読み込み、ベースとして使用する
-2. テーマの色設定（`design_themes.md`）に従い、CSSの色・グラデーション・装飾を上書きする
-3. テキスト内容のみ下書きの内容に差し替える（構造・サイズ・余白は変更しない）
-4. 使用するHTMLテンプレートの対応表:
+1. **【最重要】必ず `templates/theme_html/theme_XX_.../` フォルダにある「選択されたテーマ専用の完成HTMLテンプレート」を読み込み、ベースとして使用する**
+2. テンプレートのHTML構造、CSS（色・グラデーション・装飾・フォントサイズ）、レイアウトは**一切変更しない**こと
+3. **テキスト内容と画像パスのみ**を下書きの内容に差し替える
+4. 使用するHTMLテンプレートの対応表（※テーマ1〜8の各フォルダ内に格納されているものを使用）:
    - 表紙 → `01_cover.html`
-   - コンセプト・矢印付き箇条書き → `02_bullet_arrow.html`
    - 箇条書きリスト（お悩み・特徴等） → `03_bullet_list.html`
    - 講師プロフィール → `04_profile.html`
-   - セクション扉 → `05_section_title.html`
-   - 章立て2カラム → `06_two_column_chapter.html`
    - フェーズカード（カリキュラム） → `07_phase_card.html`
-   - 提供コンテンツ簡易 → `08_feature_card.html`
-   - 提供コンテンツ詳細 → `09_feature_card_detail.html`
-   - まとめ → `10_content_summary.html`
-   - インパクト文（得られる未来等） → `11_impact_statement.html`
    - 料金詳細 → `12_pricing.html`
-   - エンディングCTA → `13_closing.html`
+   - ※上記以外のレイアウトが必要な場合は、`templates/html_layouts/` の汎用テンプレートを使用し、選択テーマの `03_bullet_list.html` 等からCSS変数（色・装飾・フォント）をコピーして適用すること
 
 **フォント統一ルール:**
 - 女性向けテーマ（1ー6）: `Noto Serif JP`（明朝体）を全ページで使用
