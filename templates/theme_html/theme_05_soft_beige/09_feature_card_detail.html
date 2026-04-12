@@ -1,72 +1,41 @@
-<!--
-  TEMPLATE: 09_feature_card_detail (提供コンテンツ詳細)
-  USAGE: P10 — メイン提供コンテンツ（画像付き）
-  VARIABLES: 提供コンテンツ, コンテンツのサブタイトル, {{FEATURES}} (配列: {label, image_placeholder})
-  THEME VARIABLES: linear-gradient(180deg, #FFECB3 0%, #FFF8E1 100%), #5D4037, #795548, #5D4037, <div style="position: absolute; top: 30px; left: 30px; width: 60px; height: 60px; border-radius: 50%; background: rgba(220,231,117,0.2);"></div><div style="position: absolute; top: 60px; left: 60px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,245,157,0.3);"></div>, <div style="position: absolute; bottom: 30px; right: 30px; width: 80px; height: 80px; border-radius: 50%; background: rgba(220,231,117,0.2);"></div><div style="position: absolute; bottom: 70px; right: 70px; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,245,157,0.3);"></div>
--->
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@400;500;700;900&display=swap');
-</style>
-<div class="slide-container" style="
-  width: 1280px;
-  min-height: 720px;
-  background: linear-gradient(180deg, #FFECB3 0%, #FFF8E1 100%);
-  position: relative;
-  overflow: hidden;
-  font-family: 'Noto Serif JP', serif;
-">
-  <!-- 左端の装飾ライン -->
-  <div style="position: absolute; top: 30px; left: 30px; width: 60px; height: 60px; border-radius: 50%; background: rgba(220,231,117,0.2);"></div><div style="position: absolute; top: 60px; left: 60px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,245,157,0.3);"></div>
-
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>* { margin: 0; padding: 0; box-sizing: border-box; }</style>
+</head>
+<body>
+<div class="slide-container" style="width:1280px;min-height:720px;background: #FFFCF8;position:relative;overflow:hidden;font-family:'Noto Serif JP',serif;">
+  <!-- 左上ブロブ（控えめ） -->
+  <div style="position:absolute;top:-80px;left:-80px;width:280px;height:260px;background:radial-gradient(ellipse at center,rgba(245,230,195,0.45) 0%,rgba(245,230,195,0.20) 50%,transparent 75%);z-index:0;pointer-events:none;"></div>
+  <!-- 右下ブロブ（控えめ） -->
+  <div style="position:absolute;bottom:-80px;right:-80px;width:280px;height:260px;background:radial-gradient(ellipse at center,rgba(240,190,165,0.45) 0%,rgba(240,190,165,0.20) 50%,transparent 75%);z-index:0;pointer-events:none;"></div>
   <!-- タイトルエリア -->
-  <div style="
-    text-align: center;
-    padding: 48px 80px 0 80px;
-  ">
-    <h3 style="
-      font-size: 48px;
-      font-weight: 800;
-      color: #5D4037;
-      margin: 0 0 16px 0;
-      letter-spacing: 0.04em;
-    ">提供コンテンツ</h3>
-    <p style="
-      font-size: 24px;
-      font-weight: 400;
-      color: #795548;
-      margin: 0;
-      line-height: 1.6;
-    ">コンテンツのサブタイトル</p>
+  <div style="text-align:center;padding:48px 80px 0 80px;">
+    <h3 style="font-size:48px;font-weight:700;background: linear-gradient(135deg,#B5936B,#DDAD93,#C27C67); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;margin:0 0 16px 0;letter-spacing:0.04em;">{{MAIN_TITLE}}</h3>
+    <p style="font-size:24px;font-weight:400;color:#A09888;margin:0;line-height:1.6;">{{MAIN_SUBTITLE}}</p>
   </div>
-
   <!-- 3カラム特徴エリア -->
-  <div style="
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 40px 80px 48px 80px;
-  ">
-    
-    <div style="flex: 1; text-align: center;">
-      <div style="width: 100%; height: 240px; background: rgba(200,200,200,0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-        <span style="font-size: 14px; color: rgba(100,100,100,0.4);">画像1</span>
+  <div style="display:flex;justify-content:center;gap:40px;padding:40px 80px 48px 80px;">
+    <div style="flex:1;text-align:center;">
+      <div style="width:100%;height:240px;background:rgba(245,230,195,0.20);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+        <span style="font-size:14px;color:rgba(160,152,136,0.5);">画像1</span>
       </div>
-      <p style="font-size: 22px; font-weight: 700; color: #5D4037; margin: 0; line-height: 1.4;">特徴1</p>
+      <p style="font-size:22px;font-weight:700;color:#4A4A4A;margin:0;line-height:1.4;">{{FEATURE1}}</p>
     </div>
-    <div style="flex: 1; text-align: center;">
-      <div style="width: 100%; height: 240px; background: rgba(200,200,200,0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-        <span style="font-size: 14px; color: rgba(100,100,100,0.4);">画像2</span>
+    <div style="flex:1;text-align:center;">
+      <div style="width:100%;height:240px;background:rgba(240,190,165,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+        <span style="font-size:14px;color:rgba(160,152,136,0.5);">画像2</span>
       </div>
-      <p style="font-size: 22px; font-weight: 700; color: #5D4037; margin: 0; line-height: 1.4;">特徴2</p>
+      <p style="font-size:22px;font-weight:700;color:#4A4A4A;margin:0;line-height:1.4;">{{FEATURE2}}</p>
     </div>
-    <div style="flex: 1; text-align: center;">
-      <div style="width: 100%; height: 240px; background: rgba(200,200,200,0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-        <span style="font-size: 14px; color: rgba(100,100,100,0.4);">画像3</span>
+    <div style="flex:1;text-align:center;">
+      <div style="width:100%;height:240px;background:rgba(242,196,172,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+        <span style="font-size:14px;color:rgba(160,152,136,0.5);">画像3</span>
       </div>
-      <p style="font-size: 22px; font-weight: 700; color: #5D4037; margin: 0; line-height: 1.4;">特徴3</p>
+      <p style="font-size:22px;font-weight:700;color:#4A4A4A;margin:0;line-height:1.4;">{{FEATURE3}}</p>
     </div>
   </div>
-
-  <!-- 右下の装飾ライン -->
-  <div style="position: absolute; bottom: 30px; right: 30px; width: 80px; height: 80px; border-radius: 50%; background: rgba(220,231,117,0.2);"></div><div style="position: absolute; bottom: 70px; right: 70px; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,245,157,0.3);"></div>
 </div>
+</body>
+</html>

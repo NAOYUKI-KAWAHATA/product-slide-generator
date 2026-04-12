@@ -2,67 +2,51 @@
 <html lang="ja">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-  </style>
+  <style>* { margin: 0; padding: 0; box-sizing: border-box; }</style>
 </head>
 <body>
-<div class="slide-container" style="width:1280px;min-height:720px;background:radial-gradient(ellipse at 30% 30%, #FFF8F0 0%, #FDF5E6 40%, #F5E6D3 100%);position:relative;overflow:hidden;">
-
-  <!-- 左上ダイヤモンドライン（控えめ） -->
-  <div style="position:absolute;top:10px;left:10px;width:80px;height:80px;z-index:0;pointer-events:none;">
-    <div style="position:absolute;top:0;left:0;width:55px;height:55px;border:1px solid rgba(212,163,115,0.4);transform:rotate(45deg);transform-origin:0 0;"></div>
-  </div>
-
+<div class="slide-container" style="width:1280px;min-height:720px;background: #FFFCF8;position:relative;overflow:hidden;font-family:'Noto Serif JP',serif;">
+  <!-- 左上ブロブ（控えめ） -->
+  <div style="position:absolute;top:-80px;left:-80px;width:280px;height:260px;background:radial-gradient(ellipse at center,rgba(245,230,195,0.45) 0%,rgba(245,230,195,0.20) 50%,transparent 75%);z-index:0;pointer-events:none;"></div>
+  <!-- 右下ブロブ（控えめ） -->
+  <div style="position:absolute;bottom:-80px;right:-80px;width:280px;height:260px;background:radial-gradient(ellipse at center,rgba(240,190,165,0.45) 0%,rgba(240,190,165,0.20) 50%,transparent 75%);z-index:0;pointer-events:none;"></div>
   <!-- 左上バナー -->
   <div style="position:relative;z-index:1;margin-top:44px;margin-left:60px;display:inline-block;">
-    <div style="background:linear-gradient(90deg,#D4A373,#E2C792);padding:12px 36px;">
+    <div style="background:linear-gradient(90deg,#B5936B,#DDAD93,#C27C67);padding:12px 36px;">
       <span style="font-family:'Noto Serif JP',serif;font-size:26px;font-weight:700;color:#FFFFFF;letter-spacing:0.08em;">講師プロフィール</span>
     </div>
   </div>
-
-  <!-- シャンパンゴールド横線（テーマ5ではソフトベージュ系） -->
-  <div style="position:relative;z-index:1;margin:0 60px;height:1.5px;background:linear-gradient(90deg,#D4A373,#E2C792,rgba(212,163,115,0.4));margin-top:14px;"></div>
-
+  <!-- 横線 -->
+  <div style="position:relative;z-index:1;margin:0 60px;height:1.5px;background:linear-gradient(90deg,#B5936B,#DDAD93,#C27C67);margin-top:14px;"></div>
   <!-- コンテンツエリア -->
   <div style="position:relative;z-index:2;padding:0 60px;min-height:480px;display:flex;align-items:center;gap:60px;margin-top:20px;">
-    
     <!-- 左側：画像プレースホルダー -->
-    <div style="width:400px;height:400px;background:rgba(212,163,115,0.1);border:1px solid rgba(212,163,115,0.3);display:flex;justify-content:center;align-items:center;flex-shrink:0;">
-      <span style="font-family:'Noto Serif JP',serif;font-size:20px;color:#D4A373;">[画像配置スペース]</span>
+    <div style="width:400px;height:400px;background:rgba(212,168,112,0.08);border:1px solid rgba(212,168,112,0.25);display:flex;justify-content:center;align-items:center;flex-shrink:0;">
+      <span style="font-family:'Noto Serif JP',serif;font-size:20px;color:#A09888;">[画像配置スペース]</span>
     </div>
-
     <!-- 右側：テキスト情報 -->
     <div style="display:flex;flex-direction:column;gap:24px;flex-grow:1;">
-      
-      <!-- 肩書きと名前 -->
       <div style="display:flex;flex-direction:column;gap:8px;">
-        <p style="font-family:'Noto Serif JP',serif;font-size:20px;font-weight:500;color:#D4A373;letter-spacing:0.05em;">美食健康サロン 主宰</p>
-        <h2 style="font-family:'Noto Serif JP',serif;font-size:48px;font-weight:700;color:#D4A373;letter-spacing:0.1em;">カワハタ</h2>
+        <p style="font-family:'Noto Serif JP',serif;font-size:20px;font-weight:500;color:#A09888;letter-spacing:0.05em;">{{INSTRUCTOR_TITLE}}</p>
+        <h2 style="font-family:'Noto Serif JP',serif;font-size:48px;font-weight:700;background: linear-gradient(135deg,#B5936B,#DDAD93,#C27C67); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;letter-spacing:0.1em;">{{INSTRUCTOR_NAME}}</h2>
       </div>
-
-      <div style="width:120px;height:1px;background:linear-gradient(90deg,#D4A373,#E2C792);"></div>
-
-      <!-- 箇条書き実績 -->
+      <div style="width:120px;height:1px;background:linear-gradient(90deg,#B5936B,#DDAD93,#C27C67);"></div>
       <div style="display:flex;flex-direction:column;gap:16px;margin-top:8px;">
         <div style="display:flex;align-items:flex-start;gap:16px;">
-          <span style="font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;color:#D4A373;flex-shrink:0;line-height:1.5;">◆</span>
-          <p style="font-family:'Noto Serif JP',serif;font-size:26px;font-weight:500;color:#4A4A4A;line-height:1.6;">生理不順・更年期・冷え性など女性特有の不調を食生活で根本改善</p>
+          <span style="font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;color:#B5936B;flex-shrink:0;line-height:1.5;">◆</span>
+          <p style="font-family:'Noto Serif JP',serif;font-size:26px;font-weight:500;color:#4A4A4A;line-height:1.6;">{{PROFILE_1}}</p>
         </div>
         <div style="display:flex;align-items:flex-start;gap:16px;">
-          <span style="font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;color:#D4A373;flex-shrink:0;line-height:1.5;">◆</span>
-          <p style="font-family:'Noto Serif JP',serif;font-size:26px;font-weight:500;color:#4A4A4A;line-height:1.6;">薬・サプリに頼らない「食で治す」メソッドを確立</p>
+          <span style="font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;color:#B5936B;flex-shrink:0;line-height:1.5;">◆</span>
+          <p style="font-family:'Noto Serif JP',serif;font-size:26px;font-weight:500;color:#4A4A4A;line-height:1.6;">{{PROFILE_2}}</p>
         </div>
         <div style="display:flex;align-items:flex-start;gap:16px;">
-          <span style="font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;color:#D4A373;flex-shrink:0;line-height:1.5;">◆</span>
-          <p style="font-family:'Noto Serif JP',serif;font-size:26px;font-weight:500;color:#4A4A4A;line-height:1.6;">20〜60代の幅広い女性をサポート</p>
+          <span style="font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;color:#B5936B;flex-shrink:0;line-height:1.5;">◆</span>
+          <p style="font-family:'Noto Serif JP',serif;font-size:26px;font-weight:500;color:#4A4A4A;line-height:1.6;">{{PROFILE_3}}</p>
         </div>
       </div>
-
     </div>
-
   </div>
-
 </div>
 </body>
 </html>

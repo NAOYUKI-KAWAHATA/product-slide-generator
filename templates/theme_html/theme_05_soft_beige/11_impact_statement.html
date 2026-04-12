@@ -1,76 +1,25 @@
-<!--
-  TEMPLATE: 11_impact_statement (インパクト文 / この講座から得られる未来)
-  USAGE: P3 — 3行のインパクト文
-  VARIABLES: サンプルワイド見出し, サンプルテキスト1行目, サンプルテキスト2行目, サンプルテキスト3行目
-  THEME VARIABLES: linear-gradient(180deg, #FFECB3 0%, #FFF8E1 100%), linear-gradient(90deg, #DCE775 0%, #FFF59D 100%), #5D4037, #5D4037, <div style="position: absolute; top: 30px; left: 30px; width: 60px; height: 60px; border-radius: 50%; background: rgba(220,231,117,0.2);"></div><div style="position: absolute; top: 60px; left: 60px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,245,157,0.3);"></div>, <div style="position: absolute; bottom: 30px; right: 30px; width: 80px; height: 80px; border-radius: 50%; background: rgba(220,231,117,0.2);"></div><div style="position: absolute; bottom: 70px; right: 70px; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,245,157,0.3);"></div>
--->
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@400;500;700;900&display=swap');
-</style>
-<div class="slide-container" style="
-  width: 1280px;
-  min-height: 720px;
-  background: linear-gradient(180deg, #FFECB3 0%, #FFF8E1 100%);
-  position: relative;
-  overflow: hidden;
-  font-family: 'Noto Serif JP', serif;
-">
-  <!-- 左端の装飾ライン -->
-  <div style="position: absolute; top: 30px; left: 30px; width: 60px; height: 60px; border-radius: 50%; background: rgba(220,231,117,0.2);"></div><div style="position: absolute; top: 60px; left: 60px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,245,157,0.3);"></div>
-
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>* { margin: 0; padding: 0; box-sizing: border-box; }</style>
+</head>
+<body>
+<div class="slide-container" style="width:1280px;min-height:720px;background: #FFFCF8;position:relative;overflow:hidden;font-family:'Noto Serif JP',serif;">
+  <!-- 左上ブロブ（控えめ） -->
+  <div style="position:absolute;top:-80px;left:-80px;width:280px;height:260px;background:radial-gradient(ellipse at center,rgba(245,230,195,0.45) 0%,rgba(245,230,195,0.20) 50%,transparent 75%);z-index:0;pointer-events:none;"></div>
+  <!-- 右下ブロブ（控えめ） -->
+  <div style="position:absolute;bottom:-80px;right:-80px;width:280px;height:260px;background:radial-gradient(ellipse at center,rgba(240,190,165,0.45) 0%,rgba(240,190,165,0.20) 50%,transparent 75%);z-index:0;pointer-events:none;"></div>
   <!-- ワイドバナー（上部中央） -->
-  <div style="
-    background: linear-gradient(90deg, #DCE775 0%, #FFF59D 100%);
-    padding: 16px 80px;
-    text-align: center;
-    margin-top: 60px;
-  ">
-    <span style="
-      font-size: 30px;
-      font-weight: 700;
-      color: #5D4037;
-      letter-spacing: 0.1em;
-    ">サンプルワイド見出し</span>
+  <div style="background:linear-gradient(90deg,#B5936B,#DDAD93,#C27C67);padding:16px 80px;text-align:center;margin-top:60px;">
+    <span style="font-size:30px;font-weight:700;color:#FFFFFF;letter-spacing:0.1em;">{{WIDE_BANNER_TITLE}}</span>
   </div>
-
   <!-- インパクト文エリア -->
-  <div style="
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 40px 100px;
-    min-height: 480px;
-    gap: 60px;
-  ">
-    <p style="
-      font-size: 34px;
-      font-weight: 700;
-      color: #5D4037;
-      margin: 0;
-      letter-spacing: 0.02em;
-      line-height: 1.5;
-    ">サンプルテキスト1行目</p>
-
-    <p style="
-      font-size: 34px;
-      font-weight: 700;
-      color: #5D4037;
-      margin: 0;
-      letter-spacing: 0.02em;
-      line-height: 1.5;
-    ">サンプルテキスト2行目</p>
-
-    <p style="
-      font-size: 34px;
-      font-weight: 700;
-      color: #5D4037;
-      margin: 0;
-      letter-spacing: 0.02em;
-      line-height: 1.5;
-    ">サンプルテキスト3行目</p>
+  <div style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:40px 100px;min-height:480px;gap:60px;">
+    <p style="font-size:34px;font-weight:700;color:#4A4A4A;margin:0;letter-spacing:0.02em;line-height:1.5;">{{LINE1}}</p>
+    <p style="font-size:34px;font-weight:700;color:#4A4A4A;margin:0;letter-spacing:0.02em;line-height:1.5;">{{LINE2}}</p>
+    <p style="font-size:34px;font-weight:700;color:#4A4A4A;margin:0;letter-spacing:0.02em;line-height:1.5;">{{LINE3}}</p>
   </div>
-
-  <!-- 右下の装飾ライン -->
-  <div style="position: absolute; bottom: 30px; right: 30px; width: 80px; height: 80px; border-radius: 50%; background: rgba(220,231,117,0.2);"></div><div style="position: absolute; bottom: 70px; right: 70px; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,245,157,0.3);"></div>
 </div>
+</body>
+</html>
