@@ -849,27 +849,46 @@ MOOD:
 HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素を使用する。
 **装飾方式**: 外部画像不要。純粋なCSSで実装する。
 
+**フォント**: Noto Sans JP（weight: 300;400;500;700）— コンテンツページのみゴシック体。表紙はNoto Serif JP。
+
 ```
 BG_COLOR: #C8CDD8
 BG_GRADIENT: radial-gradient(ellipse at 50% 40%, #4A5A8A 0%, #2A3A6A 50%, #1A2550 100%)
 BG_GRADIENT_DARK: linear-gradient(135deg, #1A2550 0%, #2A3A6A 100%)
-BG_GRADIENT_CONTENT: linear-gradient(180deg, #C8CDD8 0%, #D8DCE5 80%, #1A2550 80%)
+BG_GRADIENT_CONTENT: linear-gradient(180deg, #C8CDD8 0%, #D8DCE5 93%, #1A2550 93%)
 TITLE_GRADIENT_CSS: color: #FFFFFF;
 TITLE_COLOR: #FFFFFF
 SUBTITLE_COLOR: rgba(255,255,255,0.85)
 TEXT_COLOR: #1A2550
-BULLET_COLOR: #B8953F
+BULLET_COLOR: linear-gradient(90deg, #8A6A20, #B8953F, #D4AF5A)
 BULLET_CHAR: ■
-BANNER_BG: linear-gradient(90deg, #1A2550, #2A3A6A)
-BANNER_BG_WIDE: linear-gradient(90deg, #1A2550, #2A3A6A, #1A2550)
-RULE_COLOR: rgba(184, 149, 63, 0.5)
-LINE_COLOR: linear-gradient(90deg, #B8953F, #D4AF5A)
-PRICE_COLOR: #D4AF5A
+BANNER_BG: linear-gradient(90deg, #0D1A3A, #1A2550, #2A3A6A, #1E2E5A)
+BANNER_BG_WIDE: linear-gradient(90deg, #0D1A3A, #1A2550, #2A3A6A, #1A2550, #0D1A3A)
+BANNER_FONT_SIZE: 22px
+BANNER_PADDING: 12px 36px
+RULE_COLOR: rgba(212, 175, 90, 0.6)
+LINE_COLOR: linear-gradient(90deg, #8A6A20, #B8953F, #D4AF5A, #C8A84E, #B8953F)
+PRICE_COLOR: linear-gradient(90deg, #B8953F, #D4AF5A, #C8A84E)
+GOLD_TEXT_GRADIENT: background:linear-gradient(90deg,#8A6A20,#B8953F,#D4AF5A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+
+【フォントサイズ確定値 — コンテンツページ】
+BANNER_TEXT: 22px / font-weight:700
+BULLET_ICON: 40px
+BULLET_TEXT: 34px / font-weight:500
+PROFILE_TITLE: 40px / Noto Serif JP
+PROFILE_SUBTITLE: 18px / font-weight:500
+PROFILE_BULLET: 22px
+PHASE_LABEL: 22px / font-weight:700
+PHASE_TITLE: 30px / Noto Serif JP
+PHASE_BODY: 22px / font-weight:400
+PRICING_PLAN_NAME: 46px / Noto Serif JP
+PRICING_PRICE: 52px / Noto Serif JP
+PRICING_ITEM: 20px
 ```
 
 ---
 【装飾 — 表紙（cover）用】
-背景はネイビーグラデーション、四隅にゴールドの方向線。
+背景はネイビーグラデーション（radial）、四隅にゴールドの方向線。フォントはNoto Serif JP。
 
 ```html
 <!-- 左上ゴールド方向線 -->
@@ -887,14 +906,31 @@ PRICE_COLOR: #D4AF5A
 
 ---
 【装飾 — コンテンツページ用】
-上80%シルバーグレー・下10%ネイビー帯（72px）。コンテンツエリアは必ず下部帯（72px）を避けて配置すること。
+背景は上93%シルバーグレーグラデーション・下7%ネイビー帯（48px）。ゴールドラインは帯の内側（bottom:12px）。
+コンテンツエリアは必ず下部帯（48px）を避けて配置すること。フォントはNoto Sans JP（weight:500）。
 
 ```html
-<!-- 下部ネイビー帯 -->
-<div style="position:absolute;bottom:0;left:0;width:100%;height:72px;background:#1A2550;z-index:0;pointer-events:none;"></div>
+<!-- 下部ネイビーグラデーション帯（height:48px） -->
+<div style="position:absolute;bottom:0;left:0;width:100%;height:48px;background:linear-gradient(90deg,#0D1A3A,#1A2550,#2A3A6A,#1A2550,#0D1A3A);z-index:0;pointer-events:none;"></div>
 
-<!-- ゴールド区切り線 -->
-<div style="position:absolute;bottom:72px;left:0;width:100%;height:1px;background:linear-gradient(90deg,#B8953F,#D4AF5A,#B8953F);z-index:0;pointer-events:none;"></div>
+<!-- シャンパンゴールド区切り線（帯の内側 bottom:12px） -->
+<div style="position:absolute;bottom:12px;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,#8A6A20,#B8953F,#D4AF5A,#C8A84E,#B8953F,#8A6A20,transparent);z-index:0;pointer-events:none;"></div>
+```
+
+---
+【コンテンツページ共通ヘッダー（バナー＋ゴールドライン）】
+全コンテンツページの上部に必ず配置する。
+
+```html
+<!-- 左上バナー -->
+<div style="position:relative;z-index:1;margin-top:44px;margin-left:60px;display:inline-block;">
+  <div style="background:linear-gradient(90deg,#0D1A3A,#1A2550,#2A3A6A,#1E2E5A);padding:12px 36px;">
+    <span style="font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:700;color:#FFFFFF;letter-spacing:0.08em;">【見出しテキスト】</span>
+  </div>
+</div>
+
+<!-- シャンパンゴールド横線 -->
+<div style="position:relative;z-index:1;margin:0 60px;height:1.5px;background:linear-gradient(90deg,#8A6A20,#B8953F,#D4AF5A,#C8A84E,#B8953F,rgba(184,149,63,0.2));margin-top:14px;"></div>
 ```
 
 ---

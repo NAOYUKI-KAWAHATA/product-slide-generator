@@ -275,13 +275,52 @@ READ: /home/ubuntu/skills/product-slide-generator/references/layout_templates.md
 - **グレーの曲線**: 極めて控えめに。文字が多いページでは完全に省略する。
 - **絶対禁止**: 渋い色味・濃い茶色・濃いローズ色・水彩テクスチャ・装飾が文字に被ること。
 
-### テーマ7（ネイビーゴールド）・テーマ8（グレーゴールド）の下部帯に関する特別注意
+### テーマ7（ネイビーゴールド）の確定デザイン仕様（必ず遵守）
 
-- コンテンツページの下部には**高さ72px（10%）の帯**（テーマ7: ネイビー #1A2550、テーマ8: チャコール #3A3A3A）が配置される。
-- **コンテンツエリアは必ず下部帯（72px）を避けて配置すること**。コンテンツが帯に被ると文字が見えなくなる。
-- 箇条書き・フェーズカード等の `min-height` は `520px` 以下に設定し、帯と被らないようにする。
-- ゴールド区切り線・枠線の `z-index` は `0` に設定し、コンテンツの前面に出ないようにする。
-- **絶対禁止**: 帯の高さを144px（20%）以上にすること、z-indexを2以上にしてコンテンツに被せること。
+#### 背景・帯・ゴールドライン
+
+- コンテンツページの背景: `linear-gradient(180deg, #C8CDD8 0%, #D8DCE5 93%, #1A2550 93%)`
+- 下部ネイビー帯: **height:48px**、`linear-gradient(90deg,#0D1A3A,#1A2550,#2A3A6A,#1A2550,#0D1A3A)`
+- ゴールド区切り線: **帯の内側 bottom:12px**、`linear-gradient(90deg,transparent,#8A6A20,#B8953F,#D4AF5A,#C8A84E,#B8953F,#8A6A20,transparent)`
+- **コンテンツエリアは必ず下部帯（48px）を避けて配置すること**。
+- ゴールド区切り線・帯の `z-index` は `0` に設定し、コンテンツの前面に出ないようにする。
+
+#### フォント
+
+- **表紙**: Noto Serif JP（明朝体、高級感）
+- **コンテンツページ**: Noto Sans JP（weight:500、ゴシック体、プロフェッショナル）
+- Google Fonts読み込み: `family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;500;700`
+
+#### バナー（全コンテンツページ共通）
+
+- 位置: 左上、margin-top:44px、margin-left:60px
+- 背景: `linear-gradient(90deg,#0D1A3A,#1A2550,#2A3A6A,#1E2E5A)`
+- パディング: `12px 36px`
+- フォント: Noto Sans JP、**22px**、font-weight:700、color:#FFFFFF、letter-spacing:0.08em
+- バナー直下にゴールド横線: margin-top:14px、height:1.5px、`linear-gradient(90deg,#8A6A20,#B8953F,#D4AF5A,#C8A84E,#B8953F,rgba(184,149,63,0.2))`
+
+#### フォントサイズ確定値
+
+| 要素 | サイズ | フォント | weight |
+|---|---|---|---|
+| バナー見出し | 22px | Noto Sans JP | 700 |
+| 箇条書きアイコン（■） | 40px | Noto Sans JP | 700 |
+| 箇条書き本文 | 34px | Noto Sans JP | 500 |
+| プロフィール名前 | 40px | Noto Serif JP | 700 |
+| プロフィール肩書き | 18px | Noto Sans JP | 500 |
+| プロフィール箇条 | 22px | Noto Sans JP | 400 |
+| フェーズラベル | 22px | Noto Sans JP | 700 |
+| フェーズタイトル | 30px | Noto Serif JP | 700 |
+| フェーズ説明文 | 22px | Noto Sans JP | 400 |
+| 料金プラン名 | 46px | Noto Serif JP | 700 |
+| 料金価格 | 52px | Noto Serif JP | 700 |
+| 料金提供内容 | 20px | Noto Sans JP | 400 |
+
+#### テーマ8（グレーゴールド）の下部帯
+
+- テーマ8の下部帯はチャコールグレー（#3A3A3A）、height:72px
+- **コンテンツエリアは必ず下部帯（72px）を避けて配置すること**。
+- **絶対禁止**: 帯の高さを144px以上にすること、z-indexを2以上にしてコンテンツに被せること。
 
 ### 日本語テキストの精度
 
