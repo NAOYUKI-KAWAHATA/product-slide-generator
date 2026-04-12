@@ -65,30 +65,26 @@ TYPOGRAPHY (CRITICAL — OVERRIDES DEFAULT):
 - Title text: dusty gradient Mincho serif
 
 BACKGROUND:
-- Cover page: white (#FFFFFF) with very subtle gradient to pale pink (#FFF0F5) and pale lavender (#F0E6FF)
-- Content pages: ALMOST PURE WHITE (#FFFFFF to #FFFBFD) — gradient must be barely perceptible, much lighter than cover page
-- Content page gradient should be at most 5% opacity — the page should read as "white with a whisper of color"
-- Soft, diffused light glow in bottom-right corner
+- Cover page: soft pink to near-white to lavender gradient (#F5E3F3 → #FFFCFE → #EBEAF8)
+- Content pages: same gradient, slightly lighter — barely perceptible, the page should read as "white with a whisper of color"
 - Overall: delicate, feminine, refined elegance
 
 COLOR PALETTE:
-- Background: white → pale pink (#FFF0F5) → pale lavender (#F0E6FF)
+- Background: #F5E3F3 → #FFFCFE → #EBEAF8 (pink → near-white → lavender)
 - Primary text: charcoal gray (#4A4A4A)
-- Title text (cover/section ONLY): DUSTY muted blue-to-purple-to-pink gradient (#7A9BBF → #9B7FB8 → #C48A9F). NOT vivid or saturated — muted, dusty, sophisticated.
+- Title text (cover/section ONLY): blue-to-purple-to-pink gradient (#6F9DC2 → #9F82C8 → #D68EC6). Muted, sophisticated.
 - Accent: subtle gold (#C5A55A) for price highlights only
 - Heading banner: soft dusty pink-to-lavender gradient (#D4A0B0 → #B0A0C8) with white text
 - Bullet icons: diamond (◆) shape in dusty pink-purple
 
 DECORATIVE ELEMENTS:
-- VERY THIN silver (#C0C0C0 / #D0D0D0) diamond-shaped line outlines — hair-thin strokes, barely visible
-- Placed ONLY in top-left corner and bottom-right corner as a SYMMETRICAL PAIR
-- Top-left: 2-3 small diamond outlines in thin silver lines, fading inward
-- Bottom-right: 2-3 small diamond outlines in thin silver lines, fading inward (mirror of top-left)
-- Diamond lines must NOT be assertive — they should be so subtle you almost miss them
-- NO diamonds in the center or other areas — keep the center clean and open
-- NO thick lines, NO bold strokes, NO filled diamonds — outlines only, hair-thin silver
-- Controlled light particles — barely visible, like dust in sunlight
-- NO heavy glow, NO lens flare, NO sparkle clusters
+- DIAGONAL LINES in top-left and bottom-right corners — hair-thin strokes, barely visible
+- Line color: 5-color grey gradient (#6E6969 → #FFFFFF → #818181 → #F5F5F5 → #797878)
+- 2 lines per corner (one slightly thicker at 2px, one at 1px with 0.7 opacity)
+- Lines are rotated at -45 degrees, extending beyond the corner edge
+- NO sparkle, NO glow, NO light particles — completely removed
+- NO diamond shapes — diagonal lines only
+- Keep the center clean and open
 - Delicate and feminine — like fine lace or silk texture
 
 TEXT SPACING (CRITICAL FOR CONTENT PAGES):
@@ -106,53 +102,38 @@ HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素
 **装飾方式**: 外部画像不要。純粋なCSSで実装する。
 
 ```
-BG_COLOR: #FFFBFD
-BG_GRADIENT: radial-gradient(ellipse at 30% 30%, #FFF0F5 0%, #FFFBFD 40%, #F8F0FF 100%)
-BG_GRADIENT_DARK: linear-gradient(135deg, #E8D0E8 0%, #D0C0E0 50%, #E0C8D8 100%)
-TITLE_GRADIENT_CSS: background: linear-gradient(135deg, #7A9BBF, #9B7FB8, #C48A9F); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-TITLE_COLOR: #9B7FB8
-SUBTITLE_COLOR: #8A8AAA
+BG_COLOR: #FFFCFE
+BG_GRADIENT: linear-gradient(135deg, #F5E3F3 0%, #FFFCFE 50%, #EBEAF8 100%)
+BG_GRADIENT_DARK: linear-gradient(135deg, #F5E3F3 0%, #FFFCFE 50%, #EBEAF8 100%)
+TITLE_GRADIENT_CSS: background: linear-gradient(90deg, #6F9DC2, #9F82C8, #D68EC6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+TITLE_COLOR: #9F82C8
+SUBTITLE_COLOR: #9F82C8
 TEXT_COLOR: #4A4A4A
-BULLET_COLOR: #C48A9F
+BULLET_COLOR: #D68EC6
 BULLET_CHAR: ◆
-BANNER_BG: linear-gradient(90deg, #D4A0B0, #B0A0C8)
-BANNER_BG_WIDE: linear-gradient(90deg, #D4A0B0, #B0A0C8, #D4A0B0)
-RULE_COLOR: rgba(180, 150, 190, 0.4)
-LINE_COLOR: linear-gradient(90deg, #9B7FB8, #C48A9F)
+BANNER_BG: linear-gradient(90deg, #6F9DC2, #9F82C8, #D68EC6)
+BANNER_BG_WIDE: linear-gradient(90deg, #6F9DC2, #9F82C8, #D68EC6)
+RULE_COLOR: rgba(159, 130, 200, 0.4)
+LINE_COLOR: linear-gradient(90deg, #6F9DC2, #9F82C8, #D68EC6)
+DECO_LINE_GRADIENT: linear-gradient(90deg, #6E6969, #FFFFFF, #818181, #F5F5F5, #797878)
 PRICE_COLOR: #C5A55A
 ```
 
 ---
-【装飾 — 表紙（cover）用】
-左上・右下にシルバーのダイヤモンドライン（CSS border で実装）。
+【装飾 — 全ページ共通（表紙・コンテンツ）用】
+左上・右下に5色グレーグラデーションの斜め線（CSS で実装）。キラキラ・光の粒は使用禁止。
 
 ```html
-<!-- 左上ダイヤモンドライン装飾 -->
-<div style="position:absolute;top:20px;left:20px;width:120px;height:120px;z-index:0;pointer-events:none;">
-  <div style="position:absolute;top:0;left:0;width:80px;height:80px;border:1px solid rgba(192,192,192,0.5);transform:rotate(45deg);transform-origin:0 0;"></div>
-  <div style="position:absolute;top:15px;left:15px;width:60px;height:60px;border:1px solid rgba(192,192,192,0.3);transform:rotate(45deg);transform-origin:0 0;"></div>
+<!-- 左上の斜め線装飾 -->
+<div style="position:absolute;top:-50px;left:-50px;width:300px;height:300px;z-index:0;pointer-events:none;">
+  <div style="position:absolute;top:150px;left:-100px;width:400px;height:2px;background:linear-gradient(90deg, #6E6969, #FFFFFF, #818181, #F5F5F5, #797878);transform:rotate(-45deg);"></div>
+  <div style="position:absolute;top:200px;left:-50px;width:400px;height:1px;background:linear-gradient(90deg, #6E6969, #FFFFFF, #818181, #F5F5F5, #797878);transform:rotate(-45deg);opacity:0.7;"></div>
 </div>
 
-<!-- 右下ダイヤモンドライン装飾 -->
-<div style="position:absolute;bottom:20px;right:20px;width:120px;height:120px;z-index:0;pointer-events:none;">
-  <div style="position:absolute;bottom:0;right:0;width:80px;height:80px;border:1px solid rgba(192,192,192,0.5);transform:rotate(45deg);transform-origin:100% 100%;"></div>
-  <div style="position:absolute;bottom:15px;right:15px;width:60px;height:60px;border:1px solid rgba(192,192,192,0.3);transform:rotate(45deg);transform-origin:100% 100%;"></div>
-</div>
-```
-
----
-【装飾 — コンテンツページ用】
-表紙と同じダイヤモンドライン（控えめサイズ）。
-
-```html
-<!-- 左上ダイヤモンドライン（控えめ） -->
-<div style="position:absolute;top:10px;left:10px;width:80px;height:80px;z-index:0;pointer-events:none;">
-  <div style="position:absolute;top:0;left:0;width:55px;height:55px;border:1px solid rgba(192,192,192,0.4);transform:rotate(45deg);transform-origin:0 0;"></div>
-</div>
-
-<!-- 右下ダイヤモンドライン（控えめ） -->
-<div style="position:absolute;bottom:10px;right:10px;width:80px;height:80px;z-index:0;pointer-events:none;">
-  <div style="position:absolute;bottom:0;right:0;width:55px;height:55px;border:1px solid rgba(192,192,192,0.4);transform:rotate(45deg);transform-origin:100% 100%;"></div>
+<!-- 右下の斜め線装飾 -->
+<div style="position:absolute;bottom:-50px;right:-50px;width:300px;height:300px;z-index:0;pointer-events:none;">
+  <div style="position:absolute;bottom:150px;right:-100px;width:400px;height:2px;background:linear-gradient(90deg, #6E6969, #FFFFFF, #818181, #F5F5F5, #797878);transform:rotate(-45deg);"></div>
+  <div style="position:absolute;bottom:200px;right:-50px;width:400px;height:1px;background:linear-gradient(90deg, #6E6969, #FFFFFF, #818181, #F5F5F5, #797878);transform:rotate(-45deg);opacity:0.7;"></div>
 </div>
 ```
 
