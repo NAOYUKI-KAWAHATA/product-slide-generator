@@ -790,7 +790,7 @@ Copy the exact color tones, textures, gradients, and atmosphere from the referen
 The reference images are the ABSOLUTE AUTHORITY for this theme's visual style.
 
 COLOR PALETTE:
-- Background (COVER): Deep navy blue gradient — center slightly lighter (#4A5A8A), edges darker (#1A2550 to #0F1A3A). Smooth radial gradient from center outward.
+- Background (COVER): Deep navy blue gradient — top-left lighter (#818FA7), bottom-right darker (#0C1856). Linear gradient from top-left to bottom-right.
 - Background (CONTENT): Light silver-gray gradient at top 70% (#C8CDD8 to #D8DCE5), transitioning to navy band at bottom 15% (#1A2550). Clean and professional.
 - Title text (COVER): Pure white (#FFFFFF), large serif font, elegant and commanding
 - Subtitle text (COVER): White (#FFFFFF), smaller, clean sans-serif
@@ -853,7 +853,7 @@ HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素
 
 ```
 BG_COLOR: #C8CDD8
-BG_GRADIENT: radial-gradient(ellipse at 50% 40%, #4A5A8A 0%, #2A3A6A 50%, #1A2550 100%)
+BG_GRADIENT: linear-gradient(135deg, #818FA7 0%, #0C1856 100%)
 BG_GRADIENT_DARK: linear-gradient(135deg, #1A2550 0%, #2A3A6A 100%)
 BG_GRADIENT_CONTENT: linear-gradient(135deg, #ECEEF4 0%, #DDE0E8 45%, #C8CDD8 93%, #1A2550 93%)
 TITLE_GRADIENT_CSS: color: #FFFFFF;
