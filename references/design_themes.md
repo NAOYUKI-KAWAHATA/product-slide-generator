@@ -853,7 +853,7 @@ HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素
 BG_COLOR: #C8CDD8
 BG_GRADIENT: radial-gradient(ellipse at 50% 40%, #4A5A8A 0%, #2A3A6A 50%, #1A2550 100%)
 BG_GRADIENT_DARK: linear-gradient(135deg, #1A2550 0%, #2A3A6A 100%)
-BG_GRADIENT_CONTENT: linear-gradient(180deg, #C8CDD8 0%, #D8DCE5 70%, #1A2550 70%)
+BG_GRADIENT_CONTENT: linear-gradient(180deg, #C8CDD8 0%, #D8DCE5 80%, #1A2550 80%)
 TITLE_GRADIENT_CSS: color: #FFFFFF;
 TITLE_COLOR: #FFFFFF
 SUBTITLE_COLOR: rgba(255,255,255,0.85)
@@ -887,14 +887,14 @@ PRICE_COLOR: #D4AF5A
 
 ---
 【装飾 — コンテンツページ用】
-上70%シルバーグレー・下20%ネイビー帯。
+上80%シルバーグレー・下10%ネイビー帯（72px）。コンテンツエリアは必ず下部帯（72px）を避けて配置すること。
 
 ```html
 <!-- 下部ネイビー帯 -->
-<div style="position:absolute;bottom:0;left:0;width:1280px;height:144px;background:#1A2550;z-index:1;pointer-events:none;"></div>
+<div style="position:absolute;bottom:0;left:0;width:100%;height:72px;background:#1A2550;z-index:0;pointer-events:none;"></div>
 
 <!-- ゴールド区切り線 -->
-<div style="position:absolute;bottom:144px;left:0;width:1280px;height:1px;background:linear-gradient(90deg,#B8953F,#D4AF5A,#B8953F);z-index:2;pointer-events:none;"></div>
+<div style="position:absolute;bottom:72px;left:0;width:100%;height:1px;background:linear-gradient(90deg,#B8953F,#D4AF5A,#B8953F);z-index:0;pointer-events:none;"></div>
 ```
 
 ---
