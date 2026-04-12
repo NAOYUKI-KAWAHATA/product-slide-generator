@@ -175,6 +175,8 @@ READ: /home/ubuntu/skills/product-slide-generator/references/layout_templates.md
    - 12_pricing.html（料金詳細）
    - 13_closing.html（クロージング/エンディング）
    - ※必ず `templates/theme_html/theme_XX_.../` フォルダ内の該当テンプレートを読み込み、テキストと画像パスのみを差し替えること。CSSやレイアウト構造は一切変更しない。
+   - ※`slide_edit` ツールが「高さオーバー（height exceeded）」の警告を出しても**無視してよい**。テンプレートは720px以内に収まるよう設計済みであり、警告に反応して余白・パディング・レイアウト構造を変更してはならない。
+   - ※実際のテキストが長すぎてボックスからはみ出す場合のみ、**フォントサイズのみ**を最小限に下げて対応する。余白・構造・装飾は絶対に変更しない。
 
 **フォント統一ルール:**
 - 女性向けテーマ（1ー6）: `Noto Serif JP`（明朝体）を全ページで使用
