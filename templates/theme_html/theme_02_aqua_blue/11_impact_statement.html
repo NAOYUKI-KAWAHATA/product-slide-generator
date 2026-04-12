@@ -2,7 +2,7 @@
   TEMPLATE: 11_impact_statement (インパクト文 / この講座から得られる未来)
   USAGE: P3 — 3行のインパクト文
   VARIABLES: サンプルワイド見出し, サンプルテキスト1行目, サンプルテキスト2行目, サンプルテキスト3行目
-  THEME VARIABLES: linear-gradient(135deg, #B2EBF2 0%, #E0F7FA 100%), linear-gradient(90deg, #4DD0E1 0%, #80DEEA 100%), #FFFFFF, #37474F, <div style="position: absolute; top: 0; left: 0; width: 12px; height: 100%; background: linear-gradient(180deg, #4DD0E1 0%, #80DEEA 100%);"></div>, <div style="position: absolute; bottom: 30px; right: 30px; width: 100px; height: 100px; border-right: 2px solid rgba(77,208,225,0.3); border-bottom: 2px solid rgba(77,208,225,0.3);"></div><div style="position: absolute; bottom: 40px; right: 40px; width: 100px; height: 100px; border-right: 2px solid rgba(77,208,225,0.3); border-bottom: 2px solid rgba(77,208,225,0.3);"></div>
+  THEME VARIABLES: linear-gradient(135deg, #B2EBF2 0%, #E0F7FA 100%), linear-gradient(90deg, #4DD0E1 0%, #80DEEA 100%), #FFFFFF, #37474F, <div style="position: absolute; top: 0; left: 0; width: 12px; height: 100%; background: linear-gradient(180deg, rgba(7,170,192,0.5) 0%, rgba(11,116,149,0.5) 50%, rgba(11,24,95,0.5) 100%);"></div>, <div style="position: absolute; bottom: 30px; right: 30px; width: 100px; height: 100px; border-right: 2px solid rgba(77,208,225,0.3); border-bottom: 2px solid rgba(77,208,225,0.3);"></div><div style="position: absolute; bottom: 40px; right: 40px; width: 100px; height: 100px; border-right: 2px solid rgba(77,208,225,0.3); border-bottom: 2px solid rgba(77,208,225,0.3);"></div>
 -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@400;500;700;900&display=swap');
@@ -10,17 +10,26 @@
 <div class="slide-container" style="
   width: 1280px;
   min-height: 720px;
-  background: linear-gradient(135deg, #B2EBF2 0%, #E0F7FA 100%);
+  background: linear-gradient(135deg, #FCFEFE 0%, #E7F6F6 100%);
   position: relative;
   overflow: hidden;
   font-family: 'Noto Serif JP', serif;
 ">
+  <!-- 左上の斜め線装飾（1本） -->
+<div style="position:absolute;top:-50px;left:-50px;width:300px;height:300px;z-index:0;pointer-events:none;opacity:0.7;">
+  <div style="position:absolute;top:150px;left:-100px;width:400px;height:2px;background:linear-gradient(90deg, #07AAC0, #0B7495, #0B185F);transform:rotate(-45deg);"></div>
+</div>
+  <!-- 右下の斜め線装飾（2本） -->
+<div style="position:absolute;bottom:-50px;right:-50px;width:300px;height:300px;z-index:0;pointer-events:none;opacity:0.7;">
+  <div style="position:absolute;bottom:150px;right:-100px;width:400px;height:2px;background:linear-gradient(90deg, #07AAC0, #0B7495, #0B185F);transform:rotate(-45deg);"></div>
+  <div style="position:absolute;bottom:200px;right:-50px;width:400px;height:1px;background:linear-gradient(90deg, #07AAC0, #0B7495, #0B185F);transform:rotate(-45deg);opacity:0.7;"></div>
+</div>
   <!-- 左端の装飾ライン -->
-  <div style="position: absolute; top: 0; left: 0; width: 12px; height: 100%; background: linear-gradient(180deg, #4DD0E1 0%, #80DEEA 100%);"></div>
+  <div style="position: absolute; top: 65px; left: 0; width: 12px; height: calc(100% - 65px); z-index: 0; background: linear-gradient(180deg, #07AAC0 0%, #0B7495 50%, #0B185F 100%);"></div>
 
   <!-- ワイドバナー（上部中央） -->
   <div style="
-    background: linear-gradient(90deg, #4DD0E1 0%, #80DEEA 100%);
+    background: linear-gradient(90deg, #07AAC0 0%, #0B7495 50%, #0B185F 100%);
     padding: 16px 80px;
     text-align: center;
     margin-top: 60px;
@@ -68,9 +77,6 @@
       margin: 0;
       letter-spacing: 0.02em;
       line-height: 1.5;
-    ">サンプルテキスト3行目</p>
+     >サンプルテキスト3行目</p>
   </div>
-
-  <!-- 右下の装飾ライン -->
-  <div style="position: absolute; bottom: 30px; right: 30px; width: 100px; height: 100px; border-right: 2px solid rgba(77,208,225,0.3); border-bottom: 2px solid rgba(77,208,225,0.3);"></div><div style="position: absolute; bottom: 40px; right: 40px; width: 100px; height: 100px; border-right: 2px solid rgba(77,208,225,0.3); border-bottom: 2px solid rgba(77,208,225,0.3);"></div>
 </div>

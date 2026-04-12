@@ -7,22 +7,26 @@
   </style>
 </head>
 <body>
-<div class="slide-container" style="width:1280px;min-height:720px;background:radial-gradient(ellipse at 30% 30%, #F0F8FF 0%, #E0FFFF 40%, #E6F2FF 100%);position:relative;overflow:hidden;">
-
-  <!-- 左上ダイヤモンドライン（控えめ） -->
-  <div style="position:absolute;top:10px;left:10px;width:80px;height:80px;z-index:0;pointer-events:none;">
-    <div style="position:absolute;top:0;left:0;width:55px;height:55px;border:1px solid rgba(135,206,250,0.4);transform:rotate(45deg);transform-origin:0 0;"></div>
-  </div>
-
+<div class="slide-container" style="width:1280px;min-height:720px;background:linear-gradient(135deg, #FCFEFE 0%, #E7F6F6 100%);position:relative;overflow:hidden;">
+  <!-- 左上の斜め線装飾（1本） -->
+<div style="position:absolute;top:-50px;left:-50px;width:300px;height:300px;z-index:0;pointer-events:none;opacity:0.7;">
+  <div style="position:absolute;top:150px;left:-100px;width:400px;height:2px;background:linear-gradient(90deg, #07AAC0, #0B7495, #0B185F);transform:rotate(-45deg);"></div>
+</div>
+  <!-- 右下の斜め線装飾（2本） -->
+<div style="position:absolute;bottom:-50px;right:-50px;width:300px;height:300px;z-index:0;pointer-events:none;opacity:0.7;">
+  <div style="position:absolute;bottom:150px;right:-100px;width:400px;height:2px;background:linear-gradient(90deg, #07AAC0, #0B7495, #0B185F);transform:rotate(-45deg);"></div>
+  <div style="position:absolute;bottom:200px;right:-50px;width:400px;height:1px;background:linear-gradient(90deg, #07AAC0, #0B7495, #0B185F);transform:rotate(-45deg);opacity:0.7;"></div>
+</div>
+</div>
   <!-- 左上バナー -->
   <div style="position:relative;z-index:1;margin-top:44px;margin-left:60px;display:inline-block;">
-    <div style="background:linear-gradient(90deg,#4682B4,#87CEFA);padding:12px 36px;">
+    <div style="background: linear-gradient(90deg, #07AAC0, #0B7495, #0B185F);padding:12px 36px;">
       <span style="font-family:'Noto Serif JP',serif;font-size:26px;font-weight:700;color:#FFFFFF;letter-spacing:0.08em;">カリキュラム詳細①</span>
     </div>
   </div>
 
   <!-- シャンパンゴールド横線（テーマ2ではアクアブルー系） -->
-  <div style="position:relative;z-index:1;margin:0 60px;height:1.5px;background:linear-gradient(90deg,#4682B4,#87CEFA,rgba(135,206,250,0.4));margin-top:14px;"></div>
+  <div style="position:relative;z-index:1;margin:0 60px;height:1.5px;background: linear-gradient(90deg, #07AAC0, #0B7495, #0B185F));margin-top:14px;"></div>
 
   <!-- コンテンツエリア -->
   <div style="position:relative;z-index:2;padding:0 60px;display:flex;flex-direction:column;justify-content:center;gap:16px;margin-top:16px;margin-bottom:64px;">
@@ -30,7 +34,7 @@
     <!-- フェーズ1 -->
     <div style="display:flex;flex-direction:column;gap:10px;background:rgba(240,248,255,0.6);padding:14px 28px;border:1px solid rgba(135,206,250,0.3);">
       <div style="display:flex;align-items:center;gap:20px;">
-        <div style="background:linear-gradient(90deg,#4682B4,#87CEFA);padding:10px 22px;flex-shrink:0;">
+        <div style="background: linear-gradient(90deg, #07AAC0, #0B7495, #0B185F);padding:10px 22px;flex-shrink:0;">
           <span style="font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;color:#FFFFFF;letter-spacing:0.1em;">フェーズ1</span>
         </div>
         <h3 style="font-family:'Noto Serif JP',serif;font-size:36px;font-weight:700;color:#4682B4;">第1章〜第2章「体を知り・食の原則を学ぶ基礎フェーズ」</h3>
@@ -41,7 +45,7 @@
     <!-- フェーズ2 -->
     <div style="display:flex;flex-direction:column;gap:10px;background:rgba(240,248,255,0.6);padding:14px 28px;border:1px solid rgba(135,206,250,0.3);">
       <div style="display:flex;align-items:center;gap:20px;">
-        <div style="background:linear-gradient(90deg,#4682B4,#87CEFA);padding:10px 22px;flex-shrink:0;">
+        <div style="background: linear-gradient(90deg, #07AAC0, #0B7495, #0B185F);padding:10px 22px;flex-shrink:0;">
           <span style="font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;color:#FFFFFF;letter-spacing:0.1em;">フェーズ2</span>
         </div>
         <h3 style="font-family:'Noto Serif JP',serif;font-size:36px;font-weight:700;color:#4682B4;">第3章〜第4章「症状別に食事で改善する実践フェーズ」</h3>
@@ -51,6 +55,5 @@
 
   </div>
 
-</div>
 </body>
 </html>

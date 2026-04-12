@@ -7,25 +7,23 @@
   </style>
 </head>
 <body>
-<div class="slide-container" style="width:1280px;min-height:720px;background:radial-gradient(ellipse at 30% 30%, #F0F8FF 0%, #E0FFFF 40%, #E6F2FF 100%);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+<div class="slide-container" style="width:1280px;min-height:720px;background:#FFFFFF;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;">
 
-  <!-- 左上ダイヤモンドライン装飾 -->
-  <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;z-index:0;pointer-events:none;">
-    <div style="position:absolute;top:0;left:0;width:80px;height:80px;border:1px solid rgba(135,206,250,0.5);transform:rotate(45deg);transform-origin:0 0;"></div>
-    <div style="position:absolute;top:15px;left:15px;width:60px;height:60px;border:1px solid rgba(135,206,250,0.3);transform:rotate(45deg);transform-origin:0 0;"></div>
-  </div>
-
-  <!-- 右下ダイヤモンドライン装飾 -->
-  <div style="position:absolute;bottom:20px;right:20px;width:120px;height:120px;z-index:0;pointer-events:none;">
-    <div style="position:absolute;bottom:0;right:0;width:80px;height:80px;border:1px solid rgba(135,206,250,0.5);transform:rotate(45deg);transform-origin:100% 100%;"></div>
-    <div style="position:absolute;bottom:15px;right:15px;width:60px;height:60px;border:1px solid rgba(135,206,250,0.3);transform:rotate(45deg);transform-origin:100% 100%;"></div>
-  </div>
-
+  <!-- 左上 幾何学的斜め線装飾 -->
+  <div style="position:absolute;top:0;left:30px;width:2px;height:240px;background:linear-gradient(to bottom, rgba(7,170,192,0.6), rgba(11,116,149,0.4), rgba(11,24,95,0.15));transform:rotate(-45deg);transform-origin:top center;z-index:0;pointer-events:none;"></div>
+  <div style="position:absolute;top:0;left:-20px;width:2px;height:200px;background:linear-gradient(to bottom, rgba(7,170,192,0.6), rgba(11,116,149,0.4), rgba(11,24,95,0.15));transform:rotate(-45deg);transform-origin:top center;z-index:0;pointer-events:none;"></div>
+  <div style="position:absolute;top:30px;left:0;width:2px;height:240px;background:linear-gradient(to bottom, rgba(7,170,192,0.45), rgba(11,116,149,0.3), rgba(11,24,95,0.1));transform:rotate(45deg);transform-origin:top center;z-index:0;pointer-events:none;"></div>
+  <div style="position:absolute;top:-20px;left:0;width:2px;height:200px;background:linear-gradient(to bottom, rgba(7,170,192,0.45), rgba(11,116,149,0.3), rgba(11,24,95,0.1));transform:rotate(45deg);transform-origin:top center;z-index:0;pointer-events:none;"></div>
+  <!-- 右下 幾何学的斜め線装飾（左上と対称） -->
+  <div style="position:absolute;bottom:0;right:30px;width:2px;height:240px;background:linear-gradient(to top, rgba(7,170,192,0.6), rgba(11,116,149,0.4), rgba(11,24,95,0.15));transform:rotate(45deg);transform-origin:bottom center;z-index:0;pointer-events:none;"></div>
+  <div style="position:absolute;bottom:0;right:-20px;width:2px;height:200px;background:linear-gradient(to top, rgba(7,170,192,0.6), rgba(11,116,149,0.4), rgba(11,24,95,0.15));transform:rotate(45deg);transform-origin:bottom center;z-index:0;pointer-events:none;"></div>
+  <div style="position:absolute;bottom:30px;right:0;width:2px;height:240px;background:linear-gradient(to top, rgba(7,170,192,0.45), rgba(11,116,149,0.3), rgba(11,24,95,0.1));transform:rotate(-45deg);transform-origin:bottom center;z-index:0;pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-20px;right:0;width:2px;height:200px;background:linear-gradient(to top, rgba(7,170,192,0.45), rgba(11,116,149,0.3), rgba(11,24,95,0.1));transform:rotate(-45deg);transform-origin:bottom center;z-index:0;pointer-events:none;"></div>
   <!-- コンテンツ -->
   <div style="position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:30px;">
     <p style="font-family:'Noto Serif JP',serif;font-size:32px;font-weight:700;color:#708090;letter-spacing:0.1em;">薬に頼らず、食で治す</p>
-    <h1 style="font-family:'Noto Serif JP',serif;font-size:80px;font-weight:700;background:linear-gradient(135deg,#4682B4,#87CEFA,#B0E0E6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;letter-spacing:0.05em;">美食健康サロン</h1>
-    <div style="width:80px;height:2px;background:linear-gradient(90deg,#4682B4,#87CEFA);margin:10px 0;"></div>
+    <h1 style="font-family:'Noto Serif JP',serif;font-size:80px;font-weight:700;background: linear-gradient(135deg, #07AAC0, #0B7495, #0B185F);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;letter-spacing:0.05em;">美食健康サロン</h1>
+    <div style="width:80px;height:2px;background: linear-gradient(90deg, #07AAC0, #0B7495, #0B185F);margin:10px 0;"></div>
     <p style="font-family:'Noto Serif JP',serif;font-size:28px;font-weight:700;color:#4A4A4A;letter-spacing:0.05em;">女性特有の不調を根本改善する3ヶ月プログラム</p>
   </div>
 
