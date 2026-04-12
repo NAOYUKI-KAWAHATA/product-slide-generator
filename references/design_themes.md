@@ -954,15 +954,15 @@ Copy the exact color tones, textures, gradients, and atmosphere from the referen
 The reference images are the ABSOLUTE AUTHORITY for this theme's visual style.
 
 COLOR PALETTE:
-- Background (COVER): Medium gray gradient — center slightly lighter (#A0A0A0 to #B0B0B0), edges darker (#707070 to #606060). Smooth radial gradient from center outward. Neutral, achromatic, sophisticated.
+- Background (COVER): Gray gradient — top-left lighter (#9D9B9B), bottom-right darker (#4A4949). Linear gradient from top-left to bottom-right. Neutral, achromatic, sophisticated.
 - Background (CONTENT): Light gray gradient at top 70-75% (#D8D8D8 to #E5E5E5), very pale and clean. Transitioning to dark charcoal-gray band at bottom 15-20% (#3A3A3A to #4A4A4A).
-- Title text (COVER): Metallic champagne gold gradient (#B8953F to #D4AF5A to #C8A84E), large serif font, luxurious and commanding. The gold should have a subtle metallic sheen — NOT flat, NOT overly shiny.
+- Title text (COVER): Champagne gold gradient (#F8E6C8, #DDBE7B, #FFE9AC, #FDF3D5, #B19549), large serif font, luxurious and commanding. The gold should have a subtle metallic sheen — NOT flat, NOT overly shiny.
 - Subtitle text (COVER): Muted warm gray (#8A8080 to #7A7070), smaller, clean sans-serif
 - Body text (CONTENT): Dark charcoal (#333333 to #4A4A4A), Gothic/sans-serif font — NOT too bold, medium weight
 - Header banner (small): Dark gray gradient (#3A3A3A to #5A5A5A), rectangular, positioned top-left
 - Header banner (large): Wider dark gray gradient band, centered at top area
 - Banner text: White (#FFFFFF)
-- Accent: Gold (#B8953F to #D4AF5A) — used ONLY for frame lines, price band, and title underline
+- Accent: Champagne Gold (#F8E6C8, #DDBE7B, #FFE9AC, #FDF3D5, #B19549) — used ONLY for frame lines, price band, and title underline
 
 DECORATIVE ELEMENTS:
 - COVER PAGE:
@@ -1020,20 +1020,20 @@ HTMLモードでスライドを生成する際、以下のCSS変数・HTML要素
 
 ```
 BG_COLOR: #D8D8D8
-BG_GRADIENT: radial-gradient(ellipse at 50% 40%, #B0B0B0 0%, #909090 50%, #606060 100%)
+BG_GRADIENT: linear-gradient(135deg, #9D9B9B 0%, #4A4949 100%)
 BG_GRADIENT_DARK: linear-gradient(135deg, #3A3A3A 0%, #5A5A5A 100%)
 BG_GRADIENT_CONTENT: linear-gradient(180deg, #D8D8D8 0%, #E5E5E5 70%, #3A3A3A 70%)
-TITLE_GRADIENT_CSS: background: linear-gradient(90deg, #B8953F, #D4AF5A, #C8A84E); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-TITLE_COLOR: #D4AF5A
+TITLE_GRADIENT_CSS: background: linear-gradient(90deg, #F8E6C8, #DDBE7B, #FFE9AC, #FDF3D5, #B19549); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+TITLE_COLOR: #DDBE7B
 SUBTITLE_COLOR: rgba(255,255,255,0.75)
 TEXT_COLOR: #333333
-BULLET_COLOR: #B8953F
+BULLET_COLOR: #DDBE7B
 BULLET_CHAR: ■
 BANNER_BG: linear-gradient(90deg, #3A3A3A, #5A5A5A)
 BANNER_BG_WIDE: linear-gradient(90deg, #3A3A3A, #5A5A5A, #3A3A3A)
-RULE_COLOR: rgba(184, 149, 63, 0.5)
-LINE_COLOR: linear-gradient(90deg, #B8953F, #D4AF5A)
-PRICE_COLOR: #D4AF5A
+RULE_COLOR: rgba(221, 190, 123, 0.5)
+LINE_COLOR: linear-gradient(90deg, #F8E6C8, #DDBE7B, #FFE9AC, #FDF3D5, #B19549)
+PRICE_COLOR: #DDBE7B
 ```
 
 ---
@@ -1058,7 +1058,7 @@ PRICE_COLOR: #D4AF5A
 </div>
 
 <!-- タイトル下ゴールド横線 -->
-<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,20px);width:480px;height:1px;background:linear-gradient(90deg,transparent,#D4AF5A,transparent);z-index:0;pointer-events:none;"></div>
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,20px);width:480px;height:1px;background:linear-gradient(90deg, #F8E6C8, #DDBE7B, #FFE9AC, #FDF3D5, #B19549);z-index:0;pointer-events:none;"></div>
 ```
 
 ---
@@ -1070,7 +1070,7 @@ PRICE_COLOR: #D4AF5A
 <div style="position:absolute;bottom:0;left:0;width:1280px;height:144px;background:#3A3A3A;z-index:1;pointer-events:none;"></div>
 
 <!-- ゴールド区切り線 -->
-<div style="position:absolute;bottom:144px;left:0;width:1280px;height:1px;background:linear-gradient(90deg,#B8953F,#D4AF5A,#B8953F);z-index:2;pointer-events:none;"></div>
+<div style="position:absolute;bottom:144px;left:0;width:1280px;height:1px;background:linear-gradient(90deg, #F8E6C8, #DDBE7B, #FFE9AC, #FDF3D5, #B19549);z-index:2;pointer-events:none;"></div>
 ```
 
 ---
