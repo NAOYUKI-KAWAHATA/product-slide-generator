@@ -457,11 +457,11 @@ PRICE_COLOR: #B8960B
 
 ---
 【装飾 — 全ページ共通】
-背景に `bg_geometric.png`（右上から差し込む斜線・幾何学模様）、下部にブルー→パープル→ピンクの波形グラデーション（2層重なり）。
+背景に `bg_geometric.png`（露出とコントラストを上げて全体に表示）、下部にブルー→パープル→ピンクの波形グラデーション（2層重なり）。
 
 ```html
-<!-- 背景幾何学模様（bg_geometric.png使用・右上から差し込む斜線） -->
-<div style="position:absolute;top:0;right:0;width:60%;height:100%;z-index:0;background-image:url('{{SKILL_DIR}}/templates/theme_html/theme_04_geometric/bg_geometric.png');background-size:cover;background-position:left center;filter:brightness(1.5) contrast(0.9);opacity:0.35;pointer-events:none;"></div>
+<!-- 背景幾何学模様（bg_geometric.png使用・露出とコントラストを上げて全体に表示） -->
+<div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;background-image:url('{{SKILL_DIR}}/templates/theme_html/theme_04_geometric/bg_geometric.png');background-size:cover;background-position:center;filter:brightness(1.4) contrast(1.1);opacity:0.7;pointer-events:none;"></div>
 
 <!-- 下部の波形装飾 Layer1（背面・薄め） -->
 <div style="position:absolute;bottom:-120px;left:-5%;width:110%;height:200px;z-index:1;background:linear-gradient(90deg,#9FAFFF,#4C68E2,#792D94,#C24CA8);border-top-left-radius:50% 120px;border-top-right-radius:50% 120px;opacity:0.45;pointer-events:none;"></div>
