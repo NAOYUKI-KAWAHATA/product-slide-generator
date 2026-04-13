@@ -457,16 +457,16 @@ PRICE_COLOR: #B8960B
 
 ---
 【装飾 — 全ページ共通】
-背景に極薄い幾何学線（ウォーターマーク風）、下部にスリムなグラデーション帯。
+背景に `bg_geometric.png`（右上から差し込む斜線・幾何学模様）、下部にブルー→パープル→ピンクの波形グラデーション（2層重なり）。
 
 ```html
-<!-- 背景幾何学線（ウォーターマーク風） -->
-<div style="position:absolute;top:0;left:0;width:1280px;height:720px;z-index:0;pointer-events:none;overflow:hidden;">
-  <div style="position:absolute;top:-100px;left:-100px;width:1480px;height:920px;background:repeating-linear-gradient(45deg,rgba(122,74,191,0.04) 0px,rgba(122,74,191,0.04) 1px,transparent 1px,transparent 80px),repeating-linear-gradient(-45deg,rgba(74,122,217,0.04) 0px,rgba(74,122,217,0.04) 1px,transparent 1px,transparent 80px);"></div>
-</div>
+<!-- 背景幾何学模様（bg_geometric.png使用・右上から差し込む斜線） -->
+<div style="position:absolute;top:0;right:0;width:60%;height:100%;z-index:0;background-image:url('{{SKILL_DIR}}/templates/theme_html/theme_04_geometric/bg_geometric.png');background-size:cover;background-position:left center;filter:brightness(1.5) contrast(0.9);opacity:0.35;pointer-events:none;"></div>
 
-<!-- 下部グラデーション帯 -->
-<div style="position:absolute;bottom:0;left:0;width:1280px;height:36px;background:linear-gradient(90deg,#4A7AD9,#7A4ABF,#C04A8A);border-radius:8px 8px 0 0;z-index:1;pointer-events:none;"></div>
+<!-- 下部の波形装飾 Layer1（背面・薄め） -->
+<div style="position:absolute;bottom:-120px;left:-5%;width:110%;height:200px;z-index:1;background:linear-gradient(90deg,#9FAFFF,#4C68E2,#792D94,#C24CA8);border-top-left-radius:50% 120px;border-top-right-radius:50% 120px;opacity:0.45;pointer-events:none;"></div>
+<!-- 下部の波形装飾 Layer2（前面・濃いめ） -->
+<div style="position:absolute;bottom:-150px;left:-10%;width:120%;height:200px;z-index:2;background:linear-gradient(90deg,#9FAFFF,#4C68E2,#792D94,#C24CA8);border-top-left-radius:50% 100px;border-top-right-radius:50% 100px;opacity:0.75;pointer-events:none;"></div>
 ```
 
 ---

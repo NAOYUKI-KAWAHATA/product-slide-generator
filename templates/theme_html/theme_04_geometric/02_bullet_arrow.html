@@ -2,7 +2,6 @@
   TEMPLATE: 02_bullet_arrow (矢印付き箇条書き / コンセプト)
   USAGE: P2 — コンセプト文（3行）
   VARIABLES: サンプル見出し, サンプルテキスト1行目, サンプルテキスト2行目, サンプルテキスト3行目
-  THEME VARIABLES: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%), linear-gradient(90deg, #FFB74D 0%, #FFCC80 100%), #424242, #FFB74D, #FFB74D, <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,183,77,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,183,77,0.05) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none;"></div>, <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 12px; background: linear-gradient(90deg, #FFB74D 0%, #FFCC80 100%);"></div>
 -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@400;500;700;900&display=swap');
@@ -17,7 +16,7 @@
 ">
 
   <!-- 提供された幾何学模様の背景画像（露出とコントラストを上げて白っぽく） -->
-  <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;background-image:url('/home/ubuntu/test_theme4_v2/bg_geometric.png');background-size:cover;background-position:center;filter:brightness(1.4) contrast(1.1);opacity:0.7;pointer-events:none;"></div>
+  <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;background-image:url('{{SKILL_DIR}}/templates/theme_html/theme_04_geometric/bg_geometric.png');background-size:cover;background-position:center;filter:brightness(1.4) contrast(1.1);opacity:0.7;pointer-events:none;"></div>
 
   <!-- 下部のなだらかでクリーンな曲線のフッター帯（4色グラデーション） -->
   <div style="position:absolute;bottom:-150px;left:-10%;width:120%;height:200px;z-index:1;background:linear-gradient(90deg, #9FAFFF, #4C68E2, #792D94, #C24CA8);border-top-left-radius:50% 100px;border-top-right-radius:50% 100px;opacity:0.8;"></div>
@@ -139,5 +138,4 @@
   </div>
 
   <!-- 右下の装飾ライン -->
-  <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 12px; background: linear-gradient(90deg, #FFB74D 0%, #FFCC80 100%);"></div>
 </div>
