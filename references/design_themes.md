@@ -1066,11 +1066,11 @@ PRICE_COLOR: #DDBE7B
 上70%ライトグレー・下20%チャコール帯。
 
 ```html
-<!-- 下部チャコール帯 -->
-<div style="position:absolute;bottom:0;left:0;width:1280px;height:144px;background:#3A3A3A;z-index:1;pointer-events:none;"></div>
+<!-- 下部グレー帯 -->
+<div style="position:absolute;bottom:0;left:0;width:1280px;height:48px;background:linear-gradient(135deg,#9D9B9B 0%,#4A4949 100%);z-index:1;pointer-events:none;"></div>
 
 <!-- ゴールド区切り線 -->
-<div style="position:absolute;bottom:144px;left:0;width:1280px;height:1px;background:linear-gradient(90deg, #F8E6C8, #DDBE7B, #FFE9AC, #FDF3D5, #B19549);z-index:2;pointer-events:none;"></div>
+<div style="position:absolute;bottom:12px;left:0;width:1280px;height:1.5px;background:linear-gradient(90deg, #F8E6C8, #DDBE7B, #FFE9AC, #FDF3D5, #B19549);z-index:2;pointer-events:none;"></div>
 ```
 
 ---

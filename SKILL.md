@@ -343,9 +343,9 @@ READ: /home/ubuntu/skills/product-slide-generator/references/layout_templates.md
 
 #### テーマ8（グレーゴールド）の下部帯
 
-- テーマ8の下部帯はチャコールグレー（#3A3A3A）、height:72px
-- **コンテンツエリアは必ず下部帯（72px）を避けて配置すること**。
-- **絶対禁止**: 帯の高さを144px以上にすること、z-indexを2以上にしてコンテンツに被せること。
+- テーマ8の下部帯はグレーグラデーション（`linear-gradient(135deg, #9D9B9B 0%, #4A4949 100%)`）、height:48px
+- **コンテンツエリアは必ず下部帯（48px）を避けるため `margin-bottom:64px` を設定すること**。
+- **絶対禁止**: 帯の高さを変更すること、z-indexを2以上にしてコンテンツに被せること。
 
 ### 日本語テキストの精度
 
