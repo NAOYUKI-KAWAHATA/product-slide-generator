@@ -862,8 +862,8 @@ SUBTITLE_COLOR: rgba(255,255,255,0.85)
 TEXT_COLOR: #1A2550
 BULLET_COLOR: linear-gradient(90deg, #8A6A20, #B8953F, #D4AF5A)
 BULLET_CHAR: ■
-BANNER_BG: linear-gradient(90deg, #0D1A3A, #1A2550, #2A3A6A, #1E2E5A)
-BANNER_BG_WIDE: linear-gradient(90deg, #0D1A3A, #1A2550, #2A3A6A, #1A2550, #0D1A3A)
+BANNER_BG: linear-gradient(90deg,#1A2550,#2A3B70)
+BANNER_BG_WIDE: linear-gradient(90deg,#1A2550,#2A3B70)
 BANNER_FONT_SIZE: 26px
 BANNER_PADDING: 12px 36px
 RULE_COLOR: rgba(212, 175, 90, 0.6)
@@ -916,7 +916,7 @@ PRICING_ITEM: 24px
 
 ```html
 <!-- 下部ネイビーグラデーション帯（height:48px） -->
-<div style="position:absolute;bottom:0;left:0;width:100%;height:48px;background:linear-gradient(90deg,#0D1A3A,#1A2550,#2A3A6A,#1A2550,#0D1A3A);z-index:0;pointer-events:none;"></div>
+<div style="position:absolute;bottom:0;left:0;width:100%;height:48px;background:linear-gradient(90deg,#1A2550,#2A3B70);z-index:0;pointer-events:none;"></div>
 
 <!-- シャンパンゴールド区切り線（帯の内側 bottom:12px） -->
 <div style="position:absolute;bottom:12px;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,#8A6A20,#B8953F,#D4AF5A,#C8A84E,#B8953F,#8A6A20,transparent);z-index:0;pointer-events:none;"></div>
@@ -929,7 +929,7 @@ PRICING_ITEM: 24px
 ```html
 <!-- 左上バナー -->
 <div style="position:relative;z-index:1;margin-top:44px;margin-left:60px;display:inline-block;">
-  <div style="background:linear-gradient(90deg,#0D1A3A,#1A2550,#2A3A6A,#1E2E5A);padding:12px 36px;">
+  <div style="background:linear-gradient(90deg,#1A2550,#2A3B70);padding:12px 36px;">
     <span style="font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:700;color:#FFFFFF;letter-spacing:0.08em;">【見出しテキスト】</span>
   </div>
 </div>

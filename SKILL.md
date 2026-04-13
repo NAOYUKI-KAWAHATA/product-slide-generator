@@ -284,7 +284,7 @@ READ: /home/ubuntu/skills/product-slide-generator/references/layout_templates.md
 
 - **表紙ページの背景**: `linear-gradient(135deg, #818FA7 0%, #0C1856 100%)` — 左上（明るいネイビー）から右下（深いネイビー）へのグラデーション（確定値）
 - コンテンツページの背景: `linear-gradient(135deg, #ECEEF4 0%, #DDE0E8 45%, #C8CDD8 93%, #1A2550 93%)` — 左上から右下への対角グラデーション
-- 下部ネイビー帯: **height:48px**、`linear-gradient(90deg,#0D1A3A,#1A2550,#2A3A6A,#1A2550,#0D1A3A)`
+- 下部ネイビー帯: **height:48px**、`linear-gradient(90deg,#1A2550,#2A3B70)`
 - ゴールド区切り線: **帯の内側 bottom:12px**、`linear-gradient(90deg,transparent,#8A6A20,#B8953F,#D4AF5A,#C8A84E,#B8953F,#8A6A20,transparent)`
 - **コンテンツエリアは必ず下部帯（48px）を避けて配置すること**。
 - ゴールド区切り線・帯の `z-index` は `0` に設定し、コンテンツの前面に出ないようにする。
@@ -298,7 +298,7 @@ READ: /home/ubuntu/skills/product-slide-generator/references/layout_templates.md
 #### バナー（全コンテンツページ共通）
 
 - 位置: 左上、margin-top:44px、margin-left:60px
-- 背景: `linear-gradient(90deg,#0D1A3A,#1A2550,#2A3A6A,#1E2E5A)`
+- 背景: `linear-gradient(90deg,#1A2550,#2A3B70)`
 - パディング: `12px 36px`
 - フォント: Noto Sans JP、**22px**、font-weight:700、color:#FFFFFF、letter-spacing:0.08em
 - バナー直下にゴールド横線: margin-top:14px、height:1.5px、`linear-gradient(90deg,#8A6A20,#B8953F,#D4AF5A,#C8A84E,#B8953F,rgba(184,149,63,0.2))`
