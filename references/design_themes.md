@@ -75,7 +75,7 @@ COLOR PALETTE:
 - Title text (cover/section ONLY): blue-to-purple-to-pink gradient (#6F9DC2 → #9F82C8 → #D68EC6). Muted, sophisticated.
 - Accent: subtle gold (#C5A55A) for price highlights only
 - Heading banner: soft dusty pink-to-lavender gradient (#D4A0B0 → #B0A0C8) with white text
-- Bullet icons: diamond (◆) shape in dusty pink-purple
+- Bullet icons: filled square (■) shape in dusty pink-purple
 
 DECORATIVE ELEMENTS:
 - DIAGONAL LINES in top-left and bottom-right corners — hair-thin strokes, barely visible
@@ -110,7 +110,7 @@ TITLE_COLOR: #9F82C8
 SUBTITLE_COLOR: #9F82C8
 TEXT_COLOR: #4A4A4A
 BULLET_COLOR: #D68EC6
-BULLET_CHAR: ◆
+BULLET_CHAR: ■
 BANNER_BG: linear-gradient(90deg, #6F9DC2, #9F82C8, #D68EC6)
 BANNER_BG_WIDE: linear-gradient(90deg, #6F9DC2, #9F82C8, #D68EC6)
 RULE_COLOR: rgba(159, 130, 200, 0.4)
@@ -168,7 +168,7 @@ COLOR PALETTE:
 - Accent: teal (#2A8A8A) for emphasis labels like "提供内容", warm gold (#B8A060) for price highlight bands
 - Heading banner (small, コンセプト style): teal → lavender gradient (#5AACAC → #8A8ABF) with white text, compact rectangle at top-left
 - Heading banner (large, この講座から得られる未来 style): wider teal → lavender gradient band across upper area, centered white text
-- Bullet icons: none (text only, or subtle dash)
+- Bullet icons: filled square (■) shape in theme accent color
 
 DECORATIVE ELEMENTS:
 - LEFT EDGE: thin vertical gradient stripe running along the left border — teal (#5AACAC) at top fading to lavender (#9A8ABF) at bottom. Subtle, like a page edge accent.
@@ -201,7 +201,7 @@ TITLE_COLOR: #07AAC0
 SUBTITLE_COLOR: #0B7495
 TEXT_COLOR: #4A4A4A
 BULLET_COLOR: #0B7495
-BULLET_CHAR: —
+BULLET_CHAR: ■
 BANNER_BG: linear-gradient(90deg, rgba(7,170,192,0.5), rgba(11,116,149,0.5), rgba(11,24,95,0.5))
 BANNER_BG_WIDE: linear-gradient(90deg, rgba(7,170,192,0.5), rgba(11,116,149,0.5), rgba(11,24,95,0.5))
 LEFT_BAND: linear-gradient(180deg, rgba(7,170,192,0.5) 0%, rgba(11,116,149,0.5) 50%, rgba(11,24,95,0.5) 100%)
@@ -263,7 +263,7 @@ COLOR PALETTE:
 - Accent: warm gold (#B8960B) for price highlights ONLY
 - Heading banner (small, コンセプト style): muted olive-green to sage gradient (#8BA888 → #7A9A78) with white text, compact rectangle at top-left
 - Heading banner (large, この講座から得られる未来 style): wider muted sage-green band, centered white text
-- Bullet icons: none (text only, or subtle dash)
+- Bullet icons: filled square (■) shape in theme accent color
 
 DECORATIVE ELEMENTS:
 - COVER PAGE ONLY: watercolor-style botanical leaf silhouettes in EXTREMELY FAINT, cool gray-green (#B8C8C0 at ~15% opacity). Placed at TOP-LEFT corner (1-2 leaves cascading down) and BOTTOM-RIGHT corner (1-2 leaves). Leaves are soft, translucent, like pressed herbs. MUST NOT look like matcha or strong green.
@@ -300,7 +300,7 @@ TITLE_COLOR: #6BB594
 SUBTITLE_COLOR: #53925E
 TEXT_COLOR: #3A4A3A
 BULLET_COLOR: #53925E
-BULLET_CHAR: —
+BULLET_CHAR: ■
 BANNER_BG: linear-gradient(90deg, #BCEDD7, #85A98C)
 BANNER_BG_WIDE: linear-gradient(90deg, #BCEDD7, #85A98C)
 RULE_COLOR: rgba(83, 146, 94, 0.3)
@@ -401,7 +401,7 @@ COLOR PALETTE:
 - Accent: warm gold (#B8960B) for price highlights ONLY
 - Heading banner (small, コンセプト style): blue-to-purple-to-pink gradient (#4A7AD9 → #7A4ABF → #C04A8A) with white text, compact rectangle at top-left
 - Heading banner (large, この講座から得られる未来 style): wider blue-to-purple-to-pink gradient band, centered white text
-- Bullet icons: none (text only, or subtle dash)
+- Bullet icons: filled square (■) shape in theme accent color
 
 DECORATIVE ELEMENTS (CRITICAL — MATCH REFERENCE IMAGE EXACTLY):
 - BOTTOM FOOTER BAND: A gentle, smooth gradient band hugging the very bottom edge of the slide.
@@ -447,7 +447,7 @@ TITLE_COLOR: #7A4ABF
 SUBTITLE_COLOR: #8A8A9A
 TEXT_COLOR: #3A3A4A
 BULLET_COLOR: #7A4ABF
-BULLET_CHAR: —
+BULLET_CHAR: ■
 BANNER_BG: linear-gradient(90deg, #4A7AD9, #7A4ABF, #C04A8A)
 BANNER_BG_WIDE: linear-gradient(90deg, #4A7AD9, #7A4ABF, #C04A8A)
 RULE_COLOR: rgba(122, 74, 191, 0.3)
@@ -556,7 +556,7 @@ TITLE_GRADIENT_CSS: background: linear-gradient(135deg, #D4A870, #B87860, #C0887
 SUBTITLE_COLOR: #A09888
 TEXT_COLOR: #5A4A44
 BULLET_COLOR: #D4A870
-BULLET_CHAR: ◆
+BULLET_CHAR: ■
 BANNER_BG: linear-gradient(90deg, #D8B8A0, #CCA0A0)
 RULE_COLOR: rgba(212, 168, 112, 0.3)
 LINE_COLOR: linear-gradient(90deg, #D4A870, #B87860)
@@ -733,7 +733,7 @@ TITLE_COLOR: #D4707A
 SUBTITLE_COLOR: #9A8A8A
 TEXT_COLOR: #4A4A4A
 BULLET_COLOR: #D4707A
-BULLET_CHAR: —
+BULLET_CHAR: ■
 BANNER_BG: linear-gradient(90deg, #E0A0B0, #D090A0)
 BANNER_BG_WIDE: linear-gradient(90deg, #E0A0B0, #D090A0, #E0A0B0)
 RULE_COLOR: rgba(212, 112, 122, 0.3)
